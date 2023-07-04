@@ -22,13 +22,13 @@ const Footer = () => {
                 </p>
                 <ul className="footer-contact">
                   <li>
-                    <i className="fas fa-phone-square-alt" /> (444) 123 4567 89
+                    <i className="fas fa-phone-square-alt" /> (+1) 307 243 2920
                   </li>
                   <li>
-                    <i className="fas fa-envelope" /> support@company.com
+                    <i className="fas fa-envelope" /> info@Pixelperfect.com
                   </li>
                   <li>
-                    <i className="fas fa-map" /> 74 South Doult Street, Dubai.
+                    <i className="fas fa-map" /> 30 N Gould Street, Sheridan, Wyoming, USA.
                   </li>
                 </ul>
               </div>
@@ -123,7 +123,7 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <p>&copy; Copyright 2021 by Themescare</p>
+              <p>&copy; Copyright 2023 by Pixel Perfect</p>
             </div>
           </div>
         </div>

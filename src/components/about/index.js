@@ -2,7 +2,7 @@ import React from "react";
 import CountUp from "react-countup";
 
 import bg from "../../img/about-bg.png";
-import img1 from "../../img/about-1.png";
+import img1 from "../../img/about-1.jpg";
 import img2 from "../../img/about-2.png";
 import signature from "../../img/signature.png";
 
@@ -31,7 +31,7 @@ const About = () => {
                 Design inilla duiman at elit finibus viverra nec a lacus themo
                 the drudea seneoice misuscipit non sagie the fermen.
               </p>
-              <div className="about-signature">
+              {/* <div className="about-signature">
                 <div className="signature-left">
                   <img src={signature} alt="signature" />
                 </div>
@@ -39,7 +39,7 @@ const About = () => {
                   <h3>Robertho Garcia</h3>
                   <p>President</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-lg-6 offset-lg-1 col-md-6">

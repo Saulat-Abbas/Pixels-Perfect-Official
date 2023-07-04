@@ -51,11 +51,13 @@
 }
 
 .partners-area .site-heading {
-	text-align: center
+	text-align: left
+
 }
 /*Responsive*/
 @media (max-width: 991px){
 	.service-video-box-text p {
+		font-size: 16px;
 		font-size: 16px;
 	}
 }

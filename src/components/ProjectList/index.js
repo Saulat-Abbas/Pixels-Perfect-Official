@@ -34,10 +34,10 @@ const ProjectList = () => {
                   <Link to="/projects-single">
                     <img src={projectImg1} alt="img" />
                     <h3>
-                      CONCERT HALL
-                      <br /> IN NEW WORK
+                      STUNNING FASION
+                      <br /> STORE
                     </h3>
-                    <p>ARCHITECTURE</p>
+                    <p>WEBSITE DEVELOPMENT</p>
                     <div className="project-zoom">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -66,10 +66,10 @@ const ProjectList = () => {
                   <Link to="/projects-single">
                     <img src={projectImg2} alt="img" />
                     <h3>
-                      MODERN INTERIOR
-                      <br /> IN AUSTRALIA
+                      GADGET HUB
+                      <br /> STORE
                     </h3>
-                    <p>INTERIOR</p>
+                    <p>WORDPRESS DESIGN</p>
                     <div className="project-zoom">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -98,10 +98,10 @@ const ProjectList = () => {
                   <Link to="/projects-single">
                     <img src={projectImg3} alt="img" />
                     <h3>
-                      DRAWING ROOM
-                      <br /> IN LAS VEGAS
+                      OFFICE
+                      <br />
                     </h3>
-                    <p>INTERIOR</p>
+                    <p>PHOTO ENHANCEMENT</p>
                     <div className="project-zoom">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -130,10 +130,10 @@ const ProjectList = () => {
                   <Link to="/projects-single">
                     <img src={projectImg4} alt="img" />
                     <h3>
-                      SWIMMING POOL
+                      OFFICE
                       <br /> IN ROMANIA
                     </h3>
-                    <p>HOUSE PLANNING</p>
+                    <p>PHOTO ENHANCEMENT</p>
                     <div className="project-zoom">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -162,10 +162,9 @@ const ProjectList = () => {
                   <Link to="/projects-single">
                     <img src={projectImg5} alt="img" />
                     <h3>
-                      MODERN OFFICE
-                      <br /> IN LOS ANGELS
+                      TV LAUNCH
                     </h3>
-                    <p>INTERIOR</p>
+                    <p>VIRTUAL STAGING</p>
                     <div className="project-zoom">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -194,10 +193,10 @@ const ProjectList = () => {
                   <Link to="/projects-single">
                     <img src={projectImg6} alt="img" />
                     <h3>
-                      MASTER KITCHEN
-                      <br /> IN DHAKA
+                      BEAUTIFUL HOUSE
+                      <br /> IN WASHINGTON
                     </h3>
-                    <p>ARCHITECTURE</p>
+                    <p>VIRTUAL DECLUTTER</p>
                     <div className="project-zoom">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -226,10 +225,10 @@ const ProjectList = () => {
                   <Link to="/projects-single">
                     <img src={projectImg7} alt="img" />
                     <h3>
-                      MODERN RESTURENT
+                      MODERN APARTMENT
                       <br /> IN BAHRAIN
                     </h3>
-                    <p>INTERIOR</p>
+                    <p>RENOVATION</p>
                     <div className="project-zoom">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -258,10 +257,10 @@ const ProjectList = () => {
                   <Link to="/projects-single">
                     <img src={projectImg8} alt="img" />
                     <h3>
-                      MODERN HALL ROOM
-                      <br /> IN AUSTRALIA
+                      TWILIGHT AND DUSK
+                      <br /> OF DAY IMAGE
                     </h3>
-                    <p>ARCHITECTURE</p>
+                    <p>TWILIGHT & DUSK</p>
                     <div className="project-zoom">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -290,8 +289,7 @@ const ProjectList = () => {
                   <Link to="/projects-single">
                     <img src={projectImg9} alt="img" />
                     <h3>
-                      MODERN HOUSE
-                      <br /> IN PARIS
+                      2D & 3D MATTERPORT FLOORPLANS
                     </h3>
                     <p>ARCHITECTURE</p>
                     <div className="project-zoom">
@@ -322,10 +320,9 @@ const ProjectList = () => {
                   <Link to="/projects-single">
                     <img src={projectImg10} alt="img" />
                     <h3>
-                      MODERN HOTEL
-                      <br /> IN BAHRAIN
+                      360 BED ROOM
                     </h3>
-                    <p>FURNITURE DESIGN</p>
+                    <p>360 VIRTUAL STAGING</p>
                     <div className="project-zoom">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

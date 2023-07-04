@@ -46,7 +46,7 @@ const PageTitle = (props) => {
                     <span className="fas fa-home" />
                   </Link>
                 </li>
-                <li>{props.pagesub}</li>
+                {/* <li>{props.pagesub}</li> */}
               </ul>
             </div>
           </div>

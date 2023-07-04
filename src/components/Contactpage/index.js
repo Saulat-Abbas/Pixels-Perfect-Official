@@ -27,9 +27,9 @@ const Contactpage = () => {
                   <div className="contact-info-text">
                     <h5>Head office</h5>
                     <p>
-                      74 South Doult Street,
+                      30 N Gould Street, Sheridan, Wyoming, USA. 
                       <br />
-                      Dubai.
+                    
                     </p>
                   </div>
                 </div>
@@ -39,8 +39,8 @@ const Contactpage = () => {
                   </div>
                   <div className="contact-info-text">
                     <h5>Phone</h5>
-                    <p>(444) 123 4567 89</p>
-                    <p>(+09) 123 4567 89</p>
+                    <p> (+1) 307 243 2920</p>
+                    <p>(+92) 303 408 7599</p>
                   </div>
                 </div>
                 <div className="single-contact-info" data-aos="fade-up">
@@ -49,8 +49,8 @@ const Contactpage = () => {
                   </div>
                   <div className="contact-info-text">
                     <h5>Email</h5>
-                    <p>info@company.com</p>
-                    <p>support@company.com</p>
+                    <p>info@Pixelperfect.com</p>
+                    <p>order@Pixelperfect.com</p>
                   </div>
                 </div>
               </div>
@@ -71,3 +71,4 @@ const Contactpage = () => {
 };
 
 export default Contactpage;
+  

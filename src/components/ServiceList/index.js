@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import serviceImg1 from "../../img/service-bg-1.png";
-import serviceImg2 from "../../img/service-bg-2.jpg";
+import serviceImg2 from "../../img/service-bg-2.png";
 import serviceImg3 from "../../img/service-bg-3.jpg";
 import serviceIcon1 from "../../img/service-icon-1.png";
 import serviceIcon2 from "../../img/service-icon-2.png";

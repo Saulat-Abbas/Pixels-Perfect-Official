@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import projectImg1 from "../../img/project-1.png";
-import projectImg2 from "../../img/project-2.png";
-import projectImg3 from "../../img/project-3.png";
+import projectImg1 from "../../img/project-1.jpg";
+import projectImg2 from "../../img/project-2.jpg";
+import projectImg3 from "../../img/project-3.jpg";
 
 import "./style.css";
 
@@ -21,10 +21,10 @@ const ProjectSection = () => {
               <Link to="/projects-single">
                 <img src={projectImg1} alt="img" />
                 <h3>
-                  CONCERT HALL
-                  <br /> IN NEW WORK
+                  fAMILY HALL
+                  <br /> IN NEW YORK
                 </h3>
-                <p>INTERIOR</p>
+                <p>PHOTO ENHANCEMENT</p>
                 <div className="project-zoom">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -88,10 +88,10 @@ const ProjectSection = () => {
               <Link to="/projects-single">
                 <img src={projectImg2} alt="img" />
                 <h3>
-                  MODERN HOTEL
-                  <br /> IN AUSTRALIA
+                  MODERN kITCHEN
+                  <br /> IN USA
                 </h3>
-                <p>ARCHITECTURE</p>
+                <p>VIRTUAL STAGING</p>
                 <div className="project-zoom">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
