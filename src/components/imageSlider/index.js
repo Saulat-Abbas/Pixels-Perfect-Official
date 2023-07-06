@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './style.css';
-import image1 from "../../img/project-6.jpg";
-import image2 from "../../img/project-7.jpg";
-import image3 from "../../img/project-8.jpg";
+import image1 from "../../img/slider-3.jpg";
+import image2 from "../../img/slider-5.jpg";
+import image3 from "../../img/slider-6.jpg";
 
 
 const ImageSlider = () => {
