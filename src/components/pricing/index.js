@@ -70,7 +70,7 @@ const Pricing = () => {
                 </ul>
               </div>
               <div className="pricing-action">
-                <Link to="/">Learn More</Link>
+                <Link to="/payments">Proceed</Link>
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@ const Pricing = () => {
                 </ul>
               </div>
               <div className="pricing-action">
-                <Link to="/">Learn More</Link>
+                <Link to="/payments">Proceed</Link>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@ const Pricing = () => {
                 </ul>
               </div>
               <div className="pricing-action">
-                <Link to="/">Learn More</Link>
+                <Link to="/payments">proceed</Link>
               </div>
             </div>
           </div>

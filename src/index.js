@@ -4,15 +4,18 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './css/all.min.css';
 import App from './main-component/App/App';
-
-
-
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe('YOUR_STRIPE_PUBLIC_KEY');
 
 
 ReactDOM.render(
-  <React.Fragment>
+  // <React.Fragment>
+  //   <App />
+  // </React.Fragment>,
+  <Elements stripe={stripePromise}>
     <App />
-  </React.Fragment>,
+  </Elements>,
   document.getElementById('root')
 );
 

@@ -8,7 +8,6 @@ import Team from '../../components/team'
 import Footer from '../../components/footer'
 
 
-
 const AboutPage =() => {
     return(
         <Fragment>

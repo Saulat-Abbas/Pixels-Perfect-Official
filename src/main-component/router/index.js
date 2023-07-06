@@ -14,8 +14,7 @@ import ContactPage from '../ContactPage'
 import ErrorPage from '../ErrorPage'
 import BlogPage from '../BlogPage'
 import BlogSinglePage from '../BlogSinglePage'
-
-      
+import CheckoutForm from '../checkoutForm/check';
 
 const AllRoute = () => { 
 
@@ -37,6 +36,7 @@ const AllRoute = () => {
             <Route path='/404' component={ErrorPage} />
             <Route path='/blog' component={BlogPage} />
             <Route path='/blog-single' component={BlogSinglePage} />
+            <Route path='/payments' component= {CheckoutForm}/>
           </Switch>
       </Router>
     </div>
