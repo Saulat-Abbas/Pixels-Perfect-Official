@@ -31,14 +31,14 @@ const ServiceSection = () => {
                 <img src={serviceIcon1} alt="img" />
               </div>
               <div className="service-text">
-                <h3>Virtual Declutter</h3>
-                <p>
+                <h3><a href="/service-single?service=Virtual-Duculator" className="cta-btn btn-border">Virtual Declutter</a></h3>
+                {/* <p>
                   We develop the full cycle of project documentation &amp; full
                   details. Our clients satisfaction is most
                 </p>
-                <Link to="/service-single" className="cta-btn btn-border">
+                <Link to="/service-single?service=Virtual-Duculator" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg1} alt="img" />
             </div>
@@ -53,14 +53,14 @@ const ServiceSection = () => {
                 <img src={serviceIcon2} alt="img" />
               </div>
               <div className="service-text">
-                <h3>Image Enhancement</h3>
-                <p>
+                <h3><a href="/service-single?service=Image-Enhancement" className="cta-btn btn-border">Image Enhancement</a></h3>
+                {/* <p>
                   We develop the full cycle of project documentation &amp; full
                   details. Our clients satisfaction is most
                 </p>
-                <Link to="/service-single" className="cta-btn btn-border">
+                <Link to="/service-single?service=Image-Enhancement" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg2} alt="img" />
             </div>
@@ -75,14 +75,14 @@ const ServiceSection = () => {
                 <img src={serviceIcon3} alt="img" />
               </div>
               <div className="service-text">
-                <h3>Virtual Staging</h3>
-                <p>
+                <h3><a href="/service-single?service=virtual-staging" className="cta-btn btn-border">Virtual Staging</a></h3>
+                {/* <p>
                   We develop the full cycle of project documentation &amp; full
                   details. Our clients satisfaction is most
                 </p>
-                <Link to="/service-single" className="cta-btn btn-border">
+                <Link to="/service-single?service=virtual-staging" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg3} alt="img" />
             </div>
@@ -99,14 +99,14 @@ const ServiceSection = () => {
                 <img src={serviceIcon4} alt="img" />
               </div>
               <div className="service-text">
-                <h3>Website Development</h3>
-                <p>
+                <h3><a href="/service-single?service=website-development" className="cta-btn btn-border">Website Development</a></h3>
+                {/* <p>
                   We develop the full cycle of project documentation &amp; full
                   details. Our clients satisfaction is most
                 </p>
-                <Link to="/service-single" className="cta-btn btn-border">
+                <Link to="/service-single?service=website-development" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg4} alt="img" />
             </div>
@@ -121,14 +121,14 @@ const ServiceSection = () => {
                 <img src={serviceIcon5} alt="img" />
               </div>
               <div className="service-text">
-                <h3>Wordpress Designing</h3>
-                <p>
+                <h3><a href="/service-single?service=wordpress-designing" className="cta-btn btn-border">Wordpress Designing</a></h3>
+                {/* <p>
                   We develop the full cycle of project documentation &amp; full
                   details. Our clients satisfaction is most
                 </p>
-                <Link to="/service-single" className="cta-btn btn-border">
+                <Link to="/service-single?service=wordpress-designing" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg5} alt="img" />
             </div>
@@ -143,14 +143,7 @@ const ServiceSection = () => {
                 <img src={serviceIcon6} alt="img" />
               </div>
               <div className="service-text">
-                <h3>Interior Design</h3>
-                <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
-                </p>
-                <Link to="/service-single" className="cta-btn btn-border">
-                  Read More
-                </Link>
+                <h3><a href="/service-single?service=interior-designing" className="cta-btn btn-border">Interior Design</a></h3>
               </div>
               <img src={serviceImg6} alt="img" />
             </div>

@@ -140,6 +140,7 @@ class Hero extends Component {
               </div>
             </div>
           </Slider>
+          <h1>wiki</h1>
         </div>
       </section>
     );

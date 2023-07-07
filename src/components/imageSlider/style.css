@@ -1,15 +1,18 @@
+
 .slider-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-  }
-  
-  .slider {
-    position: relative;
-    width: 1000px;
-    height: 500px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  overflow: hidden; /* Added overflow property */
+}
+
+.slider {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  display: flex; /* Added display property */
+}
   
   .slider img {
     width: 100%;

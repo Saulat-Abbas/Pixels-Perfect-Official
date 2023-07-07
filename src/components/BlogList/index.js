@@ -4,6 +4,7 @@ import Sidebar from "../Sidebar";
 
 import blog1 from "../../img/news-1.png";
 import blog2 from "../../img/news-2.png";
+import blog3 from "../../img/news-3.png";
 
 import "./style.css";
 
@@ -52,7 +53,7 @@ const BlogList = () => {
                     data-aos="fade-up"
                   >
                     <div className="news-img">
-                      <img src={blog1} alt="img" />
+                      <img src={blog3} alt="img" />
                     </div>
                     <div className="news-text">
                       <p className="news-date">Planning - 19.04.2020</p>
