@@ -7,9 +7,9 @@ import "./style.css";
 import Testimonial from "../testimonial";
 
 const ServiceSingle = () => {
+  
   return (
     <div>
-      <h1>wiki</h1>
       <section className="service-video-box-area" data-aos="fade-up">
         <div className="container">
           <div className="row align-items-center">
