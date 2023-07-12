@@ -96,7 +96,7 @@ const ServiceSection = () => {
             </Link>
           </div>
           <div className="col-lg-4 col-md-6">
-            <Link to="/service-single?service=interior-designing" className="service-text">
+            <Link to="/service-single?service=Virtual-Renovation" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="400">
                 <div className="service-icon">
                   <img src={serviceIcon6} alt="img" />

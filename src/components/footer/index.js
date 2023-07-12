@@ -16,10 +16,10 @@ const Footer = () => {
             <div className="col-lg-4 col-sm-6 order-lg-1 order-1">
               <div className="single-footer">
                 <h3>About</h3>
-                <p>
+                {/* <p>
                   Precious ipsum dolor sit amet consectetur
                   <br /> adipisicing elit, sed dos mod tempor
-                </p>
+                </p> */}
                 <ul className="footer-contact">
                   <li>
                     <i className="fas fa-phone-square-alt" /> (+1) 307 243 2920
