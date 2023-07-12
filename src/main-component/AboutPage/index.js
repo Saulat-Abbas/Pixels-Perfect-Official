@@ -17,7 +17,7 @@ const AboutPage =() => {
             <Feature/>
             <Partners/>
             <Expertise/>
-            <Team/>
+            {/* <Team/> */}
             <Footer/>
         </Fragment>
     )

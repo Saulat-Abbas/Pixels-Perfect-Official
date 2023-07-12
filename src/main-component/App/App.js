@@ -8,7 +8,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import PaymentForm from '../../stripeForm/paymentForm';
 
 
-const stripePromise = loadStripe('sk_test_51LkExQD2dU6r3UJMffByBHtycl7YllCjgGoUOzcecDaBv9znZOYwFYYVpiNAoNzWglpmk4q3sCtorfB4EDpG7ITB00XK1wcbNY');
+const stripePromise = loadStripe('pk_test_51LkExQD2dU6r3UJMo1HDdTm4E9g36D4Db12YmQzG7AnkXsBrFnwiMqOGJbNdpHUVX7SwHJXZXxsHCJNd12ahZfw5005R8EAYYi');
 
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
       <div className="App body_wrap"> 
     <Elements stripe={stripePromise}>
         <AllRoute />
-        <PaymentForm />
+        {/* <PaymentForm /> */}
     </Elements>
       </div>
 

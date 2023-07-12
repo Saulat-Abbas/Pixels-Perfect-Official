@@ -4,9 +4,32 @@ import Header from '../../components/header';
 import PageTitle from '../../components/pagetitle';
 import ImageSlider from '../../components/imageSlider';
 import Footer from '../../components/footer';
-import image1 from "../../img/slider-3.jpg";
-import image2 from "../../img/slider-5.jpg";
-import image3 from "../../img/slider-6.jpg";
+import staging1 from "../../img/staging-1.jpg";
+import staging2 from "../../img/staging-2.jpg";
+import staging3 from "../../img/staging-3.jpg";
+import staging4 from "../../img/staging-4.jpg";
+import staging5 from "../../img/staging-5.jpg";
+import staging6 from "../../img/staging-6.jpg";
+import decluter1 from "../../img/decluter-1.jpeg";
+import decluter3 from "../../img/decluter-3.jpeg";
+import decluter5 from "../../img/decluter-5.jpeg";
+import decluter2 from "../../img/decluter-2.jpg";
+import decluter4 from "../../img/decluter-4.jpg";
+import decluter6 from "../../img/decluter-6.jpg";
+import enhacment1 from "../../img/enhacment-1.jpg";
+import enhacment2 from "../../img/enhacment-2.jpg";
+import enhacment3 from "../../img/enhacment-3.jpg";
+import enhacment4 from "../../img/enhacment-4.jpg";
+import web1 from "../../img/web-1.jpg";
+import web2 from "../../img/web-2.jpg";
+import web3 from "../../img/web-3.jpg";
+import word1 from "../../img/word-1.jpg";
+import interior1 from "../../img/interior-1.jpg";
+import interior2 from "../../img/interior-2.jpg";
+import interior3 from "../../img/interior-3.jpg";
+import interior4 from "../../img/interior-4.jpg";
+import interior5 from "../../img/interior-5.jpg";
+import interior6 from "../../img/interior-6.jpg";
 import Testimonial from '../../components/testimonial';
 import Pricing from '../../components/pricing';
 import Partners from '../../components/partners';
@@ -28,39 +51,40 @@ const ServiceSinglePage = () => {
         case 'Virtual-Duculator':
             pageTitle = 'Virtual Duculator';
             pageSub = 'Virtual Duculator Details';
-            images = [image1, image2, image3];
+            images = [decluter1, decluter2, decluter3, decluter4, decluter5, decluter6];
+            
             break;
         case 'Image-Enhancement':
             pageTitle = 'Image Enhancement';
             pageSub = 'Image Enhancement Details';
-            images = [image2, image1, image3];
+            images = [enhacment1, enhacment2, enhacment3, enhacment4];
             break;
         case 'virtual-staging':
             pageTitle = 'Virtual Staging';
             pageSub = 'Virtual Staging Details';
-            images = [image3, image1, image1];
-            break
+            images = [staging1, staging2, staging3, staging4, staging5, staging6];
+            break;
         case 'website-development':
-            pageTitle = 'website development';
-            pageSub = 'website development Details';
-            images = [image3, image1, image1];
+            pageTitle = 'Website Development';
+            pageSub = 'Website Development Details';
+            images = [web1, web2, web3];
             break;
         case 'wordpress-designing':
-            pageTitle = 'wordpress designing ';
-            pageSub = 'wordpress designing Details';
-            images = [image3, image1, image1];
+            pageTitle = 'WordPress Designing';
+            pageSub = 'WordPress Designing Details';
+            images = [word1];
             break;
         case 'interior-designing':
-            pageTitle = 'interior designing';
-            pageSub = 'interior designing';
-            images = [image3, image1, image1];
+            pageTitle = 'Interior Designing';
+            pageSub = 'Interior Designing Details';
+            images = [interior1, interior2, interior3, interior4, interior5, interior6];
             break;
         default:
             pageTitle = 'Service Details';
             pageSub = 'Service Details';
             break;
     }
-
+    
     return (
         <Fragment>
             <Header />
@@ -73,7 +97,7 @@ const ServiceSinglePage = () => {
                             <Testimonial />
                             <Pricing />
                             <section className="pb-0">
-                                <div className="container">
+                                {/* <div className="container">
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <div className="site-heading text-center" data-aos="fade-up">
@@ -82,8 +106,8 @@ const ServiceSinglePage = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <Partners />
+                                </div> */}
+                                {/* <Partners /> */}
                             </section>
                         </div>
                     </div>

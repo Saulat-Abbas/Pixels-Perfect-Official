@@ -19,14 +19,7 @@ const ImageSlider = ({ images }) => {
   return (
     
     <div className="slider-container">
-      <div className="slider">
-        
-        <img
-          src={images[currentSlide]}
-          alt={`Image ${currentSlide + 1}`}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        <button onClick={handlePrevSlide} className="slider-button prev-button">
+       <button onClick={handlePrevSlide} className="slider-button prev-button">
           <span className="button-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +33,21 @@ const ImageSlider = ({ images }) => {
             </svg>
           </span>
         </button>
-        <button onClick={handleNextSlide} className="slider-button next-button">
+      <div className="slider">
+      <h1>Our Projects</h1>
+       <div>
+
+        <img
+          src={images[currentSlide]}
+          alt={`Image ${currentSlide + 1}`}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div> 
+    
+       
+       
+      </div>
+      <button onClick={handleNextSlide} className="slider-button next-button">
           <span className="button-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -52,10 +59,8 @@ const ImageSlider = ({ images }) => {
               >
               <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
             </svg>
-              <div><h1>Our Projects</h1></div>
           </span>
         </button>
-      </div>
     </div>
   );
 };

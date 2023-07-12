@@ -35,12 +35,10 @@ const ServiceSection = () => {
               <div className="service-text">
                 <h3>Virtual Declutter</h3>
                 <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
-                </p>
-                <Link to="/service-single?service=Virtual-Duculator" className="cta-btn btn-border">
+                Digital decluttering: Organize files, reduce clutter, streamline digital environment for efficiency..                </p>
+                {/* <Link to="/service-single?service=Virtual-Duculator" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg1} alt="img" />
             </div>
@@ -57,12 +55,11 @@ const ServiceSection = () => {
               <div className="service-text">
                 <h3>Image Enhancement</h3>
                 <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
+                Improve image quality: brightness, contrast, color, sharpness, noise.
                 </p>
-                <Link to="/service-single?service=Image-Enhancement" className="cta-btn btn-border">
+                {/* <Link to="/service-single?service=Image-Enhancement" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg2} alt="img" />
             </div>
@@ -82,9 +79,9 @@ const ServiceSection = () => {
                   We develop the full cycle of project documentation &amp; full
                   details. Our clients satisfaction is most
                 </p>
-                <Link to="/service-single?service=virtual-staging" className="cta-btn btn-border">
+                {/* <Link to="/service-single?service=virtual-staging" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg3} alt="img" />
             </div>
@@ -101,14 +98,13 @@ const ServiceSection = () => {
                 <img src={serviceIcon4} alt="img" />
               </div>
               <div className="service-text">
-                <h3>Website Development</h3>
+                <h3><a href="">Website Development</a></h3>
                 <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
+                Website development for services involves creating a professional and user-friendly website that showcases the offered services, with tasks including coding, design, and content implementation to effectively promote and attract potential customers.
                 </p>
-                <Link to="/service-single?service=website-development" className="cta-btn btn-border">
+                {/* <Link to="/service-single?service=website-development" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg4} alt="img" />
             </div>
@@ -125,12 +121,11 @@ const ServiceSection = () => {
               <div className="service-text">
                 <h3>Wordpress Designing</h3>
                 <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
+                WordPress design services tailored to your needs. We create visually appealing and user-friendly websites using customized themes, plugins, and branding elements.
                 </p>
-                <Link to="/service-single?service=wordpress-designing" className="cta-btn btn-border">
+                {/* <Link to="/service-single?service=wordpress-designing" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg5} alt="img" />
             </div>
@@ -147,12 +142,11 @@ const ServiceSection = () => {
               <div className="service-text">
                 <h3>Interior Design</h3>
                 <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
+                We offer personalized interior design services, including space planning, color selection, furniture sourcing, lighting design, and project management, to create captivating and customized interiors that reflect our clients' unique style and preferences.
                 </p>
-                <Link to="/service-single?service=interior-designing" className="cta-btn btn-border">
+                {/* <Link to="/service-single?service=interior-designing" className="cta-btn btn-border">
                   Read More
-                </Link>
+                </Link> */}
               </div>
               <img src={serviceImg6} alt="img" />
             </div>

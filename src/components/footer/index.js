@@ -33,31 +33,9 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-lg-2 col-sm-6 order-lg-2 order-3">
-              <div className="single-footer">
-                <h3>Qucik Links</h3>
-                <ul>
-                  <li>
-                    <Link to="/">About Us</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Our Projects</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Our Services</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Meet The Team</Link>
-                  </li>
-                  <li>
-                    <Link to="/">Contact</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div className="col-lg-2 col-sm-6 order-lg-3 order-4">
               <div className="single-footer">
-                <h3>Exlore</h3>
+                {/* <h3>Exlore</h3>
                 <ul>
                   <li>
                     <Link to="/">Case Study</Link>
@@ -74,10 +52,10 @@ const Footer = () => {
                   <li>
                     <Link to="/">Terms & Condition</Link>
                   </li>
-                </ul>
+                </ul> */}
               </div>
             </div>
-            <div className="col-lg-4 col-sm-6 order-lg-4 order-2">
+            {/* <div className="col-lg-4 col-sm-6 order-lg-4 order-2">
               <div className="single-footer">
                 <h3>Newsletter</h3>
                 <p>Sign up now for weekly news & updates.</p>
@@ -109,6 +87,29 @@ const Footer = () => {
                     <Link to="/">
                       <i className="fab fa-twitter" />
                     </Link>
+                  </li>
+                </ul>
+              </div>
+            </div> */}
+            <div className="col-lg-2 col-sm-6 order-lg-2 order-3">
+              <div className="single-footer" >
+                
+                <h3>Qucik Links</h3>
+                <ul>
+                  <li>
+                    <Link to="/about">About Us</Link>
+                  </li>
+                  <li>
+                    {/* <Link to="/">Our Projects</Link> */}
+                  </li>
+                  <li>
+                    <Link to="/service">Our Services</Link>
+                  </li>
+                  <li>
+                    {/* <Link to="/">Meet The Team</Link> */}
+                  </li>
+                  <li>
+                    <Link to="/contact">Contact</Link>
                   </li>
                 </ul>
               </div>

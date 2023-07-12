@@ -14,6 +14,7 @@ import ContactPage from '../ContactPage';
 import ErrorPage from '../ErrorPage';
 import BlogPage from '../BlogPage';
 import BlogSinglePage from '../BlogSinglePage';
+import { useStripe } from '@stripe/react-stripe-js';
 
 const AllRoute = () => {
   return (
@@ -33,6 +34,7 @@ const AllRoute = () => {
         <Route path="/404" component={ErrorPage} />
         <Route path="/blog" component={BlogPage} />
         <Route path="/blog-single" component={BlogSinglePage} />
+        {/* <Route path="/payments" component={useStripe} /> */}
       </Switch>
     </Router>
   );
