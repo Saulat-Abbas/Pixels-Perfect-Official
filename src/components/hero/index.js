@@ -5,8 +5,8 @@ import VideoModal from "../../components/ModalVideo";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import hero1 from "../../img/slider-1.jpg";
-import hero2 from "../../img/slider-2.png";
+import hero1 from "../../img/hero-1.jpg";
+import hero2 from "../../img/hero-2.jpg";
 
 import "./style.css";
 
@@ -93,7 +93,7 @@ class Hero extends Component {
                       </Link>
                     </div>
                   </div>
-                  <div className="video-main">
+                  {/* <div className="video-main">
                     <div className="promo-video">
                       <div className="waves-block">
                         <div className="waves wave-1" />
@@ -102,7 +102,7 @@ class Hero extends Component {
                       </div>
                     </div>
                     <VideoModal videoId="BqI0Q7e4kbk" />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@ class Hero extends Component {
                       </Link>
                     </div>
                   </div>
-                  <div className="video-main">
+                  {/* <div className="video-main">
                     <div className="promo-video">
                       <div className="waves-block">
                         <div className="waves wave-1" />
@@ -135,11 +135,12 @@ class Hero extends Component {
                       </div>
                     </div>
                     <VideoModal videoId="WVPfu1yOOko" />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </Slider>
+          
         </div>
       </section>
     );

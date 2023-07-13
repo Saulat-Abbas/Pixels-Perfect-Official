@@ -3,6 +3,7 @@ import Header from '../../components/header'
 import PageTitle from '../../components/pagetitle'
 import ServiceList from '../../components/ServiceList'
 import Footer from '../../components/footer'
+import ServiceSection from '../../components/ServiceSection'
 
 
 
@@ -11,7 +12,7 @@ const ServicePage =() => {
         <Fragment>
             <Header/>
             <PageTitle pageTitle={'SERVICE'} pagesub={'Service'}/>
-            <ServiceList/>
+            <ServiceSection/>
             <Footer/>
         </Fragment>
     )

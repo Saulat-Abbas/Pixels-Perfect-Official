@@ -11,6 +11,7 @@
 	z-index: 1;
 	box-shadow: 0 3px 30px rgba(0, 0, 0, 0.05);
 	margin-bottom: 30px
+	
 }
 
 .service-box:after {
@@ -26,6 +27,9 @@
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	-webkit-transition: all 0.4s ease 0s;
 	transition: all 0.4s ease 0s;
+	
+		cursor: pointer; 
+	
 }
 
 .service-box>img {

@@ -7,17 +7,19 @@ import "./style.css";
 import Testimonial from "../testimonial";
 
 const ServiceSingle = () => {
+
   return (
     <div>
       <section className="service-video-box-area" data-aos="fade-up">
         <div className="container">
           <div className="row align-items-center">
-              <div className="site-heading">
-              </div>
+            <div className="site-heading">
             </div>
-              <ImageSlider />
           </div>
-        
+          <div id="image-container" class="virtual-duculator-images">
+            <ImageSlider />
+          </div>
+        </div>
       </section>
       <Testimonial />
       <Pricing />
@@ -32,7 +34,7 @@ const ServiceSingle = () => {
             </div>
           </div>
         </div>
-        <Partners />
+        {/* <Partners /> */}
       </section>
     </div>
   );

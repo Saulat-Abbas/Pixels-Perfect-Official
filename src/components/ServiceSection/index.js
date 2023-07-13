@@ -16,144 +16,98 @@ import serviceIcon6 from "../../img/service-icon-6.png";
 
 import "./style.css";
 
+
+
 const ServiceSection = () => {
   return (
     <section className="service-area">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-4 col-md-6">
-            <div
-              className="service-box"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="service-icon">
-                <img src={serviceIcon1} alt="img" />
+            <Link to="/service-single?service=Virtual-Duculator" className="service-text">
+              <div className="service-box" data-aos="fade-up" data-aos-delay="100">
+                <div className="service-icon">
+                  <img src={serviceIcon1} alt="img" />
+                </div>
+                <div>
+                  <h3 className="cta-btn btn-border">Virtual Declutter</h3>
+                  <p className="btn-border"> We develop the full cycle of project documentation &amp; full details. Our clients' satisfaction is most.</p>
+                </div>
+                <img src={serviceImg1} alt="img" />
               </div>
-              <div className="service-text">
-                <h3>Virtual Declutter</h3>
-                <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
-                </p>
-                <Link to="/service-single" className="cta-btn btn-border">
-                  Read More
-                </Link>
-              </div>
-              <img src={serviceImg1} alt="img" />
-            </div>
+            </Link>
           </div>
           <div className="col-lg-4 col-md-6">
-            <div
-              className="service-box"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
-              <div className="service-icon">
-                <img src={serviceIcon2} alt="img" />
+            <Link to="/service-single?service=Image-Enhancement" className="service-text">
+              <div className="service-box" data-aos="fade-up" data-aos-delay="250">
+                <div className="service-icon">
+                  <img src={serviceIcon2} alt="img" />
+                </div>
+                <div>
+                  <h3 className="cta-btn btn-border">Image Enhancement</h3>
+                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                </div>
+                <img src={serviceImg2} alt="img" />
               </div>
-              <div className="service-text">
-                <h3>Image Enhancement</h3>
-                <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
-                </p>
-                <Link to="/service-single" className="cta-btn btn-border">
-                  Read More
-                </Link>
-              </div>
-              <img src={serviceImg2} alt="img" />
-            </div>
+            </Link>
           </div>
           <div className="col-lg-4 col-md-6">
-            <div
-              className="service-box"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              <div className="service-icon">
-                <img src={serviceIcon3} alt="img" />
+            <Link to="/service-single?service=virtual-staging" className="service-text">
+              <div className="service-box" data-aos="fade-up" data-aos-delay="400">
+                <div className="service-icon">
+                  <img src={serviceIcon3} alt="img" />
+                </div>
+                <div>
+                  <h3 className="cta-btn btn-border">Virtual Staging</h3>
+                  <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                </div>
+                <img src={serviceImg3} alt="img" />
               </div>
-              <div className="service-text">
-                <h3>Virtual Staging</h3>
-                <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
-                </p>
-                <Link to="/service-single" className="cta-btn btn-border">
-                  Read More
-                </Link>
-              </div>
-              <img src={serviceImg3} alt="img" />
-            </div>
+            </Link>
           </div>
         </div>
         <div className="row justify-content-center">
           <div className="col-lg-4 col-md-6">
-            <div
-              className="service-box"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="service-icon">
-                <img src={serviceIcon4} alt="img" />
+            <Link to="/service-single?service=website-development" className="service-text">
+              <div className="service-box" data-aos="fade-up" data-aos-delay="100">
+                <div className="service-icon">
+                  <img src={serviceIcon4} alt="img" />
+                </div>
+                <div>
+                  <h3 className="cta-btn btn-border">Website Development</h3>
+                  <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                </div>
+                <img src={serviceImg4} alt="img" />
               </div>
-              <div className="service-text">
-                <h3>Website Development</h3>
-                <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
-                </p>
-                <Link to="/service-single" className="cta-btn btn-border">
-                  Read More
-                </Link>
-              </div>
-              <img src={serviceImg4} alt="img" />
-            </div>
+            </Link>
           </div>
           <div className="col-lg-4 col-md-6">
-            <div
-              className="service-box"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
-              <div className="service-icon">
-                <img src={serviceIcon5} alt="img" />
+            <Link to="/service-single?service=wordpress-designing" className="service-text">
+              <div className="service-box" data-aos="fade-up" data-aos-delay="250">
+                <div className="service-icon">
+                  <img src={serviceIcon5} alt="img" />
+                </div>
+                <div>
+                  <h3 className="cta-btn btn-border">Wordpress Designing</h3>
+                  <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                </div>
+                <img src={serviceImg5} alt="img" />
               </div>
-              <div className="service-text">
-                <h3>Wordpress Designing</h3>
-                <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
-                </p>
-                <Link to="/service-single" className="cta-btn btn-border">
-                  Read More
-                </Link>
-              </div>
-              <img src={serviceImg5} alt="img" />
-            </div>
+            </Link>
           </div>
           <div className="col-lg-4 col-md-6">
-            <div
-              className="service-box"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              <div className="service-icon">
-                <img src={serviceIcon6} alt="img" />
+            <Link to="/service-single?service=Virtual-Renovation" className="service-text">
+              <div className="service-box" data-aos="fade-up" data-aos-delay="400">
+                <div className="service-icon">
+                  <img src={serviceIcon6} alt="img" />
+                </div>
+                <div>
+                  <h3 className="cta-btn btn-border">Interior Design</h3>
+                  <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                </div>
+                <img src={serviceImg6} alt="img" />
               </div>
-              <div className="service-text">
-                <h3>Interior Design</h3>
-                <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
-                </p>
-                <Link to="/service-single" className="cta-btn btn-border">
-                  Read More
-                </Link>
-              </div>
-              <img src={serviceImg6} alt="img" />
-            </div>
+            </Link>
           </div>
         </div>
       </div>
