@@ -21,7 +21,7 @@ const HomePage =() => {
             <ServiceSection/>
             {/* <Tour/> */}
             {/* <Partners/> */}
-            <ProjectSection/>
+            {/* <ProjectSection/> */}
             <Testimonial/>
             <BlogSection/>
             <Footer/>

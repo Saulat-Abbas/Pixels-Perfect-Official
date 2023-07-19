@@ -43,7 +43,7 @@ const Pricing = ({ pricing }) => {
                   </ul>
                 </div>
                 <div className="pricing-action">
-                  <Link to="/">Learn More</Link>
+                  <Link to="/contact">Read More</Link>
                 </div>
               </div>
             </div>
