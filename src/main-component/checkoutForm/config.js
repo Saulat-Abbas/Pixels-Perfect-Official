@@ -1,0 +1,1 @@
+export const stripeAPIKey = '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';
