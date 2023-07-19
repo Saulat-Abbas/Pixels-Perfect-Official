@@ -18,11 +18,17 @@ import "./style.css";
 
 
 
+
 const ServiceSection = () => {
   return (
     <section className="service-area">
+<h1 className="sub-titlee"> Architectural & Interior Designing </h1>
+
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="justify-content-center" style={{
+          display: 'flex',
+          flexWrap: 'nowrap !important'
+        }}>
           <div className="col-lg-4 col-md-6">
             <Link to="/service-single?service=Virtual-Duculator" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="100">
@@ -65,7 +71,22 @@ const ServiceSection = () => {
               </div>
             </Link>
           </div>
+          <div className="col-lg-4 col-md-6">
+            <Link to="/service-single?service=Virtual-Renovation" className="service-text">
+              <div className="service-box" data-aos="fade-up" data-aos-delay="400">
+                <div className="service-icon">
+                  <img src={serviceIcon6} alt="img" />
+                </div>
+                <div>
+                  <h3 className="cta-btn btn-border">Virtual Renovation</h3>
+                  <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                </div>
+                <img src={serviceImg6} alt="img" />
+              </div>
+            </Link>
+          </div>
         </div>
+          <h1 className="sub-titlee"> Website Development & Designing </h1>
         <div className="row justify-content-center">
           <div className="col-lg-4 col-md-6">
             <Link to="/service-single?service=website-development" className="service-text">
@@ -92,20 +113,6 @@ const ServiceSection = () => {
                   <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
                 </div>
                 <img src={serviceImg5} alt="img" />
-              </div>
-            </Link>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <Link to="/service-single?service=Virtual-Renovation" className="service-text">
-              <div className="service-box" data-aos="fade-up" data-aos-delay="400">
-                <div className="service-icon">
-                  <img src={serviceIcon6} alt="img" />
-                </div>
-                <div>
-                  <h3 className="cta-btn btn-border">Interior Design</h3>
-                  <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
-                </div>
-                <img src={serviceImg6} alt="img" />
               </div>
             </Link>
           </div>

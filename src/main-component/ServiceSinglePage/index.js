@@ -60,7 +60,7 @@ const ServiceSinglePage = () => {
                 },
                 {
                     name: "Regular",
-                    price: "$60",
+                    price: "$50",
                     details: [" I will remove all the existing furniture in Just $50 for 6 images"]
 
                 },
@@ -79,20 +79,20 @@ const ServiceSinglePage = () => {
             pricing = [
                 {
                     name: "Starter",
-                    price: "$2",
+                    price: "$1",
                     details: ["Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Sharpen Clarity.", "1 Image"]
 
                 },
                 {
                     name: "Regular",
                     price: "$20",
-                    details: ["Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Object removing (3 Images)"]
+                    details: ["Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Object removing (25 Images)"]
 
                 },
                 {
                     name: "Premium",
                     price: "$25",
-                    details: ["Basic Enhancement, Object removing  (8 Images), Your company Logo as watermark, Sharpen Clarity."]
+                    details: ["Basic Enhancement, Object removing  (35 Images), Your company Logo as watermark, Sharpen Clarity."]
 
                 },
             ]
@@ -116,8 +116,8 @@ const ServiceSinglePage = () => {
                 },
                 {
                     name: "Premium",
-                    price: "$110",
-                    details: ["I'll virtual stage your 12 image of your Vacant Room in Just $110"]
+                    price: "$100",
+                    details: ["I'll virtual stage your 12 image of your Vacant Room in Just $100"]
 
                 },
             ]
@@ -129,20 +129,20 @@ const ServiceSinglePage = () => {
             pricing = [
                 {
                     name: "Starter",
-                    price: "150",
-                    details: ["detail 1", 'detail 2', 'detail 3']
+                    price: "$500",
+                    details: ["I will develop a single page Frontend website (Static)."]
 
                 },
                 {
                     name: "Regular",
-                    price: "500",
-                    details: ["detail 1", 'detail 2', 'detail 3']
+                    price: "$700",
+                    details: ["3 pages Frontend application"]
 
                 },
                 {
                     name: "Premium",
-                    price: "100",
-                    details: ["detail 1", 'detail 2', 'detail 3']
+                    price: "$1000",
+                    details: ["Complete Website, up to 5 pages with frontend and backend."]
 
                 },
             ]
@@ -155,25 +155,25 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: "$150",
-                    details: ["detail 1", 'detail 2', 'detail 3']
+                    details: ["✅ Elegant Design ✅ Domain & Hosting Setup Support ✅ 5 Sections Design"]
 
                 },
                 {
                     name: "Regular",
-                    price: "$500",
-                    details: ["detail 1", 'detail 2', 'detail 3']
+                    price: "$250",
+                    details: ["✅ Custom Design ✅ Booking, Appointment, Event ✅ Payment Integration ✅ GTMetrix score upto 80%", ]
 
                 },
                 {
                     name: "Premium",
-                    price: "$1000",
-                    details: ["detail 1", 'detail 2', 'detail 3']
+                    price: "$350",
+                    details: ["✅ Business Plan inc. ✅ Membership Features ✅ Mailchimp Setup ✅ Page Speed 80% - 90%", ]
 
                 },
             ]
             break;
         case 'Virtual-Renovation':
-            pageTitle = 'Virtual-Renovation';
+            pageTitle = 'Virtual Renovation';
             pageSub = 'Virtual-Renovation Details';
             images = [interior1, interior2, interior3, interior4, interior5, interior6];
             pricing = [
@@ -191,7 +191,7 @@ const ServiceSinglePage = () => {
                 },
                 {
                     name: "Premium",
-                    price: "100",
+                    price: "$220",
                     details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $220/ 10 Photo"]
 
                 },

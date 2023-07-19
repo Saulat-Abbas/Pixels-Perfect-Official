@@ -45,9 +45,10 @@ class Hero extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <a href="https://www.facebook.com/PxlPerfects/" target="_blank">
                 <i className="fab fa-facebook-f" />
-              </Link>
+              </a>
+
             </li>
             <li>
               <Link to="/">
@@ -140,7 +141,7 @@ class Hero extends Component {
               </div>
             </div>
           </Slider>
-          
+
         </div>
       </section>
     );

@@ -22,7 +22,9 @@ const ServiceSection = () => {
   return (
     <section className="service-area">
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center" style={{
+          flexWrap: 'nowrap !important'
+        }}>
           <div className="col-lg-4 col-md-6">
             <div
               className="service-box"
