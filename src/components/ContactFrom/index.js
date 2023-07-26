@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import emailjs from "emailjs-com";
 import emailjs from '@emailjs/browser';
+import ConfirmationModal from "./MyModalComponent";
 emailjs.init('VlZjxgIjPGrH-Vu1T');
 
 const ContactForm = () => {
@@ -11,6 +12,7 @@ const ContactForm = () => {
   const [events, setEvents] = useState("");
   const [notes, setNotes] = useState("");
   const [error, setError] = useState({});
+  const [openModal, setOpenModal]= useState(false)
 
   const changeHandler = (e) => {
     const newError = { ...error };
@@ -94,7 +96,7 @@ const ContactForm = () => {
           setError({});
         })
         .catch((error) => {
-          console.error("Error sending email:", {error});
+          console.error("Error sending email:", { error });
         });
     } else {
       setError(newError);
@@ -102,76 +104,81 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler} className="form">
-      <div className="row">
-        <div className="col-lg-6 col-sm-6">
-          <div className="form-field">
-            <input
-              value={name}
-              onChange={changeHandler}
-              type="text"
-              name="name"
-              placeholder="Name"
-            />
-            {error.name && <p>{error.name}</p>}
+    <>
+
+      <ConfirmationModal open={openModal} setOpen={setOpenModal}/>
+
+      <form onSubmit={submitHandler} className="form">
+        <div className="row">
+          <div className="col-lg-6 col-sm-6">
+            <div className="form-field">
+              <input
+                value={name}
+                onChange={changeHandler}
+                type="text"
+                name="name"
+                placeholder="Name"
+              />
+              {error.name && <p>{error.name}</p>}
+            </div>
+          </div>
+          <div className="col-lg-6 col-sm-6">
+            <div className="form-field">
+              <input
+                value={lastname}
+                onChange={changeHandler}
+                type="text"
+                name="lastname"
+                placeholder="Lastname"
+              />
+              {error.lastname && <p>{error.lastname}</p>}
+            </div>
+          </div>
+          <div className="col-lg-6 col-sm-6">
+            <div className="form-field">
+              <input
+                onChange={changeHandler}
+                value={email}
+                type="email"
+                name="email"
+                placeholder="Email"
+              />
+              {error.email && <p>{error.email}</p>}
+            </div>
+          </div>
+          <div className="col-lg-6 col-sm-6">
+            <div className="form-field">
+              <input
+                onChange={changeHandler}
+                value={subject}
+                type="text"
+                name="subject"
+                placeholder="Subject"
+              />
+              {error.subject && <p>{error.subject}</p>}
+            </div>
+          </div>
+          <div className="col-lg-12 col-sm-12">
+            <div className="form-field">
+              <textarea
+                name="notes"
+                placeholder="Message"
+                onChange={changeHandler}
+                value={notes}
+              ></textarea>
+              {error.notes && <p>{error.notes}</p>}
+            </div>
+          </div>
+          <div className="col-lg-12">
+            <div className="contact-form-action">
+              <button className="form-button" type="submit" onClick={()=>setOpenModal(true)}>
+                Send Message
+              </button>
+            </div>
           </div>
         </div>
-        <div className="col-lg-6 col-sm-6">
-          <div className="form-field">
-            <input
-              value={lastname}
-              onChange={changeHandler}
-              type="text"
-              name="lastname"
-              placeholder="Lastname"
-            />
-            {error.lastname && <p>{error.lastname}</p>}
-          </div>
-        </div>
-        <div className="col-lg-6 col-sm-6">
-          <div className="form-field">
-            <input
-              onChange={changeHandler}
-              value={email}
-              type="email"
-              name="email"
-              placeholder="Email"
-            />
-            {error.email && <p>{error.email}</p>}
-          </div>
-        </div>
-        <div className="col-lg-6 col-sm-6">
-          <div className="form-field">
-            <input
-              onChange={changeHandler}
-              value={subject}
-              type="text"
-              name="subject"
-              placeholder="Subject"
-            />
-            {error.subject && <p>{error.subject}</p>}
-          </div>
-        </div>
-        <div className="col-lg-12 col-sm-12">
-          <div className="form-field">
-            <textarea
-              name="notes"
-              placeholder="Message"
-              onChange={changeHandler}
-              value={notes}
-            ></textarea>
-            {error.notes && <p>{error.notes}</p>}
-          </div>
-        </div>
-        <div className="col-lg-12">
-          <div className="contact-form-action">
-            <button className="form-button" type="submit">
-              Send Message
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
+      </form>
+    </>
   );
 };
 

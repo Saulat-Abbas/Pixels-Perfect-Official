@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import serviceImg1 from "../../img/service-bg-1.png";
 import serviceImg2 from "../../img/service-bg-2.png";
 import serviceImg3 from "../../img/service-bg-3.jpg";
@@ -16,20 +15,13 @@ import serviceIcon6 from "../../img/service-icon-6.png";
 
 import "./style.css";
 
-
-
-
 const ServiceSection = () => {
   return (
     <section className="service-area">
-<h1 className="sub-titlee"> Architectural & Interior Designing </h1>
-
-      <div className="container">
-        <div className="justify-content-center" style={{
-          display: 'flex',
-          flexWrap: 'nowrap !important'
-        }}>
-          <div className="col-lg-4 col-md-6">
+      <div className="col-lg-12 col-md-12" >
+        <h1 className="sub-titlee">Architectural & Interior Designing</h1>
+        <div className="justify-content-center d-flex flex-wrap" style={{ margin: 60 }}>
+          <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
             <Link to="/service-single?service=Virtual-Duculator" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-icon">
@@ -37,13 +29,13 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Virtual Declutter</h3>
-                  <p className="btn-border"> We develop the full cycle of project documentation &amp; full details. Our clients' satisfaction is most.</p>
+                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients' satisfaction is most.</p>
                 </div>
                 <img src={serviceImg1} alt="img" />
               </div>
             </Link>
           </div>
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
             <Link to="/service-single?service=Image-Enhancement" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="250">
                 <div className="service-icon">
@@ -57,7 +49,7 @@ const ServiceSection = () => {
               </div>
             </Link>
           </div>
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
             <Link to="/service-single?service=virtual-staging" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="400">
                 <div className="service-icon">
@@ -65,13 +57,13 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Virtual Staging</h3>
-                  <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
                 </div>
                 <img src={serviceImg3} alt="img" />
               </div>
             </Link>
           </div>
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
             <Link to="/service-single?service=Virtual-Renovation" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="400">
                 <div className="service-icon">
@@ -79,14 +71,16 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Virtual Renovation</h3>
-                  <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
                 </div>
                 <img src={serviceImg6} alt="img" />
               </div>
             </Link>
           </div>
         </div>
-          <h1 className="sub-titlee"> Website Development & Designing </h1>
+      </div>
+      <div className="col-lg-12 col-md-12" >
+        <h1 className="sub-titlee">Website Development & Designing</h1>
         <div className="row justify-content-center">
           <div className="col-lg-4 col-md-6">
             <Link to="/service-single?service=website-development" className="service-text">
@@ -96,7 +90,7 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Website Development</h3>
-                  <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
                 </div>
                 <img src={serviceImg4} alt="img" />
               </div>
@@ -110,7 +104,7 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Wordpress Designing</h3>
-                  <p className="btn-border" >We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
                 </div>
                 <img src={serviceImg5} alt="img" />
               </div>

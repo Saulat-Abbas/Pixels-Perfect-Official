@@ -5,7 +5,7 @@
 }
 
 .hero-area .hero-slide-item {
-	height: 100vh;
+	height: 70vh;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -29,7 +29,7 @@
 	background: #02050b;
 	opacity: 0.5;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-	z-index: -1
+	z-index: -1;
 }
 
 .hero-social {
