@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Img1 from "../../img/post-1.jpg";
-import Img2 from "../../img/post-2.jpg";
-import Img3 from "../../img/post-3.jpg";
-import Img4 from "../../img/post-4.jpg";
-import Img5 from "../../img/post-5.jpg";
-
 import "./style.css";
 
 const Sidebar = () => {
   const SubmitHandler = (e) => {
     e.preventDefault();
   };
+
+  const Img1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/post-1.jpg?alt=media&token=febad0d1-fb26-435f-8141-c9413f8d3bda"
+  const Img2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/post-2.jpg?alt=media&token=5b49663f-125d-4d70-8fb1-cc9a4e37d8b3"
+  const Img3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/post-3.jpg?alt=media&token=c45c4608-0a12-4e07-bb9d-f12043ab2b50"
+  const Img4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/post-4.jpg?alt=media&token=85913f11-46c5-4a87-9036-1466ca7b9f52"
+  const Img5 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/post-5.jpg?alt=media&token=d2c826cc-edbe-45db-b0dc-d347057cf056"
 
   return (
     <div className="col-lg-4 col-md-5">

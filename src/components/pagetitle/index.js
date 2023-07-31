@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import bg from "../../img/breadcrumb-bg.jpg";
+// import bg from "../../img/breadcrumb-bg.jpg";
 
 import "./style.css";
 const PageTitle = (props) => {
+  const bg = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/breadcrumb-bg.jpg?alt=media&token=ba82ae8b-8bb3-4771-aa37-ebf9a7e39756"
   return (
     <section
     className="breadcrumb-area"

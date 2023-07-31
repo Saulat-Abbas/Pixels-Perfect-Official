@@ -5,9 +5,6 @@ import VideoModal from "../../components/ModalVideo";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import hero1 from "../../img/hero-1.jpg";
-import hero2 from "../../img/hero-2.jpg";
-
 import "./style.css";
 
 class Hero extends Component {
@@ -34,32 +31,33 @@ class Hero extends Component {
       autoplaySpeed: 2500,
       fade: true,
     };
-
+const hero1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/hero-1.jpg?alt=media&token=145ba5d6-642d-4c97-a929-cfa50b10c60a"
+const hero2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/hero-2.jpg?alt=media&token=840e6d85-5066-4d0d-9843-c88c19c3e305"
     return (
       <section className="hero-area">
         <div className="hero-social">
           <ul>
-            <li>
+            {/* <li>
               <Link to="/">
                 <i className="fab fa-pinterest-p" />
               </Link>
-            </li>
+            </li> */}
             <li>
               <a href="https://www.facebook.com/PxlPerfects/" target="_blank">
                 <i className="fab fa-facebook-f" />
               </a>
 
             </li>
-            <li>
+            {/* <li>
               <Link to="/">
                 <i className="fab fa-instagram" />
               </Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link to="/">
                 <i className="fab fa-twitter" />
               </Link>
-            </li>
+            </li> */}
           </ul>
           <p>Follow Us</p>
         </div>
@@ -86,8 +84,8 @@ class Hero extends Component {
                       Design Ideas
                     </h2>
                     <div className="hero-action">
-                      <Link to="/projects" className="cta-btn btn-fill">
-                        See Projects
+                      <Link to="/service" className="cta-btn btn-fill">
+                        Services
                       </Link>
                       <Link to="/contact" className="cta-btn btn-border">
                         Get Contact

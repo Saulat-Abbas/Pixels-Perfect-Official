@@ -2,13 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../Sidebar";
 
-import blog1 from "../../img/news-1.png";
-import blog2 from "../../img/news-2.png";
-import blog3 from "../../img/news-3.png";
 
 import "./style.css";
 
 const BlogList = () => {
+
+  const blog1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/news-1.jpg?alt=media&token=50c2b145-7a83-492b-acb7-33547ffbd176"
+  const blog2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/news-2.png?alt=media&token=4b16771b-7bcc-45a0-ad83-98c8526ea1d1"
+  const blog3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/news-3.png?alt=media&token=0923dadd-01e9-4433-a50d-fde7d55d1d32"
+  
+
   return (
     <section className="blog-page-area">
       <div className="container">

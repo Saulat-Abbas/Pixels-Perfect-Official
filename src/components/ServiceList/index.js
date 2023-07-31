@@ -1,24 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import serviceImg1 from "../../img/service-bg-1.png";
-import serviceImg2 from "../../img/service-bg-2.png";
-import serviceImg3 from "../../img/service-bg-3.jpg";
-import serviceImg4 from "../../img/service-bg-4.jpg";
-import serviceImg5 from "../../img/service-bg-5.jpg";
-import serviceImg6 from "../../img/service-bg-6.jpg";
-import serviceIcon1 from "../../img/service-icon-1.png";
-import serviceIcon2 from "../../img/service-icon-2.png";
-import serviceIcon3 from "../../img/service-icon-3.png";
-import serviceIcon4 from "../../img/service-icon-4.png";
-import serviceIcon5 from "../../img/service-icon-5.png";
-import serviceIcon6 from "../../img/service-icon-6.png";
+
 
 
 
 import "./style.css";
 
 const ServiceSection = () => {
+  const serviceImg1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-bg-1.png?alt=media&token=70173d77-117b-44d9-b5e5-139a62289ade"
+  const serviceImg2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-bg-2.png?alt=media&token=8b05003d-abd6-4cc2-84df-03cb6c2d9215"
+  const serviceImg3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-bg-3.jpg?alt=media&token=4c012a14-1d73-41c4-b9fd-15961584e432"
+  const serviceImg4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-bg-4.jpg?alt=media&token=a8152bb0-13ae-481c-a549-647c29085c93"
+  const serviceImg5 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-bg-5.jpg?alt=media&token=9f826547-63fa-4d23-90d4-1b4b48681fda"
+  const serviceImg6  = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-bg-6.jpg?alt=media&token=82a45ba2-4621-4318-ab37-4798868c8bd6"
+  const serviceIcon1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-1.png?alt=media&token=bfba3402-6d36-4ac5-86c7-c5bf3e548f6d"
+  const serviceIcon2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-2.png?alt=media&token=2d1b309f-32d3-4558-ac4e-244395be503a"
+  const serviceIcon3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-3.png?alt=media&token=dfbef278-3442-4f08-b11f-3986d7af4217"
+  const serviceIcon4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-4.png?alt=media&token=90b81a21-9091-46c6-9ca3-82cea559e96a"
+  const serviceIcon5 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-5.png?alt=media&token=2c830ceb-8684-4019-ba91-a7cd126a6e7a"
+  const serviceIcon6 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-6.png?alt=media&token=a7cbdde8-731f-427f-ba3b-ccfdba669469"
   return (
     <section className="service-area">
       <div className="container">

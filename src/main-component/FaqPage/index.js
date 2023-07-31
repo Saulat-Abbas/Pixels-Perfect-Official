@@ -11,7 +11,7 @@ const FaqPage =() => {
         <Fragment>
             <Header/>
             <PageTitle pageTitle={'FAQ'} pagesub={'Faq'}/>
-            <Faq/>
+            {/* <Faq/> */}
             <Footer/>
         </Fragment>
     )

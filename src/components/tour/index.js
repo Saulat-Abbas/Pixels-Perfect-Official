@@ -1,7 +1,7 @@
 import React from "react";
 import VideoModal from "../../components/ModalVideo";
 
-import tourBG from "../../img/tour-img.png";
+// import tourBG from "../../img/tour-img.png";
 
 import "./style.css";
 
@@ -20,7 +20,7 @@ const Tour = () => {
         <div className="row">
           <div className="col-md-11 mx-auto">
             <div className="tour-inn" data-aos="fade-up">
-              <img src={tourBG} alt="img" />
+              {/* <img src={tourBG} alt="img" /> */}
               <div className="video-main">
                 <div className="tour_video_waves">
                   <div className="promo-video">
