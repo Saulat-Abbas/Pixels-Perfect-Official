@@ -70,12 +70,12 @@ const Pricing = ({ pricing }) => {
       </div>
 
       {/* Render the PricingActionModal component with pricing data */}
-      {pricingModalData && (
-        <PricingActionModal
-          show={showModal}
-          handleClose={handleCloseModal}
-          pricingData={pricingModalData}
-        />
+          {pricingModalData && (
+            <PricingActionModal
+              show={showModal}
+              handleClose={handleCloseModal}
+              pricingData={pricingModalData}
+            />
       )}
     </section>
   );
