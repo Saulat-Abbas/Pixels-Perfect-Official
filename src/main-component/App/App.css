@@ -179,7 +179,7 @@ select {
 --------------------------------------------------------------*/
 
 section {
-	padding: 100px 0
+	/* padding: 0px 0 */
 }
 
 .cta-btn {
@@ -221,7 +221,7 @@ section {
 }
 
 .section-title {
-	color: #000;
+	color: #B78D65;
 	font-size: 60px;
 	letter-spacing: 2px;
 	font-weight: 500;
@@ -231,7 +231,7 @@ section {
 .form-button {
 	display: inline-block;
 	background: #B78D65;
-	border: 1px solid #B78D65;
+	/* border: 1px solid #B78D65; */
 	padding: 17px 35px;
 	color: #fff;
 	-webkit-transition: all 0.4s ease;
