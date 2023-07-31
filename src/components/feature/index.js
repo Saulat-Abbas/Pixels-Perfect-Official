@@ -3,11 +3,15 @@ import React from "react";
 import Icon1 from "../../img/logo01-1.png";
 import Icon2 from "../../img/logo02-1.png";
 import Icon3 from "../../img/logo03-1.png";
-import img1 from "../../img/about-3.png";
-import img2 from "../../img/about-4.png";
+// import img1 from "../../img/about-3.png";
+// import img2 from "../../img/about-4.png";
 import "./style.css";
 
 const Feature = () => {
+
+  const img1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/about-3.jpg?alt=media&token=deec33a5-22ae-41dd-9d2c-b33dc480b150"
+  const img2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/about-4.jpg?alt=media&token=04aa1193-526d-4422-a9c7-4707f1340179 "
+
   return (
     <section className="about-page-area">
       <div className="container">

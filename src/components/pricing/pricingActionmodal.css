@@ -1,0 +1,96 @@
+/* Styling for the modal overlay */
+.modal-overlay {
+    /* Add your overlay styles here */
+  }
+  
+  /* Styling for the modal container */
+  .modal-content {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the close button in the modal header */
+  .modal-header .close {
+    color: #B78D65;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Styling for the modal title */
+  .modal-title {
+    text-align: center; /* Align title text in the center */
+  }
+  
+  .modal-title h1 {
+    color: #B78D65;
+    font-size: 50px;
+    margin-bottom: 3px;
+  }
+  
+  .modal-title h3 {
+    color: #B78D65;
+    font-size: 25px;
+    margin-bottom: 2px;
+  }
+  
+  /* Styling for the pricing */
+  .pricing-modal-price {
+    color: #B78D65;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center; /* Align pricing text in the center */
+  }
+  
+  /* Styling for the quantity counter */
+  .counter {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align counter elements in the center */
+    margin-top: 15px;
+  }
+  
+  .counter button {
+    border: none;
+    background: #B78D65;
+    color: #fff;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .counter span {
+    margin: 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  /* Styling for the pricing details */
+  .pricing-modal-details {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  
+  .pricing-modal-details li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+    text-align: center; /* Align details in the center */
+  }
+  
+  /* Styling for the total price */
+  .total-price {
+    font-size: 24px;
+    color: #B78D65;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center; /* Align total price in the center */
+  }
+  

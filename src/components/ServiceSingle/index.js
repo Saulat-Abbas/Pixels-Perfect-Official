@@ -1,5 +1,5 @@
 import React from "react";
-import ServiceBg from "../../img/service-bg-1.png";
+// import ServiceBg from "../../img/service-bg-1.png";
 import Pricing from "../../components/pricing";
 import Partners from "../../components/partners";
 import ImageSlider from "../../components/imageSlider";
@@ -21,7 +21,7 @@ const ServiceSingle = () => {
           </div>
         </div>
       </section>
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Pricing />
       <section className="pb-0">
         <div className="container">

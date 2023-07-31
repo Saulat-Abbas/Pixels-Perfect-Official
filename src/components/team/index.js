@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import team1 from "../../img/team-1.jpg";
-import team2 from "../../img/team-2.jpg";
-import team3 from "../../img/team-3.jpg";
+// import team1 from "../../img/team-1.jpg";
+// import team2 from "../../img/team-2.jpg";
+// import team3 from "../../img/team-3.jpg";
 import "./style.css";
 
 const Team = () => {
@@ -28,7 +28,7 @@ const Team = () => {
               <div className="col-md-4 col-sm-6">
                 <div className="single-team-box">
                   <div className="team-image">
-                    <img src={team1} alt="team" />
+                    {/* <img src={team1} alt="team" /> */}
                     <div className="team-meta">
                       <h4>Silon Michel</h4>
                       <p>Managing Director</p>
@@ -39,7 +39,7 @@ const Team = () => {
               <div className="col-md-4 col-sm-6">
                 <div className="single-team-box">
                   <div className="team-image">
-                    <img src={team2} alt="team" />
+                    {/* <img src={team2} alt="team" /> */}
                     <div className="team-meta">
                       <h4>Jhonny Jackman</h4>
                       <p>Art Director</p>
@@ -50,7 +50,7 @@ const Team = () => {
               <div className="col-md-4 col-sm-6">
                 <div className="single-team-box">
                   <div className="team-image">
-                    <img src={team3} alt="team" />
+                    {/* <img src={team3} alt="team" /> */}
                     <div className="team-meta">
                       <h4>Tyron</h4>
                       <p>Chief Architect</p>

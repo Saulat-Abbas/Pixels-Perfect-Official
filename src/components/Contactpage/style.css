@@ -45,7 +45,7 @@
 
 .contact-form {
 	position: relative;
-	background-image: url(../../img/project-2.jpg);
+	background-image: url(https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/project-2.jpg?alt=media&token=c017eeb4-8a08-4bb2-b1fa-5e0655c93a5b);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -60,7 +60,7 @@
 	content: "";
 	width: 100%;
 	height: 100%;
-	background: #02050b;
+	background-color: rgb(255, 254, 254);
 	opacity: 0.7;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 	left: 0;
@@ -95,30 +95,36 @@
 	text-align: center;
 	margin-top: 50px
 }
-.contact-page-right iframe{
-	width:100%;
+
+.contact-page-right iframe {
+	width: 100%;
 	height: 450px;
 }
 
 /*Responsive*/
-@media(max-width: 767px){
+@media(max-width: 767px) {
 	.contact-form {
 		padding: 30px
 	}
+
 	.single-contact-info {
 		padding-left: 20px
 	}
+
 	.contact-page-right {
 		margin-top: 30px
 	}
 }
-@media (min-width: 768px) and (max-width: 991px){
+
+@media (min-width: 768px) and (max-width: 991px) {
 	.contact-form {
 		padding: 30px
 	}
+
 	.single-contact-info {
 		padding-left: 20px
 	}
+
 	.contact-page-right {
 		margin-top: 30px
 	}

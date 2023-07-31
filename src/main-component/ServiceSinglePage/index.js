@@ -4,32 +4,6 @@ import Header from '../../components/header';
 import PageTitle from '../../components/pagetitle';
 import ImageSlider from '../../components/imageSlider';
 import Footer from '../../components/footer';
-import staging1 from "../../img/staging-1.jpg";
-import staging2 from "../../img/staging-2.jpg";
-import staging3 from "../../img/staging-3.jpg";
-import staging4 from "../../img/staging-4.jpg";
-import staging5 from "../../img/staging-5.jpg";
-import staging6 from "../../img/staging-6.jpg";
-import decluter1 from "../../img/decluter-1.jpeg";
-import decluter3 from "../../img/decluter-3.jpeg";
-import decluter5 from "../../img/decluter-5.jpeg";
-import decluter2 from "../../img/decluter-2.jpg";
-import decluter4 from "../../img/decluter-4.jpg";
-import decluter6 from "../../img/decluter-6.jpg";
-import enhacment1 from "../../img/enhacment-1.jpg";
-import enhacment2 from "../../img/enhacment-2.jpg";
-import enhacment3 from "../../img/enhacment-3.jpg";
-import enhacment4 from "../../img/enhacment-4.jpg";
-import web1 from "../../img/web-1.jpg";
-import web2 from "../../img/web-2.jpg";
-import web3 from "../../img/web-3.jpg";
-import word1 from "../../img/word-1.jpg";
-import interior1 from "../../img/interior-1.jpg";
-import interior2 from "../../img/interior-2.jpg";
-import interior3 from "../../img/interior-3.jpg";
-import interior4 from "../../img/interior-4.jpg";
-import interior5 from "../../img/interior-5.jpg";
-import interior6 from "../../img/interior-6.jpg";
 import Testimonial from '../../components/testimonial';
 import Pricing from '../../components/pricing';
 import Partners from '../../components/partners';
@@ -37,6 +11,35 @@ import "./style.css"
 
 
 const ServiceSinglePage = () => {
+    const decluter1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/decluter-1.jpeg?alt=media&token=b78cc221-bb6d-4249-a940-0cb14214c4f5"
+    const decluter2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/decluter-2.jpg?alt=media&token=c1633aec-3cd9-498c-b30f-ac24ce5fa094"
+    const decluter3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/decluter-3.jpeg?alt=media&token=c4c04e49-f5df-472e-af45-01b137452069"
+    const decluter4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/decluter-4.jpg?alt=media&token=60e51568-a514-461f-a324-bef53441bc43"
+    const decluter5 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/decluter-5.jpeg?alt=media&token=c9ab91c3-fc2e-40a8-84d0-4da50cad1038"
+    const decluter6 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/decluter-6.jpg?alt=media&token=fd7c22c7-a139-4b45-93dd-5610e23421ab"
+    const enhacment1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/enhacment-1.jpg?alt=media&token=bcd5fb34-c65b-428a-af15-43c5d2cfe65c"
+    const enhacment2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/enhacment-2.jpg?alt=media&token=dccf171d-040c-44ab-ba0b-4cc86aae4832"
+    const enhacment3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/enhacment-3.jpg?alt=media&token=34b958d4-b8ce-4c03-881f-23825dc2ade8"
+    const enhacment4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/enhacment-4.jpg?alt=media&token=0d0f2b33-a1df-4a22-900e-b89bd3ac5999"
+    const interior1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/interior-1.jpg?alt=media&token=6c0f9d62-3cde-4e12-aba1-c74da535358c"
+    const interior2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/interior-2.jpg?alt=media&token=a5531bdb-3776-4124-a3d4-9b371574a000"
+    const interior3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/interior-3.jpg?alt=media&token=cb0dd6da-d9dc-4c65-b73b-ecc56768b572"
+    const interior4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/interior-4.jpg?alt=media&token=b3b654c4-1a83-4a73-9d35-f7856328950e"
+    const interior5 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/interior-5.jpg?alt=media&token=74a3d7d9-59d4-41fb-b1cc-d56504404897"
+    const interior6 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/interior-6.jpg?alt=media&token=176b37b2-a242-41d4-b224-322017d85dcf"
+    const staging1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-1.jpg?alt=media&token=cdc29a90-90b6-49e7-9935-e8d7d012f7a7"
+    const staging2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-2.jpg?alt=media&token=36324d4e-af8a-4658-bb99-6d26b781acaf"
+    const staging3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-3.jpg?alt=media&token=047a2b97-88e1-48b8-a8d9-d10d157e482d"
+    const staging4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-4.jpg?alt=media&token=d3d28c65-cfe8-4f29-afce-40fa6b417ba9"
+    const staging5 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-5.jpg?alt=media&token=7c8602ff-e1c0-4c86-9b3a-2f1d0650eedd"
+    const staging6 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-6.jpg?alt=media&token=2da9843d-7a5e-4311-8b47-5bb312a835a2"
+   const web1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/web-1.jpg?alt=media&token=76e0e991-c8f9-4427-85fd-504f88c8ffb8"
+   const web2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/web-2.jpg?alt=media&token=124b5cb6-3e68-4d9c-9899-5163bdeb97bb"
+   const web3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/web-3.jpg?alt=media&token=df660f7e-9f16-4409-931f-16c1da8f751f"
+   const word1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/word-1.jpg?alt=media&token=ae8d22d2-d968-42ce-a01a-e37db3340516"
+   
+   
+   
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const type = queryParams.get('service');
@@ -55,18 +58,18 @@ const ServiceSinglePage = () => {
             pricing = [
                 {
                     name: "Starter",
-                    price: "$10",
+                    price: 10,
                     details: [" I will remove all the existing furniture in Just $10 for each image"]
                 },
                 {
                     name: "Regular",
-                    price: "$50",
+                    price: 50,
                     details: [" I will remove all the existing furniture in Just $50 for 6 images"]
 
                 },
                 {
                     name: "Premium",
-                    price: "$100",
+                    price: 100,
                     details: ["I will remove all the existing furniture in Just $100 for 12 images"]
 
                 },
@@ -79,19 +82,19 @@ const ServiceSinglePage = () => {
             pricing = [
                 {
                     name: "Starter",
-                    price: "$1",
+                    price: 1,
                     details: ["Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Sharpen Clarity.", "1 Image"]
 
                 },
                 {
                     name: "Regular",
-                    price: "$20",
+                    price: 20,
                     details: ["Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Object removing (25 Images)"]
 
                 },
                 {
                     name: "Premium",
-                    price: "$25",
+                    price: 25,
                     details: ["Basic Enhancement, Object removing  (35 Images), Your company Logo as watermark, Sharpen Clarity."]
 
                 },
@@ -104,19 +107,19 @@ const ServiceSinglePage = () => {
             pricing = [
                 {
                     name: "Starter",
-                    price: "$10",
+                    price: 10,
                     details: ["I'll virtual stage your One image of your Room in Just $10"]
 
                 },
                 {
                     name: "Regular",
-                    price: "$70",
+                    price: 70,
                     details: ["I'll virtual stage your 8 image of your Vacant Room in Just $70"]
 
                 },
                 {
                     name: "Premium",
-                    price: "$100",
+                    price: 100,
                     details: ["I'll virtual stage your 12 image of your Vacant Room in Just $100"]
 
                 },
@@ -129,19 +132,19 @@ const ServiceSinglePage = () => {
             pricing = [
                 {
                     name: "Starter",
-                    price: "$500",
+                    price: 500,
                     details: ["I will develop a single page Frontend website (Static)."]
 
                 },
                 {
                     name: "Regular",
-                    price: "$700",
+                    price: 700,
                     details: ["3 pages Frontend application"]
 
                 },
                 {
                     name: "Premium",
-                    price: "$1000",
+                    price: 1000,
                     details: ["Complete Website, up to 5 pages with frontend and backend."]
 
                 },
@@ -154,20 +157,20 @@ const ServiceSinglePage = () => {
             pricing = [
                 {
                     name: "Starter",
-                    price: "$150",
+                    price: 150,
                     details: ["✅ Elegant Design ✅ Domain & Hosting Setup Support ✅ 5 Sections Design"]
 
                 },
                 {
                     name: "Regular",
-                    price: "$250",
-                    details: ["✅ Custom Design ✅ Booking, Appointment, Event ✅ Payment Integration ✅ GTMetrix score upto 80%", ]
+                    price: 250,
+                    details: ["✅ Custom Design ✅ Booking, Appointment, Event ✅ Payment Integration ✅ GTMetrix score upto 80%",]
 
                 },
                 {
                     name: "Premium",
-                    price: "$350",
-                    details: ["✅ Business Plan inc. ✅ Membership Features ✅ Mailchimp Setup ✅ Page Speed 80% - 90%", ]
+                    price: 350,
+                    details: ["✅ Business Plan inc. ✅ Membership Features ✅ Mailchimp Setup ✅ Page Speed 80% - 90%",]
 
                 },
             ]
@@ -179,19 +182,19 @@ const ServiceSinglePage = () => {
             pricing = [
                 {
                     name: "Starter",
-                    price: "$25",
+                    price: 25,
                     details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $25/Photo"]
 
                 },
                 {
                     name: "Regular",
-                    price: "$140",
+                    price: 140,
                     details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $140/ 6 Photo"]
 
                 },
                 {
                     name: "Premium",
-                    price: "$220",
+                    price: 220,
                     details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $220/ 10 Photo"]
 
                 },
@@ -213,7 +216,7 @@ const ServiceSinglePage = () => {
                         <div className="col-lg-12">
                             <ImageSlider images={images} /> {/* Pass the images array as a prop to ImageSlider component */}
                             <Testimonial />
-                            <Pricing pricing={pricing}/>
+                            <Pricing pricing={pricing} />
                             <section className="pb-0">
                                 {/* <div className="container">
                                     <div className="row">

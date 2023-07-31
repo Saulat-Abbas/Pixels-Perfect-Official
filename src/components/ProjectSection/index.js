@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import projectImg1 from "../../img/project-1.jpg";
-import projectImg2 from "../../img/project-2.jpg";
-import projectImg3 from "../../img/project-3.jpg";
+// import projectImg1 from "../../img/project-1.jpg";
+// import projectImg2 from "../../img/project-2.jpg";
+// import projectImg3 from "../../img/project-3.jpg";
 
 import "./style.css";
 
@@ -19,7 +19,7 @@ const ProjectSection = () => {
             </div>
             <div className="project-box" data-aos="fade-up">
               <Link to="/projects-single">
-                <img src={projectImg1} alt="img" />
+                {/* <img src={projectImg1} alt="img" /> */}
                 <h3>
                   fAMILY HALL
                   <br /> IN NEW YORK
@@ -56,7 +56,7 @@ const ProjectSection = () => {
           <div className="col-sm-6">
             <div className="project-box" data-aos="fade-up">
               <Link to="/projects-single">
-                <img src={projectImg3} alt="img" />
+                {/* <img src={projectImg3} alt="img" /> */}
                 <h3>
                   MODERN LIVING
                   <br /> ROOM
@@ -86,7 +86,7 @@ const ProjectSection = () => {
             </div>
             <div className="project-box" data-aos="fade-up">
               <Link to="/projects-single">
-                <img src={projectImg2} alt="img" />
+                {/* <img src={projectImg2} alt="img" /> */}
                 <h3>
                   MODERN kITCHEN
                   <br /> IN USA

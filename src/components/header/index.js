@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 import "./style.css";
 
-const Header = () => {
+const 
+Header = () => {
   const [show, setShow] = useState(false);
 
   const SubmitHandler = (e) => {
@@ -107,9 +108,9 @@ const Header = () => {
                 </nav>
               </div>
               <div className="header-action">
-                <button className="search-toggle" onClick={() => setShow(true)}>
+                {/* <button className="search-toggle" onClick={() => setShow(true)}>
                   <i className="fa fa-search"></i>
-                </button>
+                </button> */}
                 <Link to="/contact" className="header-btn">
                   <div className="icon-holder">
                     <i className="far fa-envelope"></i>
@@ -117,11 +118,11 @@ const Header = () => {
                   Get In Touch
                 </Link>
               </div>
-              <div
+              {/* <div
                 id="search-overlay"
                 className={`block ${show ? "show" : ""}`}
-              >
-                <div className="centered">
+              > */}
+                {/* <div className="centered">
                   <div id="search-box">
                     <i
                       id="close-btn"
@@ -140,8 +141,8 @@ const Header = () => {
                       </button>
                     </form>
                   </div>
-                </div>
-              </div>
+                </div> */}
+              {/* </div> */}
               <MobileMenu />
             </div>
           </div>

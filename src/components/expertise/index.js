@@ -1,8 +1,9 @@
 import React from "react";
-import bg from "../../img/expertise.jpg";
+// import bg from "../../img/expertise.jpg";
 import "./style.css";
 
 const Expertise = () => {
+  const bg = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/expertise.jpg?alt=media&token=bcc054c7-047e-492b-9d8d-66a4db21a7a7"
   return (
     <section className="expertise-area">
       <div className="expertise-bg" style={{ backgroundImage: `url(${bg})` }} />

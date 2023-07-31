@@ -1,15 +1,18 @@
 import React from "react";
 
-import Img1 from "../../img/portfolio-1.jpg";
-import Img2 from "../../img/portfolio-2.jpg";
-import Img3 from "../../img/portfolio-3.jpg";
-import Img4 from "../../img/portfolio-4.jpg";
-import Img5 from "../../img/portfolio-5.jpg";
-import Img6 from "../../img/portfolio-6.jpg";
 
 import "./style.css";
 
 const Portfolio = () => {
+
+const Img1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/portfolio-1.jpg?alt=media&token=f0a6e742-7e49-44e1-9fef-4f7ad890e317"
+const Img2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/portfolio-2.jpg?alt=media&token=d13a62da-b00b-43cd-860f-7871b02cf65f"
+const Img3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/portfolio-3.jpg?alt=media&token=5806b5e3-d17b-4aed-91c0-ae07a9773e92"
+const Img4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/portfolio-4.jpg?alt=media&token=3c69f6cf-4e64-4dbd-9d4c-725650a32701"
+const Img5 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/portfolio-5.jpg?alt=media&token=4e3fe457-da6e-4766-beba-2f451d791862"
+const Img6 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/portfolio-6.jpg?alt=media&token=fd3dd6f5-bd35-4c92-9a7e-5b3ec38902cf"
+const Img7 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/portfolio-7.jpg?alt=media&token=63f78d96-13e4-43c8-b081-5d5180b48a94"
+
   return (
     <section className="portfolio-area portfolio-page">
       <div className="container">

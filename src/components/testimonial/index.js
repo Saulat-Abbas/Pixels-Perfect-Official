@@ -3,10 +3,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import testimonial1 from "../../img/testimonial-1.png";
-import testimonial2 from "../../img/testimonial-2.png";
-import testimonial3 from "../../img/testimonial-3.png";
-import icon from "../../img/gridicons_quote.svg"; 
+// import testimonial1 from "../../img/testimonial-1.png";
+// import testimonial2 from "../../img/testimonial-2.png";
+// import testimonial3 from "../../img/testimonial-3.png";
+// import icon from "../../img/gridicons_quote.svg"; 
 
 import "./style.css";
 
@@ -85,7 +85,7 @@ class Testimonial extends Component {
                   <div className="slide">
                     <div className="single-testimonial">
                       <div className="testimonial-text">
-                        <img src={icon} alt="icon" />
+                        {/* <img src={icon} alt="icon" /> */}
                         <p>
                           Precious ipsum dolor sit amet consectetur adipisicing
                           elit, sed dos mod tempor incididun ut labore et dolore
@@ -95,7 +95,7 @@ class Testimonial extends Component {
                         </p>
                       </div>
                       <div className="testimonial-meta">
-                        <img src={testimonial1} alt="img" />
+                        {/* <img src={testimonial1} alt="img" /> */}
                         <div className="testimonial-author">
                           <h4>Jacob William</h4>
                           <p>Crown Plaza Owner</p>
@@ -107,7 +107,7 @@ class Testimonial extends Component {
                   <div className="slide">
                     <div className="single-testimonial">
                       <div className="testimonial-text">
-                        <img src={icon} alt="icon" />
+                        {/* <img src={icon} alt="icon" /> */}
                         <p>
                           Precious ipsum dolor sit amet consectetur adipisicing
                           elit, sed dos mod tempor incididun ut labore et dolore
@@ -117,7 +117,7 @@ class Testimonial extends Component {
                         </p>
                       </div>
                       <div className="testimonial-meta">
-                        <img src={testimonial2} alt="img" />
+                        {/* <img src={testimonial2} alt="img" /> */}
                         <div className="testimonial-author">
                           <h4>Emily White</h4>
                           <p>Armada Owner</p>
@@ -129,7 +129,7 @@ class Testimonial extends Component {
                   <div className="slide">
                     <div className="single-testimonial">
                       <div className="testimonial-text">
-                        <img src={icon} alt="icon" />
+                        {/* <img src={icon} alt="icon" /> */}
                         <p>
                           Precious ipsum dolor sit amet consectetur adipisicing
                           elit, sed dos mod tempor incididun ut labore et dolore
@@ -139,7 +139,7 @@ class Testimonial extends Component {
                         </p>
                       </div>
                       <div className="testimonial-meta">
-                        <img src={testimonial2} alt="img" />
+                        {/* <img src={testimonial2} alt="img" /> */}
                         <div className="testimonial-author">
                           <h4>Emily White</h4>
                           <p>Armada Owner</p>
@@ -151,7 +151,7 @@ class Testimonial extends Component {
                   <div className="slide">
                     <div className="single-testimonial">
                       <div className="testimonial-text">
-                        <img src={icon} alt="icon" />
+                        {/* <img src={icon} alt="icon" /> */}
                         <p>
                           Precious ipsum dolor sit amet consectetur adipisicing
                           elit, sed dos mod tempor incididun ut labore et dolore
@@ -161,7 +161,7 @@ class Testimonial extends Component {
                         </p>
                       </div>
                       <div className="testimonial-meta">
-                        <img src={testimonial3} alt="img" />
+                        {/* <img src={testimonial3} alt="img" /> */}
                         <div className="testimonial-author">
                           <h4>Jesica Smith</h4>
                           <p>Bisi Plaza Manager</p>

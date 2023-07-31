@@ -13,8 +13,13 @@ import FaqPage from '../FaqPage';
 import ContactPage from '../ContactPage';
 import ErrorPage from '../ErrorPage';
 import BlogPage from '../BlogPage';
-import BlogSinglePage from '../BlogSinglePage';
-import { useStripe } from '@stripe/react-stripe-js';
+// import BlogSinglePage from '../BlogSinglePage';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import PaymentForm from '../StripeForm/paymentForm'; // Update the path accordingly
+import BlogSection from '../../components/BlogSection';
+
+const stripePromise = loadStripe('pk_test_51LkExQD2dU6r3UJMo1HDdTm4E9g36D4Db12YmQzG7AnkXsBrFnwiMqOGJbNdpHUVX7SwHJXZXxsHCJNd12ahZfw5005R8EAYYi');
 
 const AllRoute = () => {
   return (
@@ -33,8 +38,19 @@ const AllRoute = () => {
         <Route path="/contact" component={ContactPage} />
         <Route path="/404" component={ErrorPage} />
         <Route path="/blog" component={BlogPage} />
-        <Route path="/blog-single" component={BlogSinglePage} />
-        {/* <Route path="/payments" component={useStripe} /> */}
+        <Route path="/blog-single" component={BlogSection}/>
+        {/* <Route path="/Proced" component={Proced} /> */}
+
+        {/* PaymentForm route */}
+        <Route path="/payments">
+          <Elements stripe={stripePromise}>
+            <PaymentForm />
+          </Elements>
+        </Route>
+        
+        {/* Add more routes as needed */}
+        {/* ... */}
+        
       </Switch>
     </Router>
   );

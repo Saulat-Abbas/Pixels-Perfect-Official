@@ -1,7 +1,15 @@
+<<<<<<< HEAD
+import React, { useState, useRef } from 'react';
+import emailjs from 'emailjs-com';
+import ConfirmationModal from "./MyModalComponent";
+// emailjs.init('VlZjxgIjPGrH-Vu1T');
+
+=======
 import React, { useState } from "react";
 // import emailjs from "emailjs-com";
 import emailjs from '@emailjs/browser';
 emailjs.init('VlZjxgIjPGrH-Vu1T');
+>>>>>>> parent of f151e03 (feat: intigration of email in contact page and resized the images)
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -11,6 +19,7 @@ const ContactForm = () => {
   const [events, setEvents] = useState("");
   const [notes, setNotes] = useState("");
   const [error, setError] = useState({});
+  const [openModal, setOpenModal] = useState(false)
 
   const changeHandler = (e) => {
     const newError = { ...error };
@@ -44,6 +53,17 @@ const ContactForm = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
+    emailjs
+      .send('service_gnfwbrw', 'template_itvw6tl', formData, 'VlZjxgIjPGrH-Vu1T')
+      .then((result) => {
+        setOpenModal(true)
+        console.log(result.text);
+      })
+      .catch((error) => {
+        console.log(error.text);
+      });
+=======
 
     const newError = {};
     // if (name.trim() === "") {
@@ -99,9 +119,61 @@ const ContactForm = () => {
     } else {
       setError(newError);
     }
+>>>>>>> parent of f151e03 (feat: intigration of email in contact page and resized the images)
   };
 
+
+
   return (
+<<<<<<< HEAD
+    <>
+      <ConfirmationModal open={openModal} setOpen={setOpenModal} />
+      <form onSubmit={sendEmail} className='form'>
+        {/* <div className='row'> */}
+        <div className='col-lg-6 col-sm-6' style={{ width: "50%" }}>
+          <div className='form-field'>
+            <label>Name</label>
+            <input
+              type="text"
+              name="user_name"
+              value={formData.user_name}
+              onChange={changeHandler}
+            />
+            {error.user_name && <p>{error.user_name}</p>}
+          </div>
+        </div>
+        {/* </div> */}
+        <div className='col-lg-6 col-sm-6' style={{ width: "50%" }}>
+          <div className='form-field'>
+            <label>Email</label>
+            <input
+              type="email"
+              name="user_email"
+              value={formData.user_email}
+              onChange={changeHandler}
+            />
+            {error.user_email && <p>{error.user_email}</p>}
+          </div>
+        </div>
+        <div className='col-lg-12 col-sm-12'>
+          <div className='form-field'>
+            <label>Message</label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={changeHandler}
+            ></textarea>
+            {error.message && <p>{error.message}</p>}
+          </div>
+        </div>
+        <div className='col-lg-12'>
+          <div className='contact-form-action'>
+            <input type="submit" value="Send" className='form-button' />
+          </div>
+        </div>
+      </form>
+    </>
+=======
     <form onSubmit={submitHandler} className="form">
       <div className="row">
         <div className="col-lg-6 col-sm-6">
@@ -172,6 +244,7 @@ const ContactForm = () => {
         </div>
       </div>
     </form>
+>>>>>>> parent of f151e03 (feat: intigration of email in contact page and resized the images)
   );
 };
 

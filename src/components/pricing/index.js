@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-import pricingBG from "../../img/service-cost-bg.jpg";
-
+import { Modal, Button } from "react-bootstrap";
 import "./style.css";
+import PricingActionModal from "./PricingActionModal";
 
 const Pricing = ({ pricing }) => {
+  const pricingBG =
+    "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-cost-bg.jpg?alt=media&token=36ba7e12-c9c5-490a-800c-c2dbd5020846";
+
+  // State to store the pricing data for the modal
+  const [pricingModalData, setPricingModalData] = useState(null);
+
+  // State to manage the modal visibility
+  const [showModal, setShowModal] = useState(false);
+
+  // Function to show the modal and set the pricing data for the modal
+  const handleShowModal = (priceData) => {
+    setPricingModalData(priceData);
+    setShowModal(true);
+  };
+
+  // Function to hide the modal
+  const handleCloseModal = () => setShowModal(false);
+
   return (
     <section
       className="pricing-area"
@@ -22,13 +39,11 @@ const Pricing = ({ pricing }) => {
         </div>
         <div className="row justify-content-center">
           {pricing?.map((priceData, index) => (
-            <div className="col-lg-4 col-md-6">
-              <div className="pricing-box" data-aos="fade-up" key={index}>
+            <div className="col-lg-4 col-md-6" key={index}>
+              <div className="pricing-box" data-aos="fade-up">
                 <div className="pricing-header">
                   <h3>{priceData.name}</h3>
-                  <div className="price">
-                    {priceData.price}
-                  </div>
+                  <div className="price">${priceData.price}</div>
                 </div>
                 <div className="pricing-content">
                   <ul>
@@ -43,14 +58,27 @@ const Pricing = ({ pricing }) => {
                   </ul>
                 </div>
                 <div className="pricing-action">
-                  <Link to="/contact ">Read More</Link>
+                  {/* Button to trigger the modal */}
+                  <button onClick={() => handleShowModal(priceData)}>
+                    Proced to Checkout
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Render the PricingActionModal component with pricing data */}
+      {pricingModalData && (
+        <PricingActionModal
+          show={showModal}
+          handleClose={handleCloseModal}
+          pricingData={pricingModalData}
+        />
+      )}
     </section>
   );
 };
+
 export default Pricing;
