@@ -12,17 +12,17 @@ const PageTitle = (props) => {
     >
       <div className="hero-social">
         <ul>
-          <li>
+          {/* <li>
             <Link to="/">
               <i className="fab fa-pinterest-p" />
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/">
               <i className="fab fa-facebook-f" />
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/">
               <i className="fab fa-instagram" />
             </Link>
@@ -31,7 +31,7 @@ const PageTitle = (props) => {
             <Link to="/">
               <i className="fab fa-twitter" />
             </Link>
-          </li>
+          </li> */}
         </ul>
         <p>Follow Us</p>
       </div>

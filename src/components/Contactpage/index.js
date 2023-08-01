@@ -10,8 +10,9 @@ const Contactpage = () => {
           <div className="col-lg-12">
             <div className="contact-form">
               <div className="site-heading" data-aos="fade-up">
-                <h3 className="sub-title">Get Quote</h3>
-                <h2 className="section-title">Free Consultancy</h2>
+              <h2 className="section-title">LET'S CONNECT!</h2>
+                <h3 className="sub-title">FEEL FREE TO CONTACT ME DIRECTLY FOR FUTURE WORK</h3>
+                
               </div>
               <ContactForm />
             </div>
