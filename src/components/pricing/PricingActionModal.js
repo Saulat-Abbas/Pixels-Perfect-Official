@@ -73,8 +73,8 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
           </ul>
           <div className="counter">
             <div className="counter-section">
-              <h5>No of Images:</h5>
-              <button className="pricing-action" onClick={handleImageDecrement}>
+              <h5>{handleImageDecrement}</h5>
+              <button className="pricing-action" onClick=>
                 -
               </button>
               <span>{imageQuantity}</span>
