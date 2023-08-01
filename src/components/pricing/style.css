@@ -11,7 +11,7 @@
 .pricing-area:before {
 	position: absolute;
 	content: '';
-	background: #02050b;
+	/* background: #02050b; */
 	opacity: 0.6;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 	width: 100%;
@@ -22,7 +22,7 @@
 }
 
 .pricing-area .section-title {
-	color: #fff
+	color: black
 }
 
 .pricing-box {
@@ -81,3 +81,22 @@
 	margin-bottom: 15px;
   }
 
+/* Add this CSS to your pricingActionmodal.css file */
+.counter-section {
+	display: flex;
+	align-items: center;
+  }
+  
+  .counter-buttons {
+	display: flex;
+	align-items: center;
+  }
+  
+  .counter-buttons > * {
+	margin-right: 10px;
+  }
+  
+  /* Adjust margins as per your desired spacing */
+.heading {
+
+  }

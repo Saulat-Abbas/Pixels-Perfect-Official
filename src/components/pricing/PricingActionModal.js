@@ -1,119 +1,123 @@
-import * as React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import { ShowChart } from '@mui/icons-material';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
-import "./pricingActionmodal.css";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import './pricingActionmodal.css';
 
 const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const [imageQuantity, setImageQuantity] = useState(1);
+  const [revisionQuantity, setRevisionQuantity] = useState(1);
 
-  {/* State to manage the quantity of revisions */}
- const [revisionQuantity, setRevisionQuantity] = useState(1);
- 
-  {/* useEffect to set initial values for imageQuantity and revisionQuantity */}
- useEffect(() => {
-   setImageQuantity(pricingData.details[0]);
-   setRevisionQuantity(pricingData.details[1]);
- }, [pricingData]);
- 
-  {/* Function to increase the image quantity */}
- const handleImageIncrement = () => {
-   setImageQuantity((prevQuantity) => prevQuantity + 1);
- };
- 
-  {/* Function to decrease the image quantity */}
- const handleImageDecrement = () => {
-   setImageQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
- };
- 
-  {/* Function to increase the revision quantity */}
- const handleRevisionIncrement = () => {
-   setRevisionQuantity((prevQuantity) => prevQuantity + 1);
- };
- 
-  {/* Function to decrease the revision quantity */}
- const handleRevisionDecrement = () => {
-   setRevisionQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
- };
- 
-  {/* Calculate the total price by multiplying price and quantity */}
- const imagePrice = pricingData.price[0] * imageQuantity;
- const revisionPrice = pricingData.price[1] * revisionQuantity;
- const totalPrice = imagePrice + revisionPrice;
+  useEffect(() => {
+    setImageQuantity(1);
+    setRevisionQuantity(1);
+  }, []);
+
+  const handleImageIncrement = () => {
+    setImageQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleImageDecrement = () => {
+    setImageQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
+  };
+
+  const handleRevisionIncrement = () => {
+    setRevisionQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleRevisionDecrement = () => {
+    setRevisionQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
+  };
+
+  const imagePrice = pricingData.price[0] * imageQuantity;
+  const revisionPrice = pricingData.price[1] * revisionQuantity;
+  const totalPrice = imagePrice + revisionPrice;
+
   const list = () => (
-    <Box
-      sx={{ width:" 400px" }}
-      role="presentation"
-      onClick={handleClose}
-      onKeyDown={handleClose}
-    >
-     <div className="pricing-box pricing-area">
-          <div className="pricing-header"></div>
-          <h5 className="section-title">Details:</h5>
+    <Box sx={{ width: '400px' }} role="presentation">
+      <div className="pricing-box pricing-area">
+        <div className="pricing-header">
+          <h2 className="section-title" style={{ fontSize: '30px' }}>
+            Pricing Details:
+          </h2>
+        </div>
+        <div>
           <ul className="pricing-content pricing-modal-details">
             {pricingData.details.map((detail, index) => (
               <li key={index}>
-                <p>
+                <p style={{ color: 'black' }}>
                   <i className="pricing-action">&#9679;</i>
                   {detail}
                 </p>
               </li>
             ))}
           </ul>
-          <div className="counter">
-            <div className="counter-section">
-              <h5>{handleImageDecrement}</h5>
-              {/* <button className="pricing-action" onClick=>
-                -
-              </button> */}
-              <span>{imageQuantity}</span>
-              <button className="pricing-action" onClick={handleImageIncrement}>
-                +
-              </button>
+        </div>
+        <div className="counter">
+          <div className="counter-section">
+            <h4 className="heading">No of images</h4>
+            <div className="counter-buttons">
+              <Button
+                onClick={handleImageDecrement}
+                variant="contained"
+                color="secondary"
+                startIcon={<RemoveCircleOutlineIcon />}
+              />
+              <span style={{ color: 'black', margin: '0 10px' }}>{imageQuantity}</span>
+              <Button
+                onClick={handleImageIncrement}
+                variant="contained"
+                color="primary"
+                startIcon={<AddCircleOutlineIcon />}
+              />
             </div>
-            <div className="counter-section">
-              <h5>No of Revisions:</h5>
-              <button
-                className="pricing-action"
+          </div>
+        </div>
+        <div className="counter">
+          <div className="counter-section">
+            <h4 className="heading">No of revisions</h4>
+            <div className="counter-buttons">
+              <Button
                 onClick={handleRevisionDecrement}
-              >
-                -
-              </button>
-              <span>{revisionQuantity}</span>
-              <button
-                className="pricing-action"
+                variant="contained"
+                color="secondary"
+                startIcon={<RemoveCircleOutlineIcon />}
+              />
+              <span style={{ color: 'black', margin: '0 10px' }}>{revisionQuantity}</span>
+              <Button
                 onClick={handleRevisionIncrement}
-              >
-                +
-              </button>
+                variant="contained"
+                color="primary"
+                startIcon={<AddCircleOutlineIcon />}
+              />
             </div>
           </div>
-          </div>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <h2 style={{ fontSize: '20px', marginRight: '10px' }}>Extra Fast Delivery:</h2>
+          <input type="checkbox" name="extraFastDelivery" id="extraFastDelivery" style={{ height: '20px', marginRight: '5px' }} />
+        </div>
+        <div className="checkout-footer">
+          <p>Total Price: ${totalPrice}</p>
+          <Button variant="contained" color="primary">
+            Checkout
+          </Button>
+        </div>
+      </div>
     </Box>
   );
 
   return (
     <div>
-      <Drawer
-        anchor="right"
-        open={show}
-        onClose={handleClose}
-      >
+      <Drawer anchor="right" open={show} onClose={handleClose}>
         {list('right')}
       </Drawer>
     </div>
   );
-}
+};
 
 export default PricingActionModal;
