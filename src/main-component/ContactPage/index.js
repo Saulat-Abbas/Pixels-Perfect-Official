@@ -1,17 +1,17 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import Header from '../../components/header'
 import PageTitle from '../../components/pagetitle'
 import Contactpage from '../../components/Contactpage'
 import Footer from '../../components/footer'
 
 
-const ContactPage =() => {
-    return(
+const ContactPage = () => {
+    return (
         <Fragment>
-            <Header/>
-            <PageTitle pageTitle={'CONTACT'} pagesub={'Contact'}/> 
-            <Contactpage/>
-            <Footer/>
+            <Header />
+            <PageTitle pageTitle={'CONTACT'} pagesub={'Contact'} />
+            <Contactpage />
+            <Footer />
         </Fragment>
     )
 };
