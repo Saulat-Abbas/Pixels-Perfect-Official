@@ -34,7 +34,6 @@ const ImageSlider = ({ images }) => {
           </span>
         </button>
       <div className="slider">
-      <h1>Our Projects</h1>
        <div>
 
         <img

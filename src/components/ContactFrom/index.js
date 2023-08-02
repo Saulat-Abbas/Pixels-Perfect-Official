@@ -35,8 +35,8 @@ const ContactForm = () => {
         break;
       case "email":
         setEmail(e.target.value);
-        if (e.target.value.length > 15) {
-          newError.email = 'Email cannot exceed 15 characters';
+        if (e.target.value.length > 25) {
+          newError.email = 'Email cannot exceed 25 characters';
         }
         break;
       case "subject":
@@ -56,8 +56,8 @@ const ContactForm = () => {
         break;
       case "notes":
         setNotes(e.target.value);
-        if (e.target.value.length > 50) {
-          newError.notes = 'Message cannot exceed 50 characters';
+        if (e.target.value.length > 500) {
+          newError.notes = 'Message cannot exceed 500 characters';
         }
         break;
       default:
@@ -185,8 +185,8 @@ const ContactForm = () => {
               </div>
             </div>
             <div className="col-lg-12" >
-              <div className="contact-form-action">
-                <Button style={{ width: 200, display: "flex", marginLeft: '40%' }} variant="contained" className="form-button" type="submit"
+              <div className="contact-form-action" style={{textAlign:"center", display:"flex", justifyContent:"center"}}>
+                <Button style={{ width: 200, display: "flex", }} variant="contained" className="form-button" type="submit"
                   endIcon={showLoader ? <CircularProgress /> : <SendIcon />}
                   disabled={showLoader}
                 >
