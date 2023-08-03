@@ -5,8 +5,19 @@ import Button from '@mui/material/Button';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid'; // Grid version 
+import Item from '@mui/material';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+import Divider from '@mui/material/Divider';
 
 import './pricingActionmodal.css';
+import { BoltOutlined, Height } from '@mui/icons-material';
 
 const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const [imageQuantity, setImageQuantity] = useState(1);
@@ -36,80 +47,43 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const imagePrice = pricingData.price[0] * imageQuantity;
   const revisionPrice = pricingData.price[1] * revisionQuantity;
   const totalPrice = imagePrice + revisionPrice;
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+
 
   const list = () => (
-    <Box sx={{ width: '400px' }} role="presentation">
-      <div className="pricing-box pricing-area">
-        <div className="pricing-header">
-          <h2 className="section-title" style={{ fontSize: '30px' }}>
-            Pricing Details:
-          </h2>
-        </div>
-        <div>
-          <ul className="pricing-content pricing-modal-details">
-            {pricingData.details.map((detail, index) => (
-              <li key={index}>
-                <p style={{ color: 'black' }}>
-                  <i className="pricing-action">&#9679;</i>
-                  {detail}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="counter">
-          <div className="counter-section">
-            <h4 className="heading">No of images</h4>
-            <div className="counter-buttons">
-              <Button
-                onClick={handleImageDecrement}
-                variant="contained"
-                color="secondary"
-                startIcon={<RemoveCircleOutlineIcon />}
-              />
-              <span style={{ color: 'black', margin: '0 10px' }}>{imageQuantity}</span>
-              <Button
-                onClick={handleImageIncrement}
-                variant="contained"
-                color="primary"
-                startIcon={<AddCircleOutlineIcon />}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="counter">
-          <div className="counter-section">
-            <h4 className="heading">No of revisions</h4>
-            <div className="counter-buttons">
-              <Button
-                onClick={handleRevisionDecrement}
-                variant="contained"
-                color="secondary"
-                startIcon={<RemoveCircleOutlineIcon />}
-              />
-              <span style={{ color: 'black', margin: '0 10px' }}>{revisionQuantity}</span>
-              <Button
-                onClick={handleRevisionIncrement}
-                variant="contained"
-                color="primary"
-                startIcon={<AddCircleOutlineIcon />}
-              />
-            </div>
-          </div>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <h2 style={{ fontSize: '20px', marginRight: '10px' }}>Extra Fast Delivery:</h2>
-          <input type="checkbox" name="extraFastDelivery" id="extraFastDelivery" style={{ height: '20px', marginRight: '5px' }} />
-        </div>
-        <div className="checkout-footer">
-          <p>Total Price: ${totalPrice}</p>
-          <Button variant="contained" color="primary">
-            Checkout
-          </Button>
-        </div>
-      </div>
-    </Box>
+    <div style={{ width: '500px', display: 'flex', justifyContent: 'center' }}>
+      <Card variant='outlined' sx={{ maxWidth: 500, mt: 10 }}>
+        <Grid container spacing={1} p={2}>
+          <Grid item xs={8}>
+            <Item>waqas</Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>Saulat</Item>
+          </Grid>
+          <Grid item xs={12}>
+            <Item>abbas</Item>
+              <Divider variant="inset"/>
+          </Grid>
+          <Grid item xs={8}>
+            <Item>xs=8</Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>xs=8</Item>
+          </Grid>
+        </Grid>
+      </Card>
+    </div >
+
+
+
   );
+
 
   return (
     <div>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import blog1 from "../../img/news-1.png";
-import blog2 from "../../img/news-2.png";
+// import blog1 from "../../img/news-1.png";
+// import blog2 from "../../img/news-2.png";
 
 import "./style.css";
 

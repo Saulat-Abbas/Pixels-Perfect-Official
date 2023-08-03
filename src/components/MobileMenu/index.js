@@ -43,18 +43,18 @@ const menus = [
     id: 4,
     title: "Service",
     link: "/service",
-    submenu: [
-      {
-        id: 41,
-        title: "Service",
-        link: "/service",
-      },
-      // {
-      //   id: 42,
-      //   title: "Service Details",
-      //   link: "/service-single",
-      // },
-    ],
+    // submenu: [
+    //   {
+    //     id: 41,
+    //     title: "Service",
+    //     link: "/service",
+    //   },
+    //   {
+    //     id: 42,
+    //     title: "Service Details",
+    //     link: "/service-single",
+    //   },
+    // ],
   },
   {
     id: 71,

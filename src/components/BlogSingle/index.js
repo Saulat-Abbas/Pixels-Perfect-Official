@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../Sidebar";
 
-import blog1 from "../../img/news-1.png";
-import blog2 from "../../img/news-2.png";
+// import blog1 from "../../img/news-1.png";
+// import blog2 from "../../img/news-2.png";
 import Img1 from "../../img/blpl-1.jpg";
 import Img2 from "../../img/blpl-2.jpg";
 import Img3 from "../../img/blpl-3.jpg";
@@ -11,6 +11,10 @@ import Img3 from "../../img/blpl-3.jpg";
 import "./style.css";
 
 const BlogSingle = () => {
+
+  const blog1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/news-1.jpg?alt=media&token=50c2b145-7a83-492b-acb7-33547ffbd176"
+  const blog2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/news-2.png?alt=media&token=4b16771b-7bcc-45a0-ad83-98c8526ea1d1"
+
   const SubmitHandler = (e) => {
     e.preventDefault();
   };

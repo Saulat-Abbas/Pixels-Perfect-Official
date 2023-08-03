@@ -19,10 +19,10 @@ const Sidebar = () => {
       <div className="blog-sidebar" data-aos="fade-up">
         <div className="blog-search-box">
           <form onSubmit={SubmitHandler}>
-            <input type="search" placeholder="Search" />
+            {/* <input type="search" placeholder="Search" />
             <button type="submit">
               <i className="fa fa-search" />
-            </button>
+            </button> */}
           </form>
         </div>
       </div>
@@ -121,12 +121,12 @@ const Sidebar = () => {
             Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean
             sollicitudin, lorem quis
           </p>
-          <form onSubmit={SubmitHandler}>
+          {/* <form onSubmit={SubmitHandler}>
             <input type="email" placeholder="Email here" />
             <button type="submit">
               <i className="fa fa-paper-plane" />
             </button>
-          </form>
+          </form> */}
         </div>
         <div className="sidebar-tags" data-aos="fade-up">
           <div className="blog-sidebar-heading">

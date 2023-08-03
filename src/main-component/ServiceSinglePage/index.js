@@ -158,7 +158,7 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: 150,
-                    details: ["✅ Elegant Design ✅ Domain & Hosting Setup Support ✅ 5 Sections Design"]
+                    details: ["✅ Elegant Design ✅ Domain & Hosting Setup Support ✅ 5 Sections Design","hello world"]
 
                 },
                 {
