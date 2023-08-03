@@ -1,23 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid'; // Grid version 
-import Item from '@mui/material';
-import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-import Divider from '@mui/material/Divider';
-
 import './pricingActionmodal.css';
-import { BoltOutlined, Height } from '@mui/icons-material';
+import {
+  Box,
+  Button,
+  Card,
+  Drawer,
+  Divider,
+  Typography,
+  IconButton,
+  Grid,
+  Checkbox,
+  Paper,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails
+} from "@mui/material"
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
+import AutorenewIcon from '@mui/icons-material/Autorenew';
 
 const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const [imageQuantity, setImageQuantity] = useState(1);
@@ -50,44 +55,139 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
-    padding: theme.spacing(1),
+    padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
 
+  const longText = 'This is a long text that needs to be split into lines when its length is greater than 10.';
+  const lines = longText.match(/.{1,10}/g) || [];
 
   const list = () => (
-    <div style={{ width: '500px', display: 'flex', justifyContent: 'center' }}>
-      <Card variant='outlined' sx={{ maxWidth: 500, mt: 10 }}>
-        <Grid container spacing={1} p={2}>
-          <Grid item xs={8}>
-            <Item>waqas</Item>
+    <div style={{ padding: 30 }}>
+      <Grid container>
+        <Grid item sm={11} xs={11}>
+          <Typography variant="h6">
+            Order Option
+          </Typography>
+        </Grid>
+        <Grid item sm={1} xs={1}>
+          <IconButton onClick={handleClose}>
+            <CloseIcon />
+          </IconButton>
+        </Grid>
+      </Grid>
+      <Card variant='outlined' sx={{ m: 2, p: 2, maxWidth: 400 }}>
+        <Grid container spacing={2}>
+          <Grid item sm={10} xs={10}>
+            <Typography variant="button">
+              Standard
+            </Typography>
           </Grid>
-          <Grid item xs={4}>
-            <Item>Saulat</Item>
+          <Grid item sm={2} xs={2}>
+            $ 40
           </Grid>
-          <Grid item xs={12}>
-            <Item>abbas</Item>
-              <Divider variant="inset"/>
+          <Grid item sm={12} xs={12}>
+            <Box sx={{ width: '100%', maxWidth: 600 }}>
+              <Typography variant="body1" gutterBottom>
+                body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+                blanditiis tenetur unde suscipit,
+              </Typography>
+            </Box>
           </Grid>
-          <Grid item xs={8}>
-            <Item>xs=8</Item>
+          <Grid item sm={12} xs={12}>
+            <Divider />
           </Grid>
-          <Grid item xs={4}>
-            <Item>xs=8</Item>
+          <Grid item sm={8} xs={8}>
+            <Typography variant="h6">
+              Gig Quantity
+            </Typography>
+          </Grid>
+          <Grid item sm={1.6} xs={1.6}>
+            <IconButton onClick={handleImageDecrement} sx={{ border: 1 }}>
+              <RemoveIcon fontSize='small' />
+            </IconButton>
+          </Grid>
+          <Grid item sm={0.9} xs={0.9}>
+            <Typography variant="h5" sx={{ color: 'gray' }}>
+              {imageQuantity}
+            </Typography>
+          </Grid>
+          <Grid item sm={1.5} xs={1.5} onClick={handleImageIncrement}>
+            <IconButton sx={{ border: 1 }}>
+              <AddIcon fontSize='small' />
+            </IconButton>
+          </Grid>
+        </Grid>
+      </Card>
+      <Typography variant="subtitle2" mt={5} ml={2}>
+        Upgrade your order with extras
+      </Typography>
+      <Card variant='outlined' sx={{ m: 2, mb: 5, p: 2, maxWidth: 400 }}>
+        <Grid container spacing={2}>
+          <Grid item sm={10} xs={10} mt={1}>
+            <Typography variant="subtitle2">
+              Extra-fast 1-day delivery
+            </Typography>
+          </Grid>
+          <Grid item sm={2} xs={2}>
+            < Checkbox />
+          </Grid>
+          <Grid item sm={12} xs={12} mt={'-15px'} mb={1}>
+            <Typography variant="body2" sx={{ color: 'gray' }}>
+              $ 40
+            </Typography>
+          </Grid>
+        </Grid>
+      </Card>
+      <Divider />
+      <Card variant='outlined' sx={{ m: 2, mt: 5, p: 2, maxWidth: 400, bgcolor: '#E5E4E2' }}>
+        <Grid container spacing={2}>
+          <Grid item sm={12} xs={12}  mt={1}>
+            <Typography variant="h4" sx={{ color: '#36454F	' }}>
+              ${20 * imageQuantity}
+            </Typography>
+          </Grid>
+          <Grid item sm={12} xs={12} mt={'-15px'} mb={1}>
+            <Typography variant="body2" sx={{ color: 'gray' }}>
+              {`Single Order (X${imageQuantity})`}
+            </Typography>
+          </Grid>
+          <Grid item sm={12} xs={12}>
+            <Divider />
+          </Grid>
+          <Grid item sm={12} xs={12}>
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <InventoryIcon fontSize='small' sx={{ mr: 2 }} />
+                <Typography variant='subtitle2'>{`Primeium Pakage (X${imageQuantity})`}</Typography>
+              </AccordionSummary>
+              <AccordionDetails sx={{ mx: 4.5, mt: '-14px' }}>
+                <Typography variant='body2'>
+                  + Extra-fast 1-day Delivery
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          </Grid>
+          <Grid item sm={12} xs={12}>
+            <Button startIcon={<QueryBuilderIcon />} sx={{ color: 'black', pointerEvents: 'none', textTransform: 'capitalize' }}>1-day Delivery</Button>
+          </Grid>
+          <Grid item sm={12} xs={12}>
+            <Button startIcon={<AutorenewIcon />} sx={{ color: 'black', pointerEvents: 'none', textTransform: 'capitalize' }}>5 revisions</Button>
           </Grid>
         </Grid>
       </Card>
     </div >
-
-
-
   );
 
 
   return (
     <div>
-      <Drawer anchor="right" open={show} onClose={handleClose}>
+      <Drawer anchor="right" open={show} onClose={handleClose} width={20}>
         {list('right')}
       </Drawer>
     </div>
