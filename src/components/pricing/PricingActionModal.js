@@ -23,6 +23,7 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const [imageQuantity, setImageQuantity] = useState(1);
@@ -49,9 +50,15 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
     setRevisionQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
   };
 
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setIsCheckboxChecked(event.target.checked);
+  };
+  
   const imagePrice = pricingData.price[0] * imageQuantity;
   const revisionPrice = pricingData.price[1] * revisionQuantity;
-  const totalPrice = imagePrice + revisionPrice;
+  const totalPrice = pricingData.price * imageQuantity + (isCheckboxChecked ? parseFloat(pricingData.time) : 0);
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -81,39 +88,44 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
         <Grid container spacing={2}>
           <Grid item sm={10} xs={10}>
             <Typography variant="button">
-              Standard
+              {pricingData.name}
             </Typography>
           </Grid>
           <Grid item sm={2} xs={2}>
-            $ 40
+            $ {pricingData.price}
           </Grid>
           <Grid item sm={12} xs={12}>
             <Box sx={{ width: '100%', maxWidth: 600 }}>
               <Typography variant="body1" gutterBottom>
-                body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                blanditiis tenetur unde suscipit,
+                {pricingData.details.map((detail, index) => (
+                  <li key={index}>
+                    <p>
+                      <ArrowCircleRightIcon fontSize='small' /> {detail}
+                    </p>
+                  </li>
+                ))}
               </Typography>
             </Box>
           </Grid>
           <Grid item sm={12} xs={12}>
             <Divider />
           </Grid>
-          <Grid item sm={8} xs={8}>
+          <Grid item sm={8} xs={6.5}>
             <Typography variant="h6">
               Gig Quantity
             </Typography>
           </Grid>
-          <Grid item sm={1.6} xs={1.6}>
+          <Grid item sm={1.6} xs={2.2}>
             <IconButton onClick={handleImageDecrement} sx={{ border: 1 }}>
               <RemoveIcon fontSize='small' />
             </IconButton>
           </Grid>
-          <Grid item sm={0.9} xs={0.9}>
+          <Grid item sm={0.9} xs={1.4}>
             <Typography variant="h5" sx={{ color: 'gray' }}>
               {imageQuantity}
             </Typography>
           </Grid>
-          <Grid item sm={1.5} xs={1.5} onClick={handleImageIncrement}>
+          <Grid item sm={1.5} xs={1.2} onClick={handleImageIncrement}>
             <IconButton sx={{ border: 1 }}>
               <AddIcon fontSize='small' />
             </IconButton>
@@ -131,11 +143,11 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
             </Typography>
           </Grid>
           <Grid item sm={2} xs={2}>
-            < Checkbox />
+            <Checkbox checked={isCheckboxChecked} onChange={handleCheckboxChange} />
           </Grid>
           <Grid item sm={12} xs={12} mt={'-15px'} mb={1}>
             <Typography variant="body2" sx={{ color: 'gray' }}>
-              $ 40
+              {isCheckboxChecked ? `$${pricingData.time}` : ''}
             </Typography>
           </Grid>
         </Grid>
@@ -143,9 +155,9 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
       <Divider />
       <Card variant='outlined' sx={{ m: 2, mt: 5, p: 2, maxWidth: 400, bgcolor: '#E5E4E2' }}>
         <Grid container spacing={2}>
-          <Grid item sm={12} xs={12}  mt={1}>
-            <Typography variant="h4" sx={{ color: '#36454F	' }}>
-              ${20 * imageQuantity}
+          <Grid item sm={12} xs={12} mt={1}>
+          <Typography variant="h4" sx={{ color: '#36454F' }}>
+              ${totalPrice}
             </Typography>
           </Grid>
           <Grid item sm={12} xs={12} mt={'-15px'} mb={1}>
@@ -164,7 +176,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
                 id="panel1a-header"
               >
                 <InventoryIcon fontSize='small' sx={{ mr: 2 }} />
-                <Typography variant='subtitle2'>{`Primeium Pakage (X${imageQuantity})`}</Typography>
+                <Typography variant='subtitle2'>{`Premium Package (X${imageQuantity})`}</Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ mx: 4.5, mt: '-14px' }}>
                 <Typography variant='body2'>
@@ -177,7 +189,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
             <Button startIcon={<QueryBuilderIcon />} sx={{ color: 'black', pointerEvents: 'none', textTransform: 'capitalize' }}>1-day Delivery</Button>
           </Grid>
           <Grid item sm={12} xs={12}>
-            <Button startIcon={<AutorenewIcon />} sx={{ color: 'black', pointerEvents: 'none', textTransform: 'capitalize' }}>5 revisions</Button>
+            <Button startIcon={<AutorenewIcon />} sx={{ color: 'black', pointerEvents: 'none', textTransform: 'capitalize' }}>{pricingData.details[1]}</Button>
           </Grid>
         </Grid>
       </Card>

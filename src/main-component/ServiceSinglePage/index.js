@@ -33,13 +33,13 @@ const ServiceSinglePage = () => {
     const staging4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-4.jpg?alt=media&token=d3d28c65-cfe8-4f29-afce-40fa6b417ba9"
     const staging5 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-5.jpg?alt=media&token=7c8602ff-e1c0-4c86-9b3a-2f1d0650eedd"
     const staging6 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-6.jpg?alt=media&token=2da9843d-7a5e-4311-8b47-5bb312a835a2"
-   const web1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/web-1.jpg?alt=media&token=76e0e991-c8f9-4427-85fd-504f88c8ffb8"
-   const web2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/web-2.jpg?alt=media&token=124b5cb6-3e68-4d9c-9899-5163bdeb97bb"
-   const web3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/web-3.jpg?alt=media&token=df660f7e-9f16-4409-931f-16c1da8f751f"
-   const word1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/word-1.jpg?alt=media&token=ae8d22d2-d968-42ce-a01a-e37db3340516"
-   
-   
-   
+    const web1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/web-1.jpg?alt=media&token=76e0e991-c8f9-4427-85fd-504f88c8ffb8"
+    const web2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/web-2.jpg?alt=media&token=124b5cb6-3e68-4d9c-9899-5163bdeb97bb"
+    const web3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/web-3.jpg?alt=media&token=df660f7e-9f16-4409-931f-16c1da8f751f"
+    const word1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/word-1.jpg?alt=media&token=ae8d22d2-d968-42ce-a01a-e37db3340516"
+
+
+
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const type = queryParams.get('service');
@@ -59,18 +59,20 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: 10,
-                    details: [" I will remove all the existing furniture in Just $10 for each image"]
+                    details: [" I will remove all the existing furniture in Just $10 for each image", "1 revision"]
                 },
                 {
                     name: "Regular",
                     price: 50,
-                    details: [" I will remove all the existing furniture in Just $50 for 6 images"]
+                    details: [" I will remove all the existing furniture in Just $50 for 6 images", "2 revison "],
+                    time: "15"
 
                 },
                 {
                     name: "Premium",
                     price: 100,
-                    details: ["I will remove all the existing furniture in Just $100 for 12 images"]
+                    details: ["I will remove all the existing furniture in Just $100 for 12 images", "3 revison "],
+                    time: "25"
 
                 },
             ]
@@ -83,19 +85,21 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: 1,
-                    details: ["Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Sharpen Clarity.", "1 Image"]
+                    details: ["Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Sharpen Clarity.", "1 revision "]
 
                 },
                 {
                     name: "Regular",
                     price: 20,
-                    details: ["Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Object removing (25 Images)"]
+                    details: ["Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Object removing (25 Images)", "2 revison "],
+                    time : "15"
 
                 },
                 {
                     name: "Premium",
                     price: 25,
-                    details: ["Basic Enhancement, Object removing  (35 Images), Your company Logo as watermark, Sharpen Clarity."]
+                    details: ["Basic Enhancement, Object removing  (35 Images), Your company Logo as watermark, Sharpen Clarity.", "3 revision "],
+                    time : "25"
 
                 },
             ]
@@ -108,19 +112,21 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: 10,
-                    details: ["I'll virtual stage your One image of your Room in Just $10"]
+                    details: ["I'll virtual stage your One image of your Room in Just $10","1 Revision "]
 
                 },
                 {
                     name: "Regular",
                     price: 70,
-                    details: ["I'll virtual stage your 8 image of your Vacant Room in Just $70"]
+                    details: ["I'll virtual stage your 8 image of your Vacant Room in Just $70","2 Revision "],
+                    time : "15"
 
                 },
                 {
                     name: "Premium",
                     price: 100,
-                    details: ["I'll virtual stage your 12 image of your Vacant Room in Just $100"]
+                    details: ["I'll virtual stage your 12 image of your Vacant Room in Just $100","3 Revision "],
+                    time : "25"
 
                 },
             ]
@@ -158,7 +164,7 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: 150,
-                    details: ["✅ Elegant Design ✅ Domain & Hosting Setup Support ✅ 5 Sections Design","hello world"]
+                    details: ["✅ Elegant Design ✅ Domain & Hosting Setup Support ✅ 5 Sections Design", "hello world"]
 
                 },
                 {
@@ -183,19 +189,21 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: 25,
-                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $25/Photo"]
+                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $25/Photo","1 Revision "]
 
                 },
                 {
                     name: "Regular",
                     price: 140,
-                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $140/ 6 Photo"]
+                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $140/ 6 Photo","2 Revision "],
+                    time : "30"
 
                 },
                 {
                     name: "Premium",
                     price: 220,
-                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $220/ 10 Photo"]
+                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $220/ 10 Photo","3 Revision "],
+                    time : "50"
 
                 },
             ]
