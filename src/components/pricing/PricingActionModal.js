@@ -24,6 +24,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import { Payments } from '@mui/icons-material';
 
 const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const [imageQuantity, setImageQuantity] = useState(1);
@@ -55,7 +56,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const handleCheckboxChange = (event) => {
     setIsCheckboxChecked(event.target.checked);
   };
-  
+
   const imagePrice = pricingData.price[0] * imageQuantity;
   const revisionPrice = pricingData.price[1] * revisionQuantity;
   const totalPrice = pricingData.price * imageQuantity + (isCheckboxChecked ? parseFloat(pricingData.time) : 0);
@@ -156,7 +157,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
       <Card variant='outlined' sx={{ m: 2, mt: 5, p: 2, maxWidth: 400, bgcolor: '#E5E4E2' }}>
         <Grid container spacing={2}>
           <Grid item sm={12} xs={12} mt={1}>
-          <Typography variant="h4" sx={{ color: '#36454F' }}>
+            <Typography variant="h4" sx={{ color: '#36454F' }}>
               ${totalPrice}
             </Typography>
           </Grid>
@@ -190,6 +191,14 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
           </Grid>
           <Grid item sm={12} xs={12}>
             <Button startIcon={<AutorenewIcon />} sx={{ color: 'black', pointerEvents: 'none', textTransform: 'capitalize' }}>{pricingData.details[1]}</Button>
+          </Grid>
+          <Grid item sm={12} xs={12}>
+            <Divider />
+          </Grid>
+          <Grid item sm={12} xs={12}>
+            <Button variant="contained" size='large' href='/payments ' style={{width:"365px" , backgroundColor: '#B78D65'}}>
+              Priced to checkout
+            </Button>
           </Grid>
         </Grid>
       </Card>

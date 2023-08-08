@@ -223,7 +223,7 @@ const ServiceSinglePage = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <ImageSlider images={images} /> {/* Pass the images array as a prop to ImageSlider component */}
-                            <Testimonial />
+                            {/* <Testimonial /> */}
                             <Pricing pricing={pricing} />
                             <section className="pb-0">
                                 {/* <div className="container">

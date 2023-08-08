@@ -1,10 +1,17 @@
-// import { Elements } from '@stripe/react-stripe-js';
-// import { loadStripe } from '@stripe/stripe-js';
-// import PaymentForm from '../../stripeForm/paymentForm';
+import React, { Fragment } from "react";
+// import ContactForm from "../ContactFrom";
+// import "./style.css";
+import { Modal } from "react-bootstrap";
+import PaymentForm from "./paymentForm";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 
-// const stripePromise = loadStripe('pk_test_51LkExQD2dU6r3UJMo1HDdTm4E9g36D4Db12YmQzG7AnkXsBrFnwiMqOGJbNdpHUVX7SwHJXZXxsHCJNd12ahZfw5005R8EAYYi');
+const Checkoutform = () => {
+    return (
+        <Fragment>
+            <PaymentForm/>
+        </Fragment>
+    );
+};
 
-
-// <Elements stripe={stripePromise}>
-//     <PaymentForm />
-// </Elements>
+export default Checkoutform;
