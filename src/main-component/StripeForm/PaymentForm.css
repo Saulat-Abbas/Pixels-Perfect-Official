@@ -28,7 +28,7 @@
 input[type="email"],
 input[type="text"],
 input[type="tel"] {
-  width: 200%;
+  width: 300%;
   height: 45px;
   background-color: #f8f8f8;
   border: 1px solid #ccc;
@@ -78,7 +78,7 @@ input[type="tel"] {
 /* Submit button styles */
 button[type="submit"] {
   display: block;
-  width: 200%;
+  width: 100%;
   padding: 12px 20px;
   background-color: #B78D65;
   color: #fff;
@@ -91,6 +91,8 @@ button[type="submit"] {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-left: 100px;
+  height: 80px;
 }
 
 button[type="submit"]:disabled {
@@ -99,7 +101,7 @@ button[type="submit"]:disabled {
 }
 
 button[type="submit"]:hover {
-  background-color: #997350;
+  background-color: #525099;
 }
 
 /* Additional styles for responsiveness */
@@ -129,4 +131,15 @@ button[type="submit"]:hover {
 .card-element-container{
   margin-bottom: 20px;
   width: 200%;
+}
+.input-group {
+  display: flex; /* Use flexbox to display the inputs in a row */
+  gap: 10px; /* Add some spacing between the inputs */
+}
+
+/* Alternatively, you can use grid layout */
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 10px; /* Add some spacing between the inputs */
 }
