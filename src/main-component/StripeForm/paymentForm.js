@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import Header from '../../components/header';
 import './PaymentForm.css';
 import FormControlLabel from '@material-ui/core/FormControlLabel'; // Make sure to import FormControlLabel
 import Checkbox from '@material-ui/core/Checkbox'; // Make sure to import Checkbox
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
 
 
 
@@ -55,6 +52,12 @@ const countriesData =
       "name": "Netherlands",
       "cities": ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven", "Tilburg", "Groningen", "Almere", "Breda", "Nijmegen"]
     },
+    // Pakistan
+    {
+      "name": "Pakistan",
+      "cities": ["Karachi", "Lahore", "Faisalabad", "Rawalpindi", "Multan", "Gujranwala", "Peshawar", "Quetta", "Sialkot", "Gujrat"]
+    },
+
     {
       "name": "Russia",
       "cities": ["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Nizhny Novgorod", "Kazan", "Chelyabinsk", "Omsk", "Samara", "Rostov-on-Don"]
@@ -135,55 +138,55 @@ const countriesData =
       "name": "Czech Republic",
       "cities": ["Prague", "Brno", "Ostrava", "Plzen", "Liberec", "Olomouc", "Usti nad Labem", "Hradec Kralove", "Ceske Budejovice", "Pardubice"]
     },
-  
+
     // Egypt
     {
       "name": "Egypt",
       "cities": ["Cairo", "Alexandria", "Giza", "Shubra El Kheima", "Port Said", "Suez", "Luxor", "Asyut", "Ismailia", "Fayyum"]
     },
-  
+
     // Finland
     {
       "name": "Finland",
       "cities": ["Helsinki", "Espoo", "Tampere", "Vantaa", "Oulu", "Turku", "Jyvaskyla", "Lahti", "Kuopio", "Pori"]
     },
-  
+
     // Greece
     {
       "name": "Greece",
       "cities": ["Athens", "Thessaloniki", "Patras", "Heraklion", "Larissa", "Volos", "Rhodes", "Ioannina", "Chania", "Chalcis"]
     },
-  
+
     // Hungary
     {
       "name": "Hungary",
       "cities": ["Budapest", "Debrecen", "Szeged", "Miskolc", "Pecs", "Gyor", "Nyiregyhaza", "Kecskemet", "Szekesfehervar", "Szombathely"]
     },
-  
+
     // India
     {
       "name": "India",
       "cities": ["New Delhi", "Mumbai", "Bangalore", "Chennai", "Kolkata", "Hyderabad", "Pune", "Ahmedabad", "Surat", "Jaipur"]
     },
-  
+
     // Indonesia
     {
       "name": "Indonesia",
       "cities": ["Jakarta", "Surabaya", "Bandung", "Medan", "Bekasi", "Semarang", "Tangerang", "Depok", "Palembang", "Makassar"]
     },
-  
+
     // Ireland
     {
       "name": "Ireland",
       "cities": ["Dublin", "Cork", "Limerick", "Galway", "Waterford", "Drogheda", "Dundalk", "Sligo", "Bray", "Navan"]
     },
-  
+
     // Israel
     {
       "name": "Israel",
       "cities": ["Jerusalem", "Tel Aviv", "Haifa", "Rishon LeZion", "Petah Tikva", "Ashdod", "Netanya", "Beersheba", "Bnei Brak", "Holon"]
     },
-  
+
     // Italy
     {
       "name": "Italy",
@@ -192,36 +195,48 @@ const countriesData =
   ]
 
 function PaymentForm() {
+  
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [countryIndex, setCountryIndex] = useState(0);
+  const [countryIndex, setCountryIndex] = useState("");
+  const [value, setValue] = useState(0);
   const [formData, setFormData] = useState({
     email: '',
-    name: '',
+    fullName: '',
+    lastName: '',
+    address: '',
+    apartment: '',
     phoneNumber: '',
+    zip: '',
+    state: '',
+    city: '',
+    country: 'United States',
   });
+  const data = [
+    // ... (all the country data you provided)
+  ];
+  useEffect(() => {
+    const index = countriesData.findIndex((country) => country.name === formData.country);
+    setCountryIndex(index);
+  }, [formData.country]);
+
+  // Sort the data array in ascending order based on country name
+  data.sort((a, b) => a.name.localeCompare(b.name));
+
+  console.log(JSON.stringify(data, null, 2)); // Printing the sorted data
   const [quantity, setQuantity] = useState(1);
 
   const handleChange = (event) => {
+
     const { name, value } = event.target;
+    console.log("handleChange  event ===========>", name);
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
-
-  const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-
-  const handleDecrement = () => {
-    if (quantity > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1);
-    }
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -232,9 +247,17 @@ function PaymentForm() {
       type: 'card',
       card: elements.getElement(CardElement),
       billing_details: {
+        name: formData.fullName,
         email: formData.email,
-        name: formData.name,
-        phone: formData.phoneNumber,
+        address: {
+          postal_code: formData.zip, // Include the zip code
+          state: formData.state,
+          line1: formData.address,
+          line2: formData.apartment,
+          city: formData.city, // City
+          country: formData.country, //Country
+
+        }
       },
     });
 
@@ -248,127 +271,201 @@ function PaymentForm() {
       console.log(`Quantity: ${quantity}`);
     }
   };
-
+  console.log("formdata.city ===========>", formData.city);
+  console.log("formdata.country ===========>", formData.country);
   return (
-    <div className="form-body">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>
-            <b>Contact</b>
-          </label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div style={{ marginBottom: '20px' }}>
-          <FormControlLabel
-            control={<Checkbox defaultChecked />}
-            label="Email me with news and offers"
-          />
-        </div>
-        <div className="form-group" style={{ width: '300%' }}>
-          <label>Shipping Country</label>
-          <select
-            onChange={(e) => setCountryIndex(e.target.value)}>
-            {countriesData.map((country, index) => (
-              <option value={index} key={index}>
-                {country.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="form-group" style={{ width: '300%' }}>
-          <label>Shipping City</label>
-          <select>
-            {countriesData[countryIndex]?.cities.map((city) => (
-              <option>
-                {city || "Please Choose Country"}
-              </option>
-            ))}
-          </select>
+    <div className="two-panel-container">
+      <div className="code-panel">
+        <div className="form-body">
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <h3 style={{paddingBottom:"10%"}}>Contact Form</h3>
+              <label style={{ cursor: 'none' }}>
+                <b>Email</b>
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email:abc@email.com"
+                required
+              />
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+              <FormControlLabel
+                control={<Checkbox defaultChecked />}
+                label="Email me with news and offers"
+              />
+            </div>
+            <div className="form-group" style={{ width: '100%' }}>
+              <label><b>Shipping Country</b></label>
+              <select
+                onChange={(e) => handleChange(e)}
+                name='country'
+                defaultValue="United States" 
+                value={formData.country}
+                >
+                {countriesData.map((country, index) => (
+                  <option value={country.name} key={index}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="form-group" style={{ width: '100%' }}>
+              <label><b>Shipping City</b></label>
+              <select onChange={(e) => handleChange(e)} name='city'>
+                {countriesData[countryIndex]?.cities.map((city, index) => (
+                  <option key={city} value={city}>
+                    {city || "Please Choose Country"}
+                  </option>
+                ))}
+              </select>
+              
+              
+              <div class="d-flex" style={{ marginTop: "5%" }}>
+                <input class=""
+                  type="number"
+                  max={"99999"}
+                  onInput={(e) => {
+                    e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 5);
+                  }}
+                  placeholder="ZIP"
+                  name="zip"
+                  value={formData.zip}
+                  onChange={handleChange}
+                  required
+                />
+                
+                <input class=""
+                
+                  type="text"
+                  placeholder="State"
+                  name="state"
+                  value={formData.state}
+                  onChange={handleChange}
+                  required />
+              </div>
+            </div>
+            <div className="name-container">
+              <div className="form-group" style={{ width: "60.5%" }}>
+              <label style={{ cursor: 'none' }}>
+                <b>Full Name</b>
+              </label>
+                <input
+                  type="text"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  placeholder="Full Name"
+                  required
+                />
+              </div>
+            </div>
 
-        </div>
-        <div className="form-group" >
-          {/* <label>First name (Optional)</label> */}
-          <input
-            type="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            placeholder="First Name"
-            required
-          />
-        </div>
-        <div className="form-group" >
-          {/* <label>Last Name</label> */}
-          <input
-            type="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            placeholder="Last Name"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          {/* <label>Address</label> */}
-          <input
-            type="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            placeholder='Address'
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          {/* <label>Apartment, suit etc (Optional)</label> */}
-          <input
-            type="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            placeholder='Apartment, suit etc (Optional)'
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          {/* <label>City</label> */}
-          <input
-            type="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            placeholder='City'
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Quantity</label>
-          <div className="quantity-control">
-            <button type="button" onClick={handleDecrement}>
-              -
+            <div className="form-group">
+            <label style={{ cursor: 'none' }}>
+                <b>Address</b>
+              </label>
+              <input
+                type="text"
+                name="address"
+                value={formData.address}
+                placeholder="Address"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+            <label style={{ cursor: 'none' }}>
+                <b>Apartment</b>
+              </label>
+              <input
+                type="text"
+                name="apartment"
+                value={formData.apartment}
+                placeholder="Apartment, suit etc (Optional)"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="card-element-container" >
+              <CardElement />
+            </div>
+            {error && <div className="error-message">{error}</div>}
+            <button type="submit" disabled={!stripe || loading}>
+              {loading ? 'Processing...' : 'Continue to Shipping'}
             </button>
-            <span>{quantity}</span>
-            <button type="button" onClick={handleIncrement}>
-              +
-            </button>
+          </form>
+        </div></div >
+      <div className="picture-panel">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="left border">
+                <div class="row">
+                  <span ><h2>Payment</h2></span>
+                  <div class="icons">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" />
+                    <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
+                    <img src="https://img.icons8.com/color/48/000000/maestro.png" />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div >
+                <div ><h1 style={{ textAlign: "center" }}
+                >Order Summary</h1></div>
+                <p>2 items</p>
+                <div class="row item">
+                  <div class="col-4 align-self-center"><img class="img-fluid" src="https://i.imgur.com/79M6pU0.png"></img></div>
+                  <div class="col-8">
+                    <div class="row"><b>$ 26.99</b></div>
+                    <div class="row text-muted">Be Legandary Lipstick-Nude rose</div>
+                    <div class="row">Qty:1</div>
+                  </div>
+                </div>
+                <div class="row item">
+                  <div class="col-4 align-self-center"><img class="img-fluid" src="https://i.imgur.com/Ew8NzKr.jpg"></img></div>
+                  <div class="col-8">
+                    <div class="row"><b>$ 19.99</b></div>
+                    <div class="row text-muted">Be Legandary Lipstick-Sheer Navy Cream</div>
+                    <div class="row">Qty:1</div>
+                  </div>
+                </div>
+                <hr></hr>
+                <div class="row lower">
+                  <div class="col text-left">Subtotal</div>
+                  <div class="col text-right">$ 46.98</div>
+                </div>
+                <div class="row lower">
+                  <div class="col text-left">Delivery</div>
+                  <div class="col text-right">Free</div>
+                </div>
+                <div class="row lower">
+                  <div class="col text-left"><b>Total to pay</b></div>
+                  <div class="col text-right"><b>$ 46.98</b></div>
+                </div>
+                <div class="row lower">
+                  <div class="col text-left"><a href="#"><u>Add promo code</u></a></div>
+                </div>
+
+                <button
+                  type="Place Order"
+                  className={`submit-button ${loading ? 'loading' : ''}`}
+                  disabled={!stripe || loading}
+                >
+                  {loading ? 'Processing...' : 'Place Order'}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="card-element-container">
-          <CardElement />
-        </div>
-        {error && <div className="error-message">{error}</div>}
-        <button type="submit" disabled={!stripe || loading}>
-          {loading ? 'Processing...' : 'Continue to Shipping'}
-        </button>
-      </form>
-    </div>
+      </div>
+    </div >
+
   );
 }
 
