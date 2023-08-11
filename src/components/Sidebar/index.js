@@ -32,7 +32,7 @@ const Sidebar = () => {
         </div>
         <ul className="sidebar-content">
           <li>
-            <Link to="/blog">
+            <Link to="/virtual-staging">
               Interior Design <span>12</span>
             </Link>
           </li>

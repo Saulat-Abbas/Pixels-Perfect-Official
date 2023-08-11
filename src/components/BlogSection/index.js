@@ -49,9 +49,9 @@ const BlogSection = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center news_more">
-              <Link to="/blog" className="cta-btn btn-fill">
+              {/* <Link to="/blog" className="cta-btn btn-fill">
                 Explore More
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

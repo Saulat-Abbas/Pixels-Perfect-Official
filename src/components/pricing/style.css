@@ -21,14 +21,17 @@
 }
 
 .pricing-area .section-title {
-	color: black;
+	color: rgb(0, 0, 0);
 	margin-bottom: 100px	;
+	text-align: center;
 }
 
 .pricing-box {
 	background: #fff;
 	padding: 30px;
 	margin-top: 30px;
+	border: 2px solid black;
+    border-radius: 15px 5px 20px 10px;
 	/* display: flex;
 	flex-wrap: wrap; */
 }
@@ -112,5 +115,10 @@
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 9999; /* Ensure it appears on top of other elements */
+  }
+  .pricing-box:hover {
+	border-color: #000000; /* Change the border color on hover */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Add a slight shadow on hover */
+	border-radius: 20;
   }
   

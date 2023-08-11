@@ -14,7 +14,8 @@ import {
   Paper,
   Accordion,
   AccordionSummary,
-  AccordionDetails
+  AccordionDetails,
+  Tooltip
 } from "@mui/material"
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
@@ -26,10 +27,18 @@ import AutorenewIcon from '@mui/icons-material/Autorenew';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import { Payments } from '@mui/icons-material';
 
+
+// const Container = styled('div')({
+//   display: 'flex',
+//   flexDirection: 'column',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+//   height: '100%',
+// });
 const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const [imageQuantity, setImageQuantity] = useState(1);
   const [revisionQuantity, setRevisionQuantity] = useState(1);
-
+  // console.log('pricingData====>', pricingData);
   useEffect(() => {
     setImageQuantity(1);
     setRevisionQuantity(1);
@@ -72,143 +81,156 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const lines = longText.match(/.{1,10}/g) || [];
 
   const list = () => (
-    <div style={{ padding: 30 }}>
-      <Grid container>
-        <Grid item sm={11} xs={11}>
+    <div style={{ paddingTop: 10, width: '100%' }}>
+      <Grid container spacing={5}>
+        <Grid item sm={8} xs={8} ml={4} >
           <Typography variant="h6">
             Order Option
           </Typography>
         </Grid>
-        <Grid item sm={1} xs={1}>
+        <Grid item sm={1} xs={3}>
           <IconButton onClick={handleClose}>
             <CloseIcon />
           </IconButton>
         </Grid>
       </Grid>
-      <Card variant='outlined' sx={{ m: 2, p: 2, maxWidth: 400 }}>
+      <Card variant='outlined' sx={{ m: 2, p: 2, maxWidth: { xs: '600px', sm: 400 } }}>
         <Grid container spacing={2}>
           <Grid item sm={10} xs={10}>
             <Typography variant="button">
               {pricingData.name}
             </Typography>
           </Grid>
-          <Grid item sm={2} xs={2}>
+          <Grid item sm={2} >
             $ {pricingData.price}
           </Grid>
-          <Grid item sm={12} xs={12}>
+          <Grid item xs={12}>
             <Box sx={{ width: '100%', maxWidth: 600 }}>
               <Typography variant="body1" gutterBottom>
                 {pricingData.details.map((detail, index) => (
                   <li key={index}>
                     <p>
-                      <ArrowCircleRightIcon fontSize='small' /> {detail}
+                      <ArrowCircleRightIcon fontSize='small' sx={{ color: '#B78D65' }} /> {detail}
                     </p>
                   </li>
                 ))}
               </Typography>
             </Box>
+
           </Grid>
-          <Grid item sm={12} xs={12}>
+          <Grid item xs={12} >
             <Divider />
           </Grid>
-          <Grid item sm={8} xs={6.5}>
+          <Grid item xs={7}>
             <Typography variant="h6">
               Gig Quantity
             </Typography>
           </Grid>
-          <Grid item sm={1.6} xs={2.2}>
+          <Grid item xs={1.6}>
             <IconButton onClick={handleImageDecrement} sx={{ border: 1 }}>
               <RemoveIcon fontSize='small' />
             </IconButton>
           </Grid>
-          <Grid item sm={0.9} xs={1.4}>
+          <Grid item xs={0}>
             <Typography variant="h5" sx={{ color: 'gray' }}>
               {imageQuantity}
             </Typography>
           </Grid>
-          <Grid item sm={1.5} xs={1.2} onClick={handleImageIncrement}>
+          <Grid item xs={1.4} onClick={handleImageIncrement}>
             <IconButton sx={{ border: 1 }}>
               <AddIcon fontSize='small' />
             </IconButton>
           </Grid>
         </Grid>
       </Card>
-      <Typography variant="subtitle2" mt={5} ml={2}>
+      <Typography variant="subtitle2" mt={1.6} m={2}>
         Upgrade your order with extras
       </Typography>
-      <Card variant='outlined' sx={{ m: 2, mb: 5, p: 2, maxWidth: 400 }}>
+      <Card variant='outlined' sx={{ m: 2, mb: 2, p: 2, maxWidth: 400 }}  >
         <Grid container spacing={2}>
-          <Grid item sm={10} xs={10} mt={1}>
+          <Grid item xs={10} mt={1}>
             <Typography variant="subtitle2">
               Extra-fast 1-day delivery
             </Typography>
           </Grid>
-          <Grid item sm={2} xs={2}>
-            <Checkbox checked={isCheckboxChecked} onChange={handleCheckboxChange} />
+          <Grid item xs={2}>
+            <Tooltip title={!pricingData?.time && "Extra fast delivary is not available."}>
+              <span>
+                <Checkbox disabled={!pricingData?.time} checked={isCheckboxChecked} onChange={handleCheckboxChange}  sx={{color:"#B78D65"}}/>
+              </span>
+            </Tooltip>
           </Grid>
-          <Grid item sm={12} xs={12} mt={'-15px'} mb={1}>
+          <Grid item xs={12} mt={'-15px'} mb={1}>
             <Typography variant="body2" sx={{ color: 'gray' }}>
               {isCheckboxChecked ? `$${pricingData.time}` : ''}
             </Typography>
           </Grid>
         </Grid>
       </Card>
-      <Divider />
-      <Card variant='outlined' sx={{ m: 2, mt: 5, p: 2, maxWidth: 400, bgcolor: '#E5E4E2' }}>
+      <Divider variant="middle" />
+      <Card variant='outlined' sx={{ m: 1, mt: 2, p: 2, maxWidth: 400, bgcolor: '#E5E4E2' }} xs={2}>
         <Grid container spacing={2}>
-          <Grid item sm={12} xs={12} mt={1}>
+          <Grid item xs={12} mt={1}>
             <Typography variant="h4" sx={{ color: '#36454F' }}>
               ${totalPrice}
             </Typography>
           </Grid>
-          <Grid item sm={12} xs={12} mt={'-15px'} mb={1}>
+          <Grid item xs={12} mt={'-15px'} mb={1}>
             <Typography variant="body2" sx={{ color: 'gray' }}>
               {`Single Order (X${imageQuantity})`}
             </Typography>
           </Grid>
-          <Grid item sm={12} xs={12}>
+          <Grid item xs={12}>
             <Divider />
           </Grid>
-          <Grid item sm={12} xs={12}>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
+          <Grid item xs={12}>
+            {isCheckboxChecked ? ( // Check if the checkbox is checked
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <InventoryIcon fontSize='small' sx={{ mr: 2 }} />
+                  <Typography variant='subtitle2'>{`${pricingData.name} (X${imageQuantity})`}</Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ mx: 4.5, mt: '-14px' }}>
+                  <Typography variant='body2'>
+                    + Extra-fast 1-day Delivery
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            ) : (
+              <Card variant='outlined' sx={{ bgcolor: 'white', display: 'inline-flex', width: '100%', padding: 1.5 }}>
                 <InventoryIcon fontSize='small' sx={{ mr: 2 }} />
-                <Typography variant='subtitle2'>{`Premium Package (X${imageQuantity})`}</Typography>
-              </AccordionSummary>
-              <AccordionDetails sx={{ mx: 4.5, mt: '-14px' }}>
-                <Typography variant='body2'>
-                  + Extra-fast 1-day Delivery
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+                <Typography variant='subtitle2'>{`${pricingData.name} (X${imageQuantity})`}</Typography>
+              </Card>
+            )}
+
           </Grid>
-          <Grid item sm={12} xs={12}>
+          <Grid item xs={8}>
             <Button startIcon={<QueryBuilderIcon />} sx={{ color: 'black', pointerEvents: 'none', textTransform: 'capitalize' }}>1-day Delivery</Button>
           </Grid>
-          <Grid item sm={12} xs={12}>
+          <Grid item xs={4} sm={4} md={12} lg={12}>
             <Button startIcon={<AutorenewIcon />} sx={{ color: 'black', pointerEvents: 'none', textTransform: 'capitalize' }}>{pricingData.details[1]}</Button>
           </Grid>
-          <Grid item sm={12} xs={12}>
+          <Grid item xs={12}>
             <Divider />
           </Grid>
-          <Grid item sm={12} xs={12}>
-            <Button variant="contained" size='large' href='/payments ' style={{width:"365px" , backgroundColor: '#B78D65'}}>
-              Priced to checkout
+          <Grid item xs={12}>
+            <Button variant="contained" size='large' href='/payments' style={{ width: "365px", backgroundColor: '#B78D65' }}>
+              Proced to checkout
             </Button>
           </Grid>
         </Grid>
       </Card>
-    </div >
+    </div>
   );
 
 
   return (
-    <div>
-      <Drawer anchor="right" open={show} onClose={handleClose} width={20}>
+    <div className='element'>
+      <Drawer anchor="right" open={show} onClose={handleClose} width={'xs'}>
         {list('right')}
       </Drawer>
     </div>

@@ -6,7 +6,7 @@ import PaymentForm from "./paymentForm";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 
-const Checkoutform = () => {
+const Checkoutform = (pricingData) => {
     return (
         <Fragment>
             <PaymentForm/>

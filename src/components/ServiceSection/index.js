@@ -31,7 +31,7 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Virtual Declutter</h3>
-                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients' satisfaction is most.</p>
+                  <p className="btn-border">Transform your living space through virtual interior design, creating a clutter-free and stylish environment for you to enjoy</p>
                 </div>
                 <img src={serviceImg1} alt="img" />
               </div>
@@ -45,7 +45,7 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Image Enhancement</h3>
-                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                  <p className="btn-border">Elevate spaces with Image Enhancement; create inviting environments through expert design techniques for maximum appeal.</p>
                 </div>
                 <img src={serviceImg2} alt="img" />
               </div>
@@ -59,7 +59,7 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Virtual Staging</h3>
-                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                  <p className="btn-border">Enhance spaces through virtual staging, unleashing creativity to showcase your property's full potential and allure.</p>
                 </div>
                 <img src={serviceImg3} alt="img" />
               </div>
@@ -73,7 +73,7 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Virtual Renovation</h3>
-                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                  <p className="btn-border">Experience virtual renovation, revitalizing spaces with innovative design concepts and transforming your vision into reality.</p>
                 </div>
                 <img src={serviceImg6} alt="img" />
               </div>
@@ -92,7 +92,7 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Website Development</h3>
-                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                  <p className="btn-border">Crafting exceptional websites: development and design services for your online presence, tailored to your brand and goals.</p>
                 </div>
                 <img src={serviceImg4} alt="img" />
               </div>
@@ -106,7 +106,7 @@ const ServiceSection = () => {
                 </div>
                 <div>
                   <h3 className="cta-btn btn-border">Wordpress Designing</h3>
-                  <p className="btn-border">We develop the full cycle of project documentation &amp; full details. Our clients satisfaction is most</p>
+                  <p className="btn-border">Expert WordPress design: Tailored websites that captivate, engage, and deliver your unique message effectively.</p>
                 </div>
                 <img src={serviceImg5} alt="img" />
               </div>

@@ -93,4 +93,9 @@
     margin-top: 30px;
     text-align: center; /* Align total price in the center */
   }
+  @media (max-width: 600px) {
+    .element {
+  width: 100vw; /* 100% of viewport width */
+  height: 50vh    }
+  }
   
