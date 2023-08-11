@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import './PaymentForm.css';
-import FormControlLabel from '@material-ui/core/FormControlLabel'; // Make sure to import FormControlLabel
-import Checkbox from '@material-ui/core/Checkbox'; // Make sure to import Checkbox
-
+import { FormControlLabel } from '@mui/material';
+import { CheckBox } from '@mui/icons-material';
+import { Card, Grid, Typography, Box, IconButton, Divider } from '@mui/material';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
+import PricingActionModal from '../../components/pricing/PricingActionModal';
 
 
 const countriesData =
@@ -194,8 +198,8 @@ const countriesData =
     },
   ]
 
-function PaymentForm() {
-  
+function PaymentForm( ) {
+
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
@@ -271,15 +275,14 @@ function PaymentForm() {
       console.log(`Quantity: ${quantity}`);
     }
   };
-  console.log("formdata.city ===========>", formData.city);
-  console.log("formdata.country ===========>", formData.country);
+
   return (
     <div className="two-panel-container">
       <div className="code-panel">
         <div className="form-body">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <h3 style={{paddingBottom:"10%"}}>Contact Form</h3>
+              <h3 style={{ paddingBottom: "2%" }}>Contact Form</h3>
               <label style={{ cursor: 'none' }}>
                 <b>Email</b>
               </label>
@@ -294,7 +297,7 @@ function PaymentForm() {
             </div>
             <div style={{ marginBottom: '20px' }}>
               <FormControlLabel
-                control={<Checkbox defaultChecked />}
+                control={< defaultChecked />}
                 label="Email me with news and offers"
               />
             </div>
@@ -303,9 +306,9 @@ function PaymentForm() {
               <select
                 onChange={(e) => handleChange(e)}
                 name='country'
-                defaultValue="United States" 
+                defaultValue="United States"
                 value={formData.country}
-                >
+              >
                 {countriesData.map((country, index) => (
                   <option value={country.name} key={index}>
                     {country.name}
@@ -322,8 +325,8 @@ function PaymentForm() {
                   </option>
                 ))}
               </select>
-              
-              
+
+
               <div class="d-flex" style={{ marginTop: "5%" }}>
                 <input class=""
                   type="number"
@@ -337,9 +340,9 @@ function PaymentForm() {
                   onChange={handleChange}
                   required
                 />
-                
+
                 <input class=""
-                
+
                   type="text"
                   placeholder="State"
                   name="state"
@@ -350,9 +353,9 @@ function PaymentForm() {
             </div>
             <div className="name-container">
               <div className="form-group" style={{ width: "60.5%" }}>
-              <label style={{ cursor: 'none' }}>
-                <b>Full Name</b>
-              </label>
+                <label style={{ cursor: 'none' }}>
+                  {/* <b>Full Name</b> */}
+                </label>
                 <input
                   type="text"
                   name="fullName"
@@ -365,8 +368,8 @@ function PaymentForm() {
             </div>
 
             <div className="form-group">
-            <label style={{ cursor: 'none' }}>
-                <b>Address</b>
+              <label style={{ cursor: 'none' }}>
+                {/* <b>Address</b> */}
               </label>
               <input
                 type="text"
@@ -378,8 +381,8 @@ function PaymentForm() {
               />
             </div>
             <div className="form-group">
-            <label style={{ cursor: 'none' }}>
-                <b>Apartment</b>
+              <label style={{ cursor: 'none' }}>
+                {/* <b>Apartment</b> */}
               </label>
               <input
                 type="text"
@@ -397,73 +400,35 @@ function PaymentForm() {
               {loading ? 'Processing...' : 'Continue to Shipping'}
             </button>
           </form>
-        </div></div >
+        </div>
+      </div >
       <div className="picture-panel">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="left border">
-                <div class="row">
-                  <span ><h2>Payment</h2></span>
-                  <div class="icons">
-                    <img src="https://img.icons8.com/color/48/000000/visa.png" />
-                    <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
-                    <img src="https://img.icons8.com/color/48/000000/maestro.png" />
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div >
-                <div ><h1 style={{ textAlign: "center" }}
-                >Order Summary</h1></div>
-                <p>2 items</p>
-                <div class="row item">
-                  <div class="col-4 align-self-center"><img class="img-fluid" src="https://i.imgur.com/79M6pU0.png"></img></div>
-                  <div class="col-8">
-                    <div class="row"><b>$ 26.99</b></div>
-                    <div class="row text-muted">Be Legandary Lipstick-Nude rose</div>
-                    <div class="row">Qty:1</div>
-                  </div>
-                </div>
-                <div class="row item">
-                  <div class="col-4 align-self-center"><img class="img-fluid" src="https://i.imgur.com/Ew8NzKr.jpg"></img></div>
-                  <div class="col-8">
-                    <div class="row"><b>$ 19.99</b></div>
-                    <div class="row text-muted">Be Legandary Lipstick-Sheer Navy Cream</div>
-                    <div class="row">Qty:1</div>
-                  </div>
-                </div>
-                <hr></hr>
-                <div class="row lower">
-                  <div class="col text-left">Subtotal</div>
-                  <div class="col text-right">$ 46.98</div>
-                </div>
-                <div class="row lower">
-                  <div class="col text-left">Delivery</div>
-                  <div class="col text-right">Free</div>
-                </div>
-                <div class="row lower">
-                  <div class="col text-left"><b>Total to pay</b></div>
-                  <div class="col text-right"><b>$ 46.98</b></div>
-                </div>
-                <div class="row lower">
-                  <div class="col text-left"><a href="#"><u>Add promo code</u></a></div>
-                </div>
-
-                <button
-                  type="Place Order"
-                  className={`submit-button ${loading ? 'loading' : ''}`}
-                  disabled={!stripe || loading}
-                >
-                  {loading ? 'Processing...' : 'Place Order'}
-                </button>
+        <div className="row">
+          <div className="col-md-8">
+            <div className="left border">
+              <div className="row">
+                <Card variant='outlined' sx={{ height: "500px", width: "800px" }}>
+                  <Grid item sm={10} xs={10}>
+                    <Typography variant="button" item sm={12} style={{ textAlign: 'center', marginLeft:"100px", fontSize:"25px" }}>  
+                      Your order summary
+                    </Typography>
+                  </Grid>
+                  <Grid item sm={10} xs={10}>
+                  <Divider />
+                  </Grid>
+                  <Grid>
+                    <Typography>
+                      {PricingActionModal}
+                    </Typography>
+                  </Grid>
+                </Card>
+                {/* <button onClick={handleContentChange}>Change Content</button> */}
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div >
 
   );

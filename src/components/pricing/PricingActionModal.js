@@ -43,7 +43,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
     setImageQuantity(1);
     setRevisionQuantity(1);
   }, []);
-
+ 
   const handleImageIncrement = () => {
     setImageQuantity((prevQuantity) => prevQuantity + 1);
   };

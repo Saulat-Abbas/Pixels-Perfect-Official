@@ -89,7 +89,7 @@ input[type="tel"] {
 button[type="submit"] {
   display:inline-block;
   width: 50%;
-  padding: 12px 20px;
+  /* padding: 12px 20px; */
   background-color: #B78D65;
   color: #fff;
   border: none;
@@ -152,7 +152,7 @@ button[type="submit"]:hover {
 
 .code-panel {
   flex: 1;
-  padding: 20px;
+  padding: 0px;
   background-color: #f0f0f0;
 }
 
@@ -161,7 +161,7 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e0e0e0;
+  background-color: #F0F0F0;
 }
 
 .picture-panel img {
@@ -181,7 +181,7 @@ button[type="submit"]:hover {
 @media screen and (min-width: 768px) {
    .two-panel-container {
     flex-direction: row;
-    gap: 40px;
+    gap: 0px;
   } 
   .code-panel {
     width: 60%;

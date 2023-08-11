@@ -60,14 +60,12 @@ const Pricing = ({ pricing }) => {
                     ))}
                   </ul>
                 </div>
-                <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+                <div style={{ position: "fixed", left: "50%", transform: "translateX(-50%)", bottom: "20px" }}>
                   {/* Button to trigger the modal */}
                   <MuiButton
                     variant="contained"
                     style={{
-                      backgroundColor: "#B78D65", color: "white" ,position: "sticky",
-                      
-                      
+                      backgroundColor: "#B78D65", color: "white",
                       marginBottom: "2px",
                     }}
                     onClick={() => handleShowModal(priceData)}
