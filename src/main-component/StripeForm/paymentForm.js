@@ -192,7 +192,6 @@ const countriesData =
   ]
 
 function PaymentForm() {
-
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);

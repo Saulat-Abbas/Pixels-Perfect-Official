@@ -120,14 +120,6 @@ button[type="submit"]:hover {
   flex-direction: column-reverse;
   padding-left: 100px;
 }
-
-@media (min-width: 768px) and (max-width: 991px) {
-  /* Add any responsive styles here if needed */
-}
-
-@media (width: 1024px) {
-  /* Add any responsive styles here if needed */
-}
 .card-element-container{
   margin-bottom: 20px;
   width: 200%;

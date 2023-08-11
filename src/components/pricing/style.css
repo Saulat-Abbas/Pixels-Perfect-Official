@@ -9,9 +9,8 @@
 }
 
 .pricing-area:before {
-	position: absolute;
 	content: '';
-	/* background: #02050b; */
+	/* background: #02050b;	 */
 	opacity: 0.6;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 	width: 100%;
@@ -22,19 +21,23 @@
 }
 
 .pricing-area .section-title {
-	color: black
+	color: black;
+	margin-bottom: 100px	;
 }
 
 .pricing-box {
 	background: #fff;
 	padding: 30px;
-	margin-top: 30px
+	margin-top: 30px;
+	/* display: flex;
+	flex-wrap: wrap; */
 }
 
 .pricing-header .price {
 	color: #B78D65;
 	font-weight: 500;
-	font-size: 20px
+	font-size: 20px;
+	/* padding-bottom: 100px ;	 */
 }
 
 .pricing-header .price span {
@@ -49,7 +52,7 @@
 	margin: 5px 0
 }
 
-.pricing-content ul li p {
+.pricing-content ul 	li p {
 	font-size: 16px;
 	color: #111
 }
@@ -100,3 +103,14 @@
 .heading {
 
   }
+  /* style.css */
+
+/* Add a custom class to style the "Proceed to Checkout" button */
+.bottom-button-container {
+	position: fixed;
+	bottom: 20px; /* Adjust the value to control the vertical position */
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 9999; /* Ensure it appears on top of other elements */
+  }
+  

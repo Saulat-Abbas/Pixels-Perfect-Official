@@ -13,7 +13,7 @@ const ProjectPage =() => {
             <Header/>
             <PageTitle pageTitle={'PROJECT DETAILS'} pagesub={'Project Details'}/>
             <ProjectSingle/>
-            <Testimonial/>
+            {/* <Testimonial/> */}
             <Footer/>
         </Fragment>
     )

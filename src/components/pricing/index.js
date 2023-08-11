@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
 import "./style.css";
 import PricingActionModal from "./PricingActionModal";
+import { Button as MuiButton } from "@mui/material";
 
 const Pricing = ({ pricing }) => {
   const pricingBG =
@@ -57,12 +58,16 @@ const Pricing = ({ pricing }) => {
                     ))}
                   </ul>
                 </div>
-                <div className="pricing-action">
-                  {/* Button to trigger the modal */}
-                  <button onClick={() => handleShowModal(priceData)}>
-                    Proced to Checkout
-                  </button>
-                </div>
+                <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+        {/* Button to trigger the modal */}
+        <MuiButton
+                    variant="contained"
+                    style={{ backgroundColor: "#B78D65", color: "white" }}
+                    onClick={() => handleShowModal(priceData)}
+                  >
+                    Proceed to Checkout
+                  </MuiButton>
+      </div>
               </div>
             </div>
           ))}
