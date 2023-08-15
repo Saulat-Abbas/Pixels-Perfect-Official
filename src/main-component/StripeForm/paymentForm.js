@@ -198,7 +198,7 @@ const countriesData =
     },
   ]
 
-function PaymentForm( ) {
+function PaymentForm() {
 
   const stripe = useStripe();
   const elements = useElements();
@@ -392,9 +392,6 @@ function PaymentForm( ) {
                 onChange={handleChange}
               />
             </div>
-            <div className="card-element-container" >
-              <CardElement />
-            </div>
             {error && <div className="error-message">{error}</div>}
             <button type="submit" disabled={!stripe || loading}>
               {loading ? 'Processing...' : 'Continue to Shipping'}
@@ -407,18 +404,27 @@ function PaymentForm( ) {
           <div className="col-md-8">
             <div className="left border">
               <div className="row">
+            <div className="card-element-container">
+              <CardElement className="card-element" />
+            </div>
                 <Card variant='outlined' sx={{ height: "500px", width: "800px" }}>
                   <Grid item sm={10} xs={10}>
-                    <Typography variant="button" item sm={12} style={{ textAlign: 'center', marginLeft:"100px", fontSize:"25px" }}>  
+                    <Typography variant="button" item sm={12} style={{ textAlign: 'center', marginLeft: "100px", fontSize: "25px" }}>
                       Your order summary
                     </Typography>
                   </Grid>
                   <Grid item sm={10} xs={10}>
-                  <Divider />
+                    <Divider />
                   </Grid>
-                  <Grid>
-                    <Typography>
-                      {PricingActionModal}
+                  <Grid item sm={10} xs={10} variant="button" style={{ marginLeft: "10px", fontSize: "25px", marginTop: "10px" }}>
+                    <Typography style={{ marginTop: "100px" }} >
+                      No of images
+                    </Typography>
+                    <Typography style={{ marginTop: "100px" }} >
+                      Gig Quantit * 2
+                    </Typography>
+                    <Typography style={{ marginTop: "100px" }}>
+                      Total Amount 25$
                     </Typography>
                   </Grid>
                 </Card>

@@ -27,9 +27,9 @@ const Portfolio = () => {
                 <div className="portfolio-img">
                   <img src={Img1} alt="" />
                 </div>
-                <div className="portfolio-text text-center">
-                  <h2 className="h4">Interior Design</h2>
-                  <h3 className="h2">City</h3>
+                <div className="portfolio-text text-center" style={{ textAlign: 'center', marginBottom : "150px" }}>
+                  <h2 className="h4" >Interior Design</h2>
+                  <h3 className="h2" >City</h3>
                 </div>
               </div>
             </div>
@@ -38,84 +38,84 @@ const Portfolio = () => {
                 <div className="portfolio-img">
                   <img src={Img2} alt="portfolio img" />
                 </div>
-                <div className="portfolio-text text-center">
+                <div className="portfolio-text text-center"style={{ textAlign: 'center', marginBottom : "150px" }}>
                   <h2 className="h4">Interior Design</h2>
                   <h3 className="h2">Drawing Room</h3>
                 </div>
               </div>
             </div>
-            <div className="col-md-4 col-sm-6 no-paading"  onClick={() => { setOpenModal(true); setModalData(Img3) }}>
+            <div className="col-md-4 col-sm-6 no-paading" onClick={() => { setOpenModal(true); setModalData(Img3) }}>
               <div className="portfolio-box">
                 <div className="portfolio-img">
                   <img src={Img3} alt="portfolio img" />
                 </div>
-                <div className="portfolio-text text-center">
+                <div className="portfolio-text text-center"style={{ textAlign: 'center', marginBottom : "150px" }}>
                   <h2 className="h4">Interior Design</h2>
                   <h3 className="h2">Drawing Room</h3>
                 </div>
               </div>
             </div>
-            <div className="col-md-4 col-sm-6 no-paading"  onClick={() => { setOpenModal(true); setModalData(Img4) }}>
+            <div className="col-md-4 col-sm-6 no-paading" onClick={() => { setOpenModal(true); setModalData(Img4) }}>
               <div className="portfolio-box">
                 <div className="portfolio-img">
                   <img src={Img4} alt="portfolio img" />
                 </div>
-                <div className="portfolio-text text-center">
+                <div className="portfolio-text text-center"style={{ textAlign: 'center', marginBottom : "150px" }}>
                   <h2 className="h4">House Planning</h2>
                   <h3 className="h2">Pool</h3>
                 </div>
               </div>
             </div>
-            <div className="col-md-4 col-sm-6 no-paading"  onClick={() => { setOpenModal(true); setModalData(Img5) }}>
+            <div className="col-md-4 col-sm-6 no-paading" onClick={() => { setOpenModal(true); setModalData(Img5) }}>
               <div className="portfolio-box">
                 <div className="portfolio-img">
                   <img src={Img5} alt="portfolio img" />
                 </div>
-                <div className="portfolio-text text-center">
+                <div className="portfolio-text text-center"style={{ textAlign: 'center', marginBottom : "150px" }}>
                   <h2 className="h4">House Planning</h2>
                   <h3 className="h2">Garden</h3>
                 </div>
               </div>
             </div>
-            <div className="col-md-4 col-sm-6 no-paading"  onClick={() => { setOpenModal(true); setModalData(Img6) }}>
+            <div className="col-md-4 col-sm-6 no-paading" onClick={() => { setOpenModal(true); setModalData(Img6) }}>
               <div className="portfolio-box">
                 <div className="portfolio-img">
                   <img src={Img6} alt="portfolio img" />
                 </div>
-                <div className="portfolio-text text-center">
+                <div className="portfolio-text text-center"style={{ textAlign: 'center', marginBottom : "150px" }}>
                   <h2 className="h4">Interior Design</h2>
                   <h3 className="h2">Bathroom</h3>
                 </div>
               </div>
             </div>
-            <div className="col-md-4 col-sm-6 no-paading"  onClick={() => { setOpenModal(true); setModalData(Img7) }}>
+            <div className="col-md-4 col-sm-6 no-paading" onClick={() => { setOpenModal(true); setModalData(Img7) }}>
               <div className="portfolio-box">
                 <div className="portfolio-img">
                   <img src={Img7} alt="portfolio img" />
                 </div>
-                <div className="portfolio-text text-center">
+                <div className="portfolio-text text-center"style={{ textAlign: 'center', marginBottom : "150px" }}>
                   <h2 className="h4">House Planning</h2>
                   <h3 className="h2">Pool</h3>
                 </div>
               </div>
             </div>
-            <div className="col-md-4 col-sm-6 no-paading"  onClick={() => { setOpenModal(true); setModalData(Img1) }}>
+            <div className="col-md-4 col-sm-6 no-paading" onClick={() => { setOpenModal(true); setModalData(Img1) }}>
               <div className="portfolio-box">
                 <div className="portfolio-img">
                   <img src={Img1} alt="portfolio img" />
                 </div>
-                <div className="portfolio-text text-center">
+                <div className="portfolio-text text-center"style={{ textAlign: 'center', marginBottom : "150px" }}>
                   <h2 className="h4">Interior Design</h2>
                   <h3 className="h2">Hotel</h3>
                 </div>
               </div>
             </div>
-            <div className="col-md-4 col-sm-6 no-paading"  onClick={() => { setOpenModal(true); setModalData(Img2) }}>
+            <div className="col-md-4 col-sm-6 no-paading" onClick={() => { setOpenModal(true); setModalData(Img2) }}>
               <div className="portfolio-box">
                 <div className="portfolio-img">
                   <img src={Img2} alt="portfolio img" />
                 </div>
-                <div className="portfolio-text text-center">
+                <div className="portfolio-text text-center"style={{ textAlign: 'center', marginBottom : "150px" }}>
                   <h2 className="h4">Interior Design</h2>
                   <h3 className="h2">Residential</h3>
                 </div>
