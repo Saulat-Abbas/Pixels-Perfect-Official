@@ -2,12 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import './PaymentForm.css';
 import { FormControlLabel } from '@mui/material';
-import { CheckBox } from '@mui/icons-material';
-import { Card, Grid, Typography, Box, IconButton, Divider } from '@mui/material';
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-import PricingActionModal from '../../components/pricing/PricingActionModal';
+import { Card, Grid, Typography, Divider } from '@mui/material';
+
 
 
 const countriesData =
@@ -205,7 +201,7 @@ function PaymentForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [countryIndex, setCountryIndex] = useState("");
-  const [value, setValue] = useState(0);
+  // const [value, setValue] = useState(0);
   const [formData, setFormData] = useState({
     email: '',
     fullName: '',
