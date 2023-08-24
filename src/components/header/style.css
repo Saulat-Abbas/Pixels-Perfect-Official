@@ -44,7 +44,7 @@
 }
 
 .site-logo a {
-	/* padding: 10px ; */
+	padding:-1px ;
 	margin-left: 20px;
 	background: #fff;
 	width: 100px;
@@ -339,7 +339,7 @@
 		justify-content: flex-end;
 	}
 	.site-logo a {
-		width: 50%
+		width: 20%
 	}
 	.header {
 		padding-right: 5px
