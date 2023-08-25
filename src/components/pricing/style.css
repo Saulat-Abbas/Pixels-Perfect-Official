@@ -1,83 +1,82 @@
-/* ===================== PRICING ======================*/
+/* ===================== PRICING ====================== */
 .pricing-area {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
 	position: relative;
-	z-index: 1
-}
-
-.pricing-area:before {
+	z-index: 1;
+	max-width: 1200px; /* Add max-width to adjust the width */
+	margin: 0 auto; /* Center align the pricing area */
+  }
+  
+  .pricing-area:before {
 	content: '';
-	/* background: #02050b;	 */
 	opacity: 0.6;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 	width: 100%;
 	height: 100%;
 	left: 0;
 	top: 0;
-	z-index: -1
-}
-
-.pricing-area .section-title {
-	color: rgb(0, 0, 0);
-	margin-bottom: 100px	;
+	z-index: -1;
+  }
+  
+  
+  .pricing-area .section-title {
+	color: #000;
+	margin-bottom: 50px;
 	text-align: center;
-}
-
-.pricing-box {
+  }
+  
+  .pricing-box {
 	background: #fff;
 	padding: 30px;
 	margin-top: 30px;
-	border: 2px solid black;
-    border-radius: 15px 5px 20px 10px;
-	/* display: flex;
-	flex-wrap: wrap; */
-}
-
-.pricing-header .price {
+	border: 2px solid #000;
+	border-radius: 15px;
+	/* Removed unnecessary code */
+  }
+  
+  .pricing-header .price {
 	color: #B78D65;
 	font-weight: 500;
-	font-size: 20px;
-	/* padding-bottom: 100px ;	 */
-}
-
-.pricing-header .price span {
-	color: #111
-}
-
-.pricing-content ul {
-		margin: 30px 0
-}
-
-.pricing-content ul li {
-	margin: 5px 0
-}
-
-.pricing-content ul 	li p {
+	font-size: 24px;
+  }
+  
+  .pricing-header .price span {
+	color: #111;
+  }
+  
+  .pricing-content ul {
+	margin: 20px 0;
+  }
+  
+  .pricing-content ul li {
+	margin: 5px 0;
+  }
+  
+  .pricing-content ul li p {
 	font-size: 16px;
-	color: #111
-}
-
-.pricing-content ul li p i {
+	color: #111;
+  }
+  
+  .pricing-content ul li p i {
 	color: #B78D65;
-	margin-right: 10px
-}
-
-.pricing-content .hidden-list {
+	margin-right: 10px;
+  }
+  
+  .pricing-content .hidden-list {
 	text-decoration: line-through;
-	color: #333
-}
-
-.pricing-action a {
-		display: inline-block;
-		border-bottom: 1px solid #B78D65;
-		font-weight: 700;
-		font-size: 18px
-}
-.pricing-box {
-	height: 300px; /* You can adjust the height as per your requirement */  
+	color: #333;
+  }
+  
+  .pricing-action a {
+	display: inline-block;
+	border-bottom: 1px solid #B78D65;
+	font-weight: 700;
+	font-size: 18px;
+  }
+  .pricing-box {
+	height: 100%; /* You can adjust the height as per your requirement */  
 }
   .pricing-box {
 	background-color: #fff;
@@ -86,9 +85,7 @@
 	padding: 15px;
 	margin-bottom: 15px;
   }
-
-/* Add this CSS to your pricingActionmodal.css file */
-.counter-section {
+  .counter-section {
 	display: flex;
 	align-items: center;
   }
@@ -102,23 +99,36 @@
 	margin-right: 10px;
   }
   
-  /* Adjust margins as per your desired spacing */
-.heading {
-
-  }
-  /* style.css */
-
-/* Add a custom class to style the "Proceed to Checkout" button */
-.bottom-button-container {
+  /* Add styles for your "Proceed to Checkout" button */
+  .bottom-button-container {
 	position: fixed;
-	bottom: 20px; /* Adjust the value to control the vertical position */
+	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
-	z-index: 9999; /* Ensure it appears on top of other elements */
-  }
-  .pricing-box:hover {
-	border-color: #000000; /* Change the border color on hover */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Add a slight shadow on hover */
-	border-radius: 20;
+	z-index: 9999;
   }
   
+  /* Add hover styles for pricing boxes */
+  .pricing-box:hover {
+	border-color: #000;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Add styles for heading */
+  .heading {
+	/* Add your desired styles here */
+  }
+  
+  /* style.css */
+  /* You can add any additional styles here */
+  .mui-button{
+	margin-left: 150px;
+}
+@media (max-width: 768px) {
+    .mui-button {
+        margin-left: auto; /* Reset margin-left */
+        margin-right: auto; /* Set margin-right to center horizontally */
+        display: block; /* Make sure it takes up full width */
+        text-align: center; /* Center the content inside the button */
+    }
+}

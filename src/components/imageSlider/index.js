@@ -16,6 +16,9 @@ const ImageSlider = ({ images }) => {
     setCurrentSlide((prevSlide) => (prevSlide - 1 + images.length) % images.length);
   };
 
+  const handleSlideChange = (index) => {
+    setCurrentSlide(index);
+  };
   return (
 
     <div className="slider-container">
@@ -33,13 +36,24 @@ const ImageSlider = ({ images }) => {
           </svg>
         </span>
       </button>
-      <div className="slider">
-        <div style={{ border: "12px solid #B78D65", boxSizing: "border-box" }}>
+      <div className="gallery-container">
+        <div className="main-slide">
           <img
             src={images[currentSlide]}
             alt={`Image ${currentSlide + 1}`}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            className="main-image"
           />
+        </div>
+        <div className="thumbnail-container">
+          {images.map((image, index) => (
+            <button
+              key={index}
+              onClick={() => handleSlideChange(index)}
+              className={`thumbnail-button ${index === currentSlide ? 'active' : ''}`}
+            >
+              <img src={image} alt={`Thumbnail ${index + 1}`} className="thumbnail-image" />
+            </button>
+          ))}
         </div>
       </div>
       <button onClick={handleNextSlide} className="slider-button next-button">

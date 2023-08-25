@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Modal, Button } from "react-bootstrap";
 import "./style.css";
 import PricingActionModal from "./PricingActionModal";
-import { Button as MuiButton } from "@mui/material";
+import { Button as MuiButton, colors } from "@mui/material";
+import { Tabs, Tab, Paper } from "@mui/material";
 
 
 const Pricing = ({ pricing }) => {
@@ -25,57 +24,73 @@ const Pricing = ({ pricing }) => {
   // Function to hide the modal
   const handleCloseModal = () => setShowModal(false);
 
+  const [value, setValue] = useState(0);
 
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   return (
-    <section
-      className="pricing-area"
-    // style={{ backgroundImage: `url(${pricingBG})` }}
-    >
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
+    <section >
+      <div >
+        <div >
+          <div>
             <div className="site-heading" data-aos="fade-up">
-              <h2 className="section-title">Packeges</h2>
+              <h2 className="section-title">Packages</h2>
             </div>
           </div>
         </div>
-        <div className="row justify-content-center" >
-          {pricing?.map((priceData, index) => (
-            <div className="col-lg-4 col-md-6" key={index} >
-              <div className="pricing-box" data-aos="fade-up">
-                <div className="pricing-header">
-                  <h3>{priceData.name}</h3>
-                  <div className="price">${priceData.price}</div>
+        <div >
+          <div className="col-md-6" style={{ width: "100%", height: "100%" }}> {/* Adjust the column width as needed */}
+            <Paper elevation={3} className="pricing-box" data-aos="fade-up">
+              <Tabs
+                value={value} // Set the active tab value
+                onChange={handleChange} // Handle tab change
+                variant="fullWidth"
+                indicatorColor="primary"
+                textColor="primary"
+                style={{ marginBottom: "20px", color: "black" }}
+              >
+                {pricing?.map((priceData, index) => (
+                  <Tab key={index} label={priceData.name} />
+                ))}
+              </Tabs>
+              {/* Pricing content */}
+              {pricing?.map((priceData, index) => (
+                <div key={index} hidden={value !== index}>
+                  <div className="pricing-header">
+                    <h3>{priceData.name}</h3>
+                    <div className="price">${priceData.price}</div>
+                  </div>
+                  <div className="pricing-content" style={{ marginBottom: "20px" }}>
+                    <ul>
+                      {priceData.details?.map((detailData, index) => (
+                        <li key={index}>
+                          <p>
+                            <i className="fa fa-arrow-circle-right" />
+                            {detailData}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mui-button">
+                    {/* Button to trigger the modal */}
+                    <MuiButton
+                      variant="contained"
+                      style={{
+                        backgroundColor: "#B78D65", color: "white",
+                        marginBottom: "2px"
+                      }}
+                      onClick={() => handleShowModal(priceData)}
+                    >
+                      Proceed to Checkout
+                    </MuiButton>
+                  </div>
                 </div>
-                <div className="pricing-content">
-                  <ul>
-                    {priceData.details?.map((detailData, index) => (
-                      <li key={index}>
-                        <p>
-                          <i className="fa fa-arrow-circle-right" />
-                          {detailData}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div style={{ position: "fixed", left: "50%", transform: "translateX(-50%)", bottom: "20px" }}>
-                  {/* Button to trigger the modal */}
-                  <MuiButton
-                    variant="contained"
-                    style={{
-                      backgroundColor: "#B78D65", color: "white",
-                      marginBottom: "2px",
-                    }}
-                    onClick={() => handleShowModal(priceData)}
-                  >
-                    Proceed to Checkout
-                  </MuiButton>
-                </div>
-              </div>
-            </div>
-          ))}
+              ))}
+            </Paper>
+          </div>
         </div>
       </div>
 

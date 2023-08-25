@@ -59,7 +59,7 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: 10,
-                    details: [" I will remove all the existing furniture in Just $10 for each image", "1 revision"]
+                    details: [" I will remove all the existing furniture in Just $10 for each image", "1 revision"],
                 },
                 {
                     name: "Regular",
@@ -92,14 +92,14 @@ const ServiceSinglePage = () => {
                     name: "Regular",
                     price: 20,
                     details: ["Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Object removing (25 Images)", "2 revison "],
-                    time : "15"
+                    time: "15"
 
                 },
                 {
                     name: "Premium",
                     price: 25,
                     details: ["Basic Enhancement, Object removing  (35 Images), Your company Logo as watermark, Sharpen Clarity.", "3 revision "],
-                    time : "25"
+                    time: "25"
 
                 },
             ]
@@ -112,21 +112,21 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: 10,
-                    details: ["I'll virtual stage your One image of your Room in Just $10","1 Revision "]
+                    details: ["I'll virtual stage your One image of your Room in Just $10", "1 Revision", ""]
 
                 },
                 {
                     name: "Regular",
                     price: 70,
-                    details: ["I'll virtual stage your 8 image of your Vacant Room in Just $70","2 Revision "],
-                    time : "15"
+                    details: ["I'll virtual stage your 8 image of your Vacant Room in Just $70", "2 Revision ", "2 Days Dalivery "],
+                    time: "15"
 
                 },
                 {
                     name: "Premium",
                     price: 100,
-                    details: ["I'll virtual stage your 12 image of your Vacant Room in Just $100","3 Revision "],
-                    time : "25"
+                    details: ["I'll virtual stage your 12 image of your Vacant Room in Just $100", "3 Revision ", "3 Days Dalivery"],
+                    time: "25"
 
                 },
             ]
@@ -164,19 +164,19 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: 150,
-                    details: ["✅ Elegant Design ✅ Domain & Hosting Setup Support ✅ 5 Sections Design", "hello world"]
+                    details: [" Elegant Design", " Domain & Hosting Setup Support ", " 5 Sections Design"]
 
                 },
                 {
                     name: "Regular",
                     price: 250,
-                    details: ["✅ Custom Design ✅ Booking, Appointment, Event ✅ Payment Integration ✅ GTMetrix score upto 80%",]
+                    details: [" Custom Design", " Booking", " Appointment", "Event", " Payment Integration ", "GTMetrix score upto 80%"]
 
                 },
                 {
                     name: "Premium",
                     price: 350,
-                    details: ["✅ Business Plan inc. ✅ Membership Features ✅ Mailchimp Setup ✅ Page Speed 80% - 90%",]
+                    details: [" Business Plan inc", "Membership Features", "Mailchimp Setup", " Page Speed 80% - 90%"]
 
                 },
             ]
@@ -189,21 +189,21 @@ const ServiceSinglePage = () => {
                 {
                     name: "Starter",
                     price: 25,
-                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $25/Photo","1 Revision "]
+                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $25/Photo", "1 Revision "]
 
                 },
                 {
                     name: "Regular",
                     price: 140,
-                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $140/ 6 Photo","2 Revision "],
-                    time : "30"
+                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $140/ 6 Photo", "2 Revision "],
+                    time: "30"
 
                 },
                 {
                     name: "Premium",
                     price: 220,
-                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $220/ 10 Photo","3 Revision "],
-                    time : "50"
+                    details: ["Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $220/ 10 Photo", "3 Revision "],
+                    time: "50"
 
                 },
             ]
@@ -219,28 +219,18 @@ const ServiceSinglePage = () => {
             <Header />
             <PageTitle pageTitle={pageTitle} pagesub={pageSub} />
             <div className="content-section">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <ImageSlider images={images} /> {/* Pass the images array as a prop to ImageSlider component */}
-                            {/* <Testimonial /> */}
-                            <Pricing pricing={pricing} />
-                            <section className="pb-0">
-                                {/* <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <div className="site-heading text-center" data-aos="fade-up">
-                                                <h3 className="sub-title">CORPORATION</h3>
-                                                <h2 className="section-title">OUR CLIENTS & PARTNERS</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> */}
-                                {/* <Partners /> */}
-                            </section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 image-slider">
+                            <ImageSlider images={images} />
                         </div>
+                        <div class="col-lg-6 pricing">
+                            <Pricing pricing={pricing} />
+                        </div>
+                     
                     </div>
                 </div>
+
             </div>
             <Footer />
         </Fragment>
