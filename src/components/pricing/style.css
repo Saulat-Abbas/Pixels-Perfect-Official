@@ -66,17 +66,17 @@
   
   .pricing-content .hidden-list {
 	text-decoration: line-through;
-	color: #333;
-  }
-  
-  .pricing-action a {
-	display: inline-block;
-	border-bottom: 1px solid #B78D65;
-	font-weight: 700;
-	font-size: 18px;
-  }
-  .pricing-box {
-	height: 100%; /* You can adjust the height as per your requirement */  
+	color: #333
+}
+
+.pricing-action a {
+		display: inline-block;
+		border-bottom: 1px solid #B78D65;
+		font-weight: 700;
+		font-size: 18px
+}
+.pricing-box {
+	height: 300px; /* You can adjust the height as per your requirement */  
 }
   .pricing-box {
 	background-color: #fff;
