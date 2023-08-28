@@ -16,7 +16,6 @@ import BlogPage from '../BlogPage';
 // import BlogSinglePage from '../BlogSinglePage';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import PaymentForm from '../StripeForm/paymentForm'; 
 import BlogSection from '../../components/BlogSection';
 import Checkoutform from '../StripeForm/checkOutForm';
 

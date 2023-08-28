@@ -84,7 +84,7 @@ const ServiceSection = () => {
       <div className="col-lg-12 col-md-12" >
         <h1 className="sub-titlee">Website Development & Designing</h1>
         <div className="row justify-content-center">
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <Link to="/service-single?service=website-development" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-icon">
@@ -98,7 +98,7 @@ const ServiceSection = () => {
               </div>
             </Link>
           </div>
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <Link to="/service-single?service=wordpress-designing" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="250">
                 <div className="service-icon">

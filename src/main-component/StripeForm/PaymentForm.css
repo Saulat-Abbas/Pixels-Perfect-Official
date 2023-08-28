@@ -113,15 +113,11 @@ button[type="submit"]:disabled {
 button[type="submit"]:hover {
   background-color: #525099;
 }
-
-/* Additional styles for responsiveness */
 @media (max-width: 767px) {
   .form-container {
     max-width: 80%;
   }
 }
-
-/* Align the form to the center of the page */
 .form-body {
   display: flex;
   align-items: center;

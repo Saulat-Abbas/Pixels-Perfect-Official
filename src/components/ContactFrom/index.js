@@ -34,14 +34,14 @@ const ContactForm = () => {
         break;
       case "email":
         setEmail(e.target.value);
-        if (e.target.value.length > 25) {
-          newError.email = 'Email cannot exceed 25 characters';
+        if (e.target.value.length) {
+          newError.email = '';
         }
         break;
       case "subject":
         setSubject(e.target.value);
-        if (e.target.value.length > 20) {
-          newError.subject = 'Subject cannot exceed 20 characters';
+        if (e.target.value.length > 100) {
+          newError.subject = 'Subject cannot exceed 100 characters';
         }
         break;
       case "lastname":

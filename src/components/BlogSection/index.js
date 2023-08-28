@@ -12,7 +12,7 @@ const BlogSection = () => {
   const blog2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/news-2.png?alt=media&token=4b16771b-7bcc-45a0-ad83-98c8526ea1d1"
 
   return (
-    <section className="latest-news-area" data-aos="fade-up">
+    <section className="latest-news-area" data-aos="fade-up" style={{paddingTop:"15%"}}>
       <div className="container">
         <div className="row">
           <div className="col-lg-12">

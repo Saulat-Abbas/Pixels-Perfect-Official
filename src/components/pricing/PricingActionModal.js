@@ -25,7 +25,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import { Payments } from '@mui/icons-material';
+
 
 
 // const Container = styled('div')({
@@ -226,7 +226,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
               <Divider />
             </Grid>
             <Grid item xs={6}>
-              <Button variant="contained" size='large' href='/payments' style={{ width: "320px", backgroundColor: '#B78D65' }}>
+              <Button variant="contained" size='large' href='/payments' style={{ width: "300px", backgroundColor: '#B78D65' ,marginLeft:"35px" }}>
                 Proced to checkout
               </Button>
             </Grid>

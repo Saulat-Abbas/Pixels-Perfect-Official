@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../../img/logo.png";
+import Logo from "../../img/logo.gif";
 import MobileMenu from "../../components/MobileMenu";
 
 import "./style.css";

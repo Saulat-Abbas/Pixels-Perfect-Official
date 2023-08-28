@@ -35,14 +35,14 @@ const Pricing = ({ pricing }) => {
       <div >
         <div >
           <div>
-            <div className="site-heading" data-aos="fade-up">
-              <h2 className="section-title">Packages</h2>
-            </div>
           </div>
         </div>
         <div >
           <div className="col-md-6" style={{ width: "100%", height: "100%" }}> {/* Adjust the column width as needed */}
             <Paper elevation={3} className="pricing-box" data-aos="fade-up">
+            <div className="site-heading" data-aos="fade-up">
+              <h2 className="section-title" style={{textAlign:"center"}}>Packages</h2>
+            </div>
               <Tabs
                 value={value} // Set the active tab value
                 onChange={handleChange} // Handle tab change

@@ -48,13 +48,15 @@ const ServiceSinglePage = () => {
     let pageTitle = '';
     let pageSub = '';
     let images = []; // Declare images array
-    let pricing = []
+    let pricing = [];
+    let description = ""
     // Set the page title, subtitle, and images based on the type query parameter
     switch (type) {
         case 'Virtual-Duculator':
             pageTitle = 'Virtual Duculator';
             pageSub = 'Virtual Duculator Details';
             images = [decluter1, decluter2, decluter3, decluter4, decluter5, decluter6];
+            description = "Virtual Duculator is an innovative digital tool that transforms the way calculations are conducted. Combining cutting-edge technology with user-friendly design, it offers a virtual calculator experience that transcends traditional methods. Virtual Duculator's intuitive interface allows users to perform a wide range of calculations, from basic arithmetic to advanced mathematical operations, all within a digital environment. Its 24/7 availability ensures instant access whenever needed, while data security measures prioritize privacy. Virtual Duculator is a versatile solution that suits students, professionals, and anyone seeking accurate and efficient computations, redefining the concept of digital calculators."
             pricing = [
                 {
                     name: "Starter",
@@ -81,6 +83,7 @@ const ServiceSinglePage = () => {
             pageTitle = 'Image Enhancement';
             pageSub = 'Image Enhancement Details';
             images = [enhacment1, enhacment2, enhacment3, enhacment4];
+            description = "Image enhancement refers to the process of improving the visual quality of a photograph or image through various techniques and technologies. It aims to make images more visually appealing, clear, and detailed by adjusting attributes such as brightness, contrast, color balance, sharpness, and removing unwanted elements or imperfections. Image enhancement can be applied for various purposes, including improving the visual impact of photographs, enhancing the clarity of details, and making images more suitable for specific applications such as printing, publishing, or digital display. This process can involve manual adjustments using software tools or automated algorithms to achieve desired outcomes while maintaining the integrity of the original content."
             pricing = [
                 {
                     name: "Starter",
@@ -108,6 +111,7 @@ const ServiceSinglePage = () => {
             pageTitle = 'Virtual Staging';
             pageSub = 'Virtual Staging Details';
             images = [staging1, staging2, staging3, staging4, staging5, staging6];
+            description = "Virtual staging is a modern real estate technique where software is used to digitally furnish and decorate vacant or minimally furnished rooms in property photographs. By adding virtual furniture and design elements, it creates visually engaging images that help potential buyers envision the full potential of a space. This cost-effective approach allows for customization of styles, layouts, and decor, while also enabling quick turnaround for property listings. However, it's important to transparently communicate that these images are digitally enhanced for marketing purposes to set accurate expectations for potential buyers or renters.  "
             pricing = [
                 {
                     name: "Starter",
@@ -135,6 +139,7 @@ const ServiceSinglePage = () => {
             pageTitle = 'Website Development';
             pageSub = 'Website Development Details';
             images = [web1, web2, web3];
+            description = "Website development involves designing, creating, and maintaining websites to ensure they are functional, visually appealing, and user-friendly. It encompasses various aspects such as front-end development, which focuses on the user interface and design, and back-end development, which involves the server-side functionality and databases. Website developers use programming languages like HTML, CSS, JavaScript, and backend languages (e.g., PHP, Python, Ruby) to build dynamic and interactive websites. They also integrate features like navigation, forms, multimedia, e-commerce, and responsive design for optimal performance across different devices. The goal is to deliver websites that meet specific requirements, engage users, and provide a seamless browsing experience."
             pricing = [
                 {
                     name: "Starter",
@@ -160,6 +165,7 @@ const ServiceSinglePage = () => {
             pageTitle = 'WordPress Designing';
             pageSub = 'WordPress Designing Details';
             images = [word1];
+            description = "WordPress designing encompasses the creation and customization of websites using the WordPress platform. It involves selecting themes, layouts, and plugins to build websites tailored to specific needs. WordPress's user-friendly interface allows for seamless content management, from text and images to interactive elements. Designers can leverage pre-designed themes or create unique layouts, ensuring responsive and visually appealing sites. With its vast community and extensive resources, WordPress is a powerful tool for crafting websites ranging from blogs and portfolios to e-commerce stores and corporate sites."
             pricing = [
                 {
                     name: "Starter",
@@ -185,6 +191,7 @@ const ServiceSinglePage = () => {
             pageTitle = 'Virtual Renovation';
             pageSub = 'Virtual-Renovation Details';
             images = [interior1, interior2, interior3, interior4, interior5, interior6];
+            description = "Virtual renovation refers to the digital transformation of real estate property images to showcase potential renovations, improvements, or updates. Through specialized software, virtual renovation allows visual enhancements like new paint colors, flooring materials, fixtures, and furniture placements to be added to existing images. This technique helps potential buyers or renters envision the possibilities for a property, whether it's a vacant space or a property in need of updates. Virtual renovation can be a cost-effective way to demonstrate the potential of a space without physically making changes. However, it's important to transparently communicate that the images represent a virtual concept and not the current state of the property."
             pricing = [
                 {
                     name: "Starter",
@@ -227,7 +234,16 @@ const ServiceSinglePage = () => {
                         <div class="col-lg-6 pricing">
                             <Pricing pricing={pricing} />
                         </div>
-                     
+                        <div class="row">
+                            <div className="about-left" style={{marginBottom:"100px", marginLeft:"2px"}}>
+                                    <h1 class="col-lg-12 sub-title">
+                                    {pageSub}
+                                    </h1>
+                                <p className=''>
+                                    {description}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
