@@ -13,40 +13,15 @@ import "./style.css";
 const Partners = () => {
   return (
     <section className="partners-area pt-0" data-aos="fade-up">
-      <div className="container">
+      {/* <div className="container">
         <div className="row">
           <div className="col-lg-10 mx-auto">
             <div className="partner-inn">
-              <ul>
-                <li>
-                  {/* <img src={partnerImg1} alt="img" /> */}
-                </li>
-                <li>
-                  {/* <img src={partnerImg2} alt="img" /> */}
-                </li>
-                <li>
-                  {/* <img src={partnerImg3} alt="img" /> */}
-                </li>
-                <li>
-                  {/* <img src={partnerImg7} alt="img" /> */}
-                </li>
-                <li>
-                  {/* <img src={partnerImg7} alt="img" /> */}
-                </li>
-                <li>
-                  {/* <img src={partnerImg5} alt="img" /> */}
-                </li>
-                <li>
-                  {/* <img src={partnerImg6} alt="img" /> */}
-                </li>
-                <li>
-                  {/* <img src={partnerImg4} alt="img" /> */}
-                </li>
-              </ul>
+              
             </div>
           </div>
-        </div>
-      </div>
+        </div> 
+      </div> */}
     </section>
   );
 };

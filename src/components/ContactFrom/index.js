@@ -3,8 +3,8 @@ import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import emailjs from '@emailjs/browser';
 import ConfirmationModal from "./MyModalComponent";
-import { CenterFocusStrong } from "@mui/icons-material";
-import TextField from '@mui/material/TextField';
+// import { CenterFocusStrong } from "@mui/icons-material";
+// import TextField from '@mui/material/TextField';
 import CircularProgress from '@mui/material/CircularProgress';
 
 emailjs.init('VlZjxgIjPGrH-Vu1T');
