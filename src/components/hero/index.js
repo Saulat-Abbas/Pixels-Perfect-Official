@@ -37,27 +37,14 @@ const hero2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspo
       <section className="hero-area">
         <div className="hero-social">
           <ul>
-            {/* <li>
-              <Link to="/">
-                <i className="fab fa-pinterest-p" />
-              </Link>
-            </li> */}
+            
             <li>
               <a href="https://www.facebook.com/PxlPerfects/" target="_blank">
                 <i className="fab fa-facebook-f" />
               </a>
 
             </li>
-            {/* <li>
-              <Link to="/">
-                <i className="fab fa-instagram" />
-              </Link>
-            </li> */}
-            {/* <li>
-              <Link to="/">
-                <i className="fab fa-twitter" />
-              </Link>
-            </li> */}
+           
           </ul>
           <p>Follow Us</p>
         </div>
@@ -92,16 +79,7 @@ const hero2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspo
                       </Link>
                     </div>
                   </div>
-                  {/* <div className="video-main">
-                    <div className="promo-video">
-                      <div className="waves-block">
-                        <div className="waves wave-1" />
-                        <div className="waves wave-2" />
-                        <div className="waves wave-3" />
-                      </div>
-                    </div>
-                    <VideoModal videoId="BqI0Q7e4kbk" />
-                  </div> */}
+                
                 </div>
               </div>
             </div>
@@ -125,16 +103,7 @@ const hero2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspo
                       </Link>
                     </div>
                   </div>
-                  {/* <div className="video-main">
-                    <div className="promo-video">
-                      <div className="waves-block">
-                        <div className="waves wave-1" />
-                        <div className="waves wave-2" />
-                        <div className="waves wave-3" />
-                      </div>
-                    </div>
-                    <VideoModal videoId="WVPfu1yOOko" />
-                  </div> */}
+                  
                 </div>
               </div>
             </div>

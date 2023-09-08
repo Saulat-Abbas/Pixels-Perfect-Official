@@ -76,7 +76,7 @@
 		font-size: 18px
 }
 .pricing-box {
-	height: 300px; /* You can adjust the height as per your requirement */  
+	height: 100%; /* You can adjust the height as per your requirement */  
 }
   .pricing-box {
 	background-color: #fff;

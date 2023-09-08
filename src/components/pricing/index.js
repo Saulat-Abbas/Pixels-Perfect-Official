@@ -55,7 +55,7 @@ const Pricing = ({ pricing }) => {
                   <Tab key={index} label={priceData.name} />
                 ))}
               </Tabs>
-              {/* Pricing content */}
+            
               {pricing?.map((priceData, index) => (
                 <div key={index} hidden={value !== index}>
                   <div className="pricing-header">
@@ -75,7 +75,6 @@ const Pricing = ({ pricing }) => {
                     </ul>
                   </div>
                   <div className="mui-button">
-                    {/* Button to trigger the modal */}
                     <MuiButton
                       variant="contained"
                       style={{
@@ -94,7 +93,6 @@ const Pricing = ({ pricing }) => {
         </div>
       </div>
 
-      {/* Render the PricingActionModal component with pricing data */}
       {pricingModalData && (
         <PricingActionModal
           show={showModal}

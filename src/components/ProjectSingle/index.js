@@ -12,7 +12,6 @@ const ProjectSingle = () => {
           <div className="col-lg-12">
             <div className="project-details-top">
               <div className="project-details-top-img">
-                {/* <img src={Img1} alt="img" /> */}
               </div>
               <div className="project-details-top-box">
                 <h3>Project Details</h3>
@@ -79,28 +78,24 @@ const ProjectSingle = () => {
               <div className="row">
                 <div className="col-lg-3 col-6">
                   <div className="project-overview-box">
-                    {/* <img src={Img2} alt="img" /> */}
                     <h5>Project size</h5>
                     <p>5200 sq ft</p>
                   </div>
                 </div>
                 <div className="col-lg-3 col-6">
                   <div className="project-overview-box">
-                    {/* <img src={Img3} alt="img" /> */}
                     <h5>Project time</h5>
                     <p>62 Days</p>
                   </div>
                 </div>
                 <div className="col-lg-3 col-6">
                   <div className="project-overview-box">
-                    {/* <img src={Img4} alt="img" /> */}
                     <h5>People worked</h5>
                     <p>18</p>
                   </div>
                 </div>
                 <div className="col-lg-3 col-6">
                   <div className="project-overview-box">
-                    {/* <img src={Img5} alt="img" /> */}
                     <h5>Project cost</h5>
                     <p>4800$</p>
                   </div>
@@ -112,7 +107,6 @@ const ProjectSingle = () => {
                 <div className="col-md-4">
                   <div className="details-box">
                     <div className="project-box project-details-box">
-                      {/* <img src={Img6} alt="img" /> */}
                       <p>BEDROOM</p>
                     </div>
                     <div className="project-details-box-meta-text">
@@ -128,7 +122,6 @@ const ProjectSingle = () => {
                 <div className="col-md-4">
                   <div className="details-box">
                     <div className="project-box project-details-box">
-                      {/* <img src={Img7} alt="img" /> */}
                       <p>HALLROOM</p>
                     </div>
                     <div className="project-details-box-meta-text">
@@ -144,7 +137,6 @@ const ProjectSingle = () => {
                 <div className="col-md-4">
                   <div className="details-box">
                     <div className="project-box project-details-box">
-                      {/* <img src={Img8} alt="img" /> */}
                       <p>KITCHEN</p>
                     </div>
                     <div className="project-details-box-meta-text">

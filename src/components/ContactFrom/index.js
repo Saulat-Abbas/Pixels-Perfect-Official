@@ -79,7 +79,6 @@ const ContactForm = () => {
         notes: notes,
       };
 
-      console.log("templateParams", templateParams);
       emailjs
         .send(
           "service_gnfwbrw",
@@ -89,7 +88,6 @@ const ContactForm = () => {
         )
         .then((response) => {
           setShowLoader(false)
-          console.log("Email sent successfully!", response.status, response.text);
           setName("");
           setEmail("");
           setSubject("");

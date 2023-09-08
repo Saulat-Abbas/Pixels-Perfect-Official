@@ -39,18 +39,14 @@ const AllRoute = () => {
         <Route path="/404" component={ErrorPage} />
         <Route path="/blog" component={BlogPage} />
         <Route path="/blog-single" component={BlogSection}/>
-        {/* <Route path="/payments" component={Contactpagee}/> */}
-        {/* <Route path="/Proced" component={Proced} /> */}
 
-        {/* PaymentForm route */}
         <Route path="/payments">
           <Elements stripe={stripePromise}>
             <Checkoutform />
           </Elements>
         </Route>
         
-        {/* Add more routes as needed */}
-        {/* ... */}
+
         
       </Switch>
     </Router>

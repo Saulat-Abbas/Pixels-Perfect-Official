@@ -4,19 +4,17 @@ import 'aos/dist/aos.css';
 import AllRoute from '../router';
 import './App.css';
 import Logo from "../../img/logo.gif";
+import { Provider } from 'react-redux'; 
+import { store } from './store';
 
 const App = () => {
   const [loading, setLoading] = useState(false);
 
-
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     setTimeout(() => {
-      setLoading(false)
-
-    }, 3000
-    )
-
+      setLoading(false);
+    }, 3000);
 
     AOS.init({
       offset: 100,
@@ -24,23 +22,26 @@ const App = () => {
     });
   }, []);
 
+  const pricingData = {
+    imageQuantity: 5,
+    totalPrice: 100, 
+  };
+
+
   return (
     <div className="App body_wrap">
-      {loading ? (
-        <div className="loader-overlay">
-          {/* <ClimbingBoxLoader color={"blue"} size={30} loading={loading} /> */}
-          <div className="gif-loader-container">
+    {loading ? (
+      <div className="loader-overlay">
+        <div className="gif-loader-container">
           <img src={Logo} alt="Loading" className="gif-loader" />
         </div>
-        </div>
-      ) : (
+      </div>
+    ) : (
+      <Provider store={store}>
         <AllRoute />
-      )}
-    </div>
-
-
-
-
+      </Provider>
+    )}
+  </div>
   );
 }
 

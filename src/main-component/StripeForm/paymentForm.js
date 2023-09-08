@@ -1,237 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import './PaymentForm.css';
-import { FormControlLabel } from '@mui/material';
-import { Card, Grid, Typography, Divider } from '@mui/material';
-
-
-
-const countriesData =
-  [
-    {
-      "name": "Brazil",
-      "cities": ["Sao Paulo", "Rio de Janeiro", "Brasilia", "Salvador", "Fortaleza", "Belo Horizonte", "Manaus", "Curitiba", "Recife", "Porto Alegre"]
-    },
-    {
-      "name": "Canada",
-      "cities": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton", "London"]
-    },
-    {
-      "name": "China",
-      "cities": ["Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Chongqing", "Tianjin", "Wuhan", "Chengdu", "Nanjing", "Hangzhou"]
-    },
-    {
-      "name": "Egypt",
-      "cities": ["Cairo", "Alexandria", "Giza", "Shubra El Kheima", "Port Said", "Suez", "Luxor", "Asyut", "Ismailia", "Fayyum"]
-    },
-    {
-      "name": "France",
-      "cities": ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille"]
-    },
-    {
-      "name": "Germany",
-      "cities": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Dusseldorf", "Dortmund", "Essen", "Leipzig"]
-    },
-    {
-      "name": "India",
-      "cities": ["New Delhi", "Mumbai", "Bangalore", "Chennai", "Kolkata", "Hyderabad", "Pune", "Ahmedabad", "Surat", "Jaipur"]
-    },
-    {
-      "name": "Italy",
-      "cities": ["Rome", "Milan", "Naples", "Turin", "Palermo", "Genoa", "Bologna", "Florence", "Bari", "Catania"]
-    },
-    {
-      "name": "Japan",
-      "cities": ["Tokyo", "Yokohama", "Osaka", "Nagoya", "Sapporo", "Fukuoka", "Kobe", "Kyoto", "Kawasaki", "Saitama"]
-    },
-    {
-      "name": "Mexico",
-      "cities": ["Mexico City", "Guadalajara", "Monterrey", "Puebla", "Toluca", "Tijuana", "Leon", "Ciudad Juarez", "Merida", "San Luis Potosi"]
-    },
-    {
-      "name": "Netherlands",
-      "cities": ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven", "Tilburg", "Groningen", "Almere", "Breda", "Nijmegen"]
-    },
-    // Pakistan
-    {
-      "name": "Pakistan",
-      "cities": ["Karachi", "Lahore", "Faisalabad", "Rawalpindi", "Multan", "Gujranwala", "Peshawar", "Quetta", "Sialkot", "Gujrat"]
-    },
-
-    {
-      "name": "Russia",
-      "cities": ["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Nizhny Novgorod", "Kazan", "Chelyabinsk", "Omsk", "Samara", "Rostov-on-Don"]
-    },
-    {
-      "name": "South Africa",
-      "cities": ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Port Elizabeth", "Bloemfontein", "Polokwane", "Nelspruit", "East London", "Kimberley"]
-    },
-    {
-      "name": "South Korea",
-      "cities": ["Seoul", "Busan", "Incheon", "Daegu", "Daejeon", "Gwangju", "Ulsan", "Suwon", "Changwon", "Seongnam"]
-    },
-    {
-      "name": "Spain",
-      "cities": ["Madrid", "Barcelona", "Valencia", "Seville", "Zaragoza", "Málaga", "Murcia", "Palma de Mallorca", "Las Palmas de Gran Canaria", "Bilbao"]
-    },
-    {
-      "name": "Turkey",
-      "cities": ["Istanbul", "Ankara", "Izmir", "Bursa", "Adana", "Gaziantep", "Konya", "Antalya", "Kayseri", "Mersin"]
-    },
-    {
-      "name": "Ukraine",
-      "cities": ["Kyiv", "Kharkiv", "Odesa", "Dnipro", "Donetsk", "Zaporizhzhia", "Lviv", "Kryvyi Rih", "Mykolaiv", "Mariupol"]
-    },
-    {
-      "name": "United Kingdom",
-      "cities": ["London", "Manchester", "Birmingham", "Glasgow", "Liverpool", "Edinburgh", "Leeds", "Bristol", "Sheffield", "Newcastle upon Tyne"]
-    },
-    {
-      "name": "United States",
-      "cities": ["New York City", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose"]
-    },
-    {
-      "name": "Vietnam",
-      "cities": ["Ho Chi Minh City", "Hanoi", "Da Nang", "Haiphong", "Can Tho", "Bien Hoa", "Hue", "Nha Trang", "Nam Dinh", "Buon Ma Thuot"]
-    },
-    {
-      "name": "Argentina",
-      "cities": ["Buenos Aires", "Cordoba", "Rosario", "Mendoza", "San Miguel de Tucuman", "La Plata", "Mar del Plata", "Salta", "Santa Fe", "San Juan"]
-    },
-    {
-      "name": "Australia",
-      "cities": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Newcastle", "Canberra", "Wollongong", "Geelong"]
-    },
-    {
-      "name": "Austria",
-      "cities": ["Vienna", "Graz", "Linz", "Salzburg", "Innsbruck", "Klagenfurt", "Villach", "Wels", "Sankt Pölten", "Dornbirn"]
-    },
-    {
-      "name": "Belgium",
-      "cities": ["Brussels", "Antwerp", "Ghent", "Charleroi", "Liège", "Bruges", "Namur", "Leuven", "Mons", "Aalst"]
-    },
-    {
-      "name": "Chile",
-      "cities": ["Santiago", "Valparaíso", "Concepción", "Antofagasta", "Vina del Mar", "Temuco", "Rancagua", "Talca", "Arica", "Iquique"]
-    },
-    {
-      "name": "Colombia",
-      "cities": ["Bogotá", "Medellin", "Cali", "Barranquilla", "Cartagena", "Cucuta", "Soledad", "Ibague", "Bucaramanga", "Pereira"]
-    },
-    {
-      "name": "Denmark",
-      "cities": ["Copenhagen", "Aarhus", "Odense", "Aalborg", "Esbjerg", "Randers", "Kolding", "Horsens", "Vejle", "Roskilde"]
-    },
-    {
-      "name": "Finland",
-      "cities": ["Helsinki", "Espoo", "Tampere", "Vantaa", "Oulu", "Turku", "Jyvaskyla", "Lahti", "Kuopio", "Pori"]
-    },
-    {
-      "name": "Greece",
-      "cities": ["Athens", "Thessaloniki", "Patras", "Heraklion", "Larissa", "Volos", "Rhodes", "Ioannina", "Chania", "Chalcis"]
-    },
-    {
-      "name": "Hungary",
-      "cities": ["Budapest", "Debrecen", "Szeged", "Miskolc", "Pecs", "Gyor", "Nyiregyhaza", "Kecskemet", "Szekesfehervar", "Szombathely"]
-    },
-    {
-      "name": "Czech Republic",
-      "cities": ["Prague", "Brno", "Ostrava", "Plzen", "Liberec", "Olomouc", "Usti nad Labem", "Hradec Kralove", "Ceske Budejovice", "Pardubice"]
-    },
-
-    // Egypt
-    {
-      "name": "Egypt",
-      "cities": ["Cairo", "Alexandria", "Giza", "Shubra El Kheima", "Port Said", "Suez", "Luxor", "Asyut", "Ismailia", "Fayyum"]
-    },
-
-    // Finland
-    {
-      "name": "Finland",
-      "cities": ["Helsinki", "Espoo", "Tampere", "Vantaa", "Oulu", "Turku", "Jyvaskyla", "Lahti", "Kuopio", "Pori"]
-    },
-
-    // Greece
-    {
-      "name": "Greece",
-      "cities": ["Athens", "Thessaloniki", "Patras", "Heraklion", "Larissa", "Volos", "Rhodes", "Ioannina", "Chania", "Chalcis"]
-    },
-
-    // Hungary
-    {
-      "name": "Hungary",
-      "cities": ["Budapest", "Debrecen", "Szeged", "Miskolc", "Pecs", "Gyor", "Nyiregyhaza", "Kecskemet", "Szekesfehervar", "Szombathely"]
-    },
-
-    // India
-    {
-      "name": "India",
-      "cities": ["New Delhi", "Mumbai", "Bangalore", "Chennai", "Kolkata", "Hyderabad", "Pune", "Ahmedabad", "Surat", "Jaipur"]
-    },
-
-    // Indonesia
-    {
-      "name": "Indonesia",
-      "cities": ["Jakarta", "Surabaya", "Bandung", "Medan", "Bekasi", "Semarang", "Tangerang", "Depok", "Palembang", "Makassar"]
-    },
-
-    // Ireland
-    {
-      "name": "Ireland",
-      "cities": ["Dublin", "Cork", "Limerick", "Galway", "Waterford", "Drogheda", "Dundalk", "Sligo", "Bray", "Navan"]
-    },
-
-    // Israel
-    {
-      "name": "Israel",
-      "cities": ["Jerusalem", "Tel Aviv", "Haifa", "Rishon LeZion", "Petah Tikva", "Ashdod", "Netanya", "Beersheba", "Bnei Brak", "Holon"]
-    },
-
-    // Italy
-    {
-      "name": "Italy",
-      "cities": ["Rome", "Milan", "Naples", "Turin", "Palermo", "Genoa", "Bologna", "Florence", "Bari", "Catania"]
-    },
-  ]
+import React, { useState, useEffect } from "react";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import "./PaymentForm.css";
+import { FormControlLabel } from "@mui/material";
+import { Card, Grid, Typography, Divider } from "@mui/material";
+import { countriesData } from "./countriesData";
+import { useSelector } from "react-redux";
+import img from "../../img/decluter-1.jpg";
+import CheckIcon from "@mui/icons-material/Check";
+import { Bolt } from "@mui/icons-material";
+import { Button as MuiButton } from "@mui/material";
 
 function PaymentForm() {
 
+  const imageQuantity = useSelector((state) => state.pricing.imageQuantity);
+  const isCheckboxChecked = useSelector((state) => state.pricing.isCheckboxChecked);
+
+  // const imageQuantity = useSelector((state) =>
+  //   console.log("state imageQuantity ===========>", state?.pricing)
+  // );
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [countryIndex, setCountryIndex] = useState("");
-  // const [value, setValue] = useState(0);
   const [formData, setFormData] = useState({
-    email: '',
-    fullName: '',
-    lastName: '',
-    address: '',
-    apartment: '',
-    phoneNumber: '',
-    zip: '',
-    state: '',
-    city: '',
-    country: 'United States',
+    email: "",
+    fullName: "",
+    lastName: "",
+    address: "",
+    apartment: "",
+    phoneNumber: "",
+    zip: "",
+    state: "",
+    city: "",
+    country: "United States",
   });
   const data = [
     // ... (all the country data you provided)
   ];
   useEffect(() => {
-    const index = countriesData.findIndex((country) => country.name === formData.country);
+    const index = countriesData.findIndex(
+      (country) => country.code === formData.country
+    );
     setCountryIndex(index);
   }, [formData.country]);
 
   // Sort the data array in ascending order based on country name
   data.sort((a, b) => a.name.localeCompare(b.name));
 
-  console.log(JSON.stringify(data, null, 2)); // Printing the sorted data
-  const [quantity, setQuantity] = useState(1);
-
   const handleChange = (event) => {
-
     const { name, value } = event.target;
-    console.log("handleChange  event ===========>", name);
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -244,7 +62,7 @@ function PaymentForm() {
     setError(null);
 
     const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: 'card',
+      type: "card",
       card: elements.getElement(CardElement),
       billing_details: {
         name: formData.fullName,
@@ -254,21 +72,17 @@ function PaymentForm() {
           state: formData.state,
           line1: formData.address,
           line2: formData.apartment,
-          city: formData.city, // City
-          country: formData.country, //Country
-
-        }
+          city: formData.city.toLowerCase(), // City
+          // country: formData.country, //Country
+        },
       },
     });
-
+    console.log("card elementv =========>", CardElement);
     setLoading(false);
 
     if (error) {
       setError(error.message);
     } else {
-      console.log(paymentMethod);
-      console.log(formData);
-      console.log(`Quantity: ${quantity}`);
     }
   };
 
@@ -279,7 +93,7 @@ function PaymentForm() {
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <h3 style={{ paddingBottom: "2%" }}>Contact Form</h3>
-              <label style={{ cursor: 'none' }}>
+              <label style={{ cursor: "none" }}>
                 <b>Email</b>
               </label>
               <input
@@ -291,44 +105,50 @@ function PaymentForm() {
                 required
               />
             </div>
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ marginBottom: "20px" }}>
               <FormControlLabel
-                control={< defaultChecked />}
+                control={<defaultChecked />}
                 label="Email me with news and offers"
               />
             </div>
-            <div className="form-group" style={{ width: '100%' }}>
-              <label><b>Shipping Country</b></label>
+            <div className="form-group" style={{ width: "100%" }}>
+              <label>
+                <b>Shipping Country</b>
+              </label>
               <select
                 onChange={(e) => handleChange(e)}
-                name='country'
+                name="country"
                 defaultValue="United States"
                 value={formData.country}
               >
-                {countriesData.map((country, index) => (
-                  <option value={country.name} key={index}>
+                {countriesData.map((country) => (
+                  <option value={country.code} key={country.code}>
                     {country.name}
                   </option>
                 ))}
               </select>
             </div>
-            <div className="form-group" style={{ width: '100%' }}>
-              <label><b>Shipping City</b></label>
-              <select onChange={(e) => handleChange(e)} name='city'>
+            <div className="form-group" style={{ width: "100%" }}>
+              <label>
+                <b>Shipping City</b>
+              </label>
+              {/* <select onChange={(e) => handleChange(e)} name='city'>
                 {countriesData[countryIndex]?.cities.map((city, index) => (
                   <option key={city} value={city}>
                     {city || "Please Choose Country"}
                   </option>
                 ))}
-              </select>
-
+              </select> */}
 
               <div class="d-flex" style={{ marginTop: "5%" }}>
-                <input class=""
+                <input
+                  class=""
                   type="number"
                   max={"99999"}
                   onInput={(e) => {
-                    e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 5);
+                    e.target.value = Math.max(0, parseInt(e.target.value))
+                      .toString()
+                      .slice(0, 5);
                   }}
                   placeholder="ZIP"
                   name="zip"
@@ -336,22 +156,30 @@ function PaymentForm() {
                   onChange={handleChange}
                   required
                 />
+                <input
+                  class=""
+                  type="text"
+                  placeholder="City"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  required
+                />
 
-                <input class=""
-
+                <input
+                  class=""
                   type="text"
                   placeholder="State"
                   name="state"
                   value={formData.state}
                   onChange={handleChange}
-                  required />
+                  required
+                />
               </div>
             </div>
             <div className="name-container">
               <div className="form-group" style={{ width: "60.5%" }}>
-                <label style={{ cursor: 'none' }}>
-                  {/* <b>Full Name</b> */}
-                </label>
+                <label style={{ cursor: "none" }}></label>
                 <input
                   type="text"
                   name="fullName"
@@ -364,9 +192,7 @@ function PaymentForm() {
             </div>
 
             <div className="form-group">
-              <label style={{ cursor: 'none' }}>
-                {/* <b>Address</b> */}
-              </label>
+              <label style={{ cursor: "none" }}></label>
               <input
                 type="text"
                 name="address"
@@ -377,9 +203,7 @@ function PaymentForm() {
               />
             </div>
             <div className="form-group">
-              <label style={{ cursor: 'none' }}>
-                {/* <b>Apartment</b> */}
-              </label>
+              <label style={{ cursor: "none" }}></label>
               <input
                 type="text"
                 name="apartment"
@@ -390,49 +214,154 @@ function PaymentForm() {
             </div>
             {error && <div className="error-message">{error}</div>}
             <button type="submit" disabled={!stripe || loading}>
-              {loading ? 'Processing...' : 'Continue to Shipping'}
+              {loading ? "Processing..." : "Continue to Shipping"}
             </button>
           </form>
         </div>
-      </div >
+      </div>
       <div className="picture-panel">
         <div className="row">
           <div className="col-md-8">
             <div className="left border">
               <div className="row">
-            <div className="card-element-container">
-              <CardElement className="card-element" />
-            </div>
-                <Card variant='outlined' sx={{ height: "500px", width: "800px" }}>
+                <div className="card-element-container">
+                  <CardElement className="card-element" />
+                </div>
+                <Card
+                  variant="outlined"
+                  sx={{
+                    height: "600px",
+                    width: "800px",
+                    border: "1px solid gray",
+                  }}
+                >
                   <Grid item sm={10} xs={10}>
-                    <Typography variant="button" item sm={12} style={{ textAlign: 'center', marginLeft: "100px", fontSize: "25px" }}>
+                    <Typography
+                      variant="button"
+                      item
+                      sm={12}
+                      style={{
+                        textAlign: "center",
+                        marginLeft: "90px",
+                        fontSize: "15px",
+                      }}
+                    >
                       Your order summary
                     </Typography>
                   </Grid>
                   <Grid item sm={10} xs={10}>
                     <Divider />
                   </Grid>
-                  <Grid item sm={10} xs={10} variant="button" style={{ marginLeft: "10px", fontSize: "25px", marginTop: "10px" }}>
-                    <Typography style={{ marginTop: "100px" }} >
-                      No of images
-                    </Typography>
-                    <Typography style={{ marginTop: "100px" }} >
-                      Gig Quantit * 2
-                    </Typography>
-                    <Typography style={{ marginTop: "100px" }}>
-                      Total Amount 25$
-                    </Typography>
+                  <Grid
+                    item
+                    sm={10}
+                    xs={10}
+                    variant="button"
+                    style={{
+                      marginLeft: "10px",
+                      fontSize: "25px",
+                      marginTop: "10px",
+                    }}
+                  >
+                    <Grid container alignItems="center">
+                      <Grid item xs={12}>
+                        <img
+                          src={img}
+                          style={{
+                            width: "100%", // Set the width to 100% to fill the container
+                            height: "auto", // Use "auto" to maintain the aspect ratio
+                            border: "2px solid black",
+                          }}
+                          alt="Your Image"
+                        />
+                      </Grid>
+                      <Grid item>
+                        <Typography
+                          variant="body1"
+                          style={{
+                            marginTop: "20px",
+                            width: "100ch", 
+                            overflow: "hidden",
+                            whiteSpace: "nowrap",
+                            textOverflow: "ellipsis",
+                          }}
+                        >
+                          Your data goes here
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                    <Grid container spacing={2} alignItems="center">
+                      <Grid
+                        item
+                        xs={10}
+                        sx={{ display: "flex", alignItems: "center" }}
+                      >
+                        <Typography variant="h6" component="div">
+                          Standard Package {imageQuantity}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={2}>
+                        <Typography variant="h6" component="div" align="right">
+                          $10
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                    <Grid sx={{ marginTop: "10px" }}>
+                      <Typography sx={{ mt: "10px", mb: "10px" }}>
+                        {" "}
+                        <CheckIcon sx={{ color: "green" }} /> 3 revision{" "}
+                      </Typography>
+                      <Divider sx={{ mb: "10px" }} />
+                      <Typography>
+                        {" "}
+                        <CheckIcon sx={{ color: "green" }} /> Extra fast
+                        delivery
+                      </Typography>
+                      <Divider sx={{ mb: "30px" }} />
+                      <Typography sx={{ mb: "10px" }}>
+                        No of days Delivery
+                      </Typography>
+                      <Divider sx={{ mb: "10px" }} />
+                      <Grid container spacing={2} alignItems="center">
+                        <Grid
+                          item
+                          xs={10}
+                          sx={{ display: "flex", alignItems: "center" }}
+                        >
+                          <Typography variant="h6" component="div">
+                            Total Price
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={2}>
+                          <Typography
+                            variant="h6"
+                            component="div"
+                            align="right"
+                          >
+                            $10
+                          </Typography>
+                        </Grid>
+                        <MuiButton
+                          variant="contained"
+                          style={{
+                            backgroundColor: "#B78D65",
+                            color: "white",
+                            marginTop: "20px",
+                            marginLeft: "20%",
+                          }}
+                        >
+                          Proceed to Checkout
+                        </MuiButton>
+                      </Grid>
+                    </Grid>
                   </Grid>
                 </Card>
-                {/* <button onClick={handleContentChange}>Change Content</button> */}
               </div>
             </div>
           </div>
         </div>
       </div>
-
-    </div >
-
+    </div>
   );
 }
 

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// import blog1 from "../../img/news-1.png";
-// import blog2 from "../../img/news-2.png";
 
 import "./style.css";
 
@@ -49,9 +47,8 @@ const BlogSection = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center news_more">
-              {/* <Link to="/blog" className="cta-btn btn-fill">
-                Explore More
-              </Link> */}
+             
+             
             </div>
           </div>
         </div>

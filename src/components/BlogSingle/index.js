@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../Sidebar";
 
-// import blog1 from "../../img/news-1.png";
-// import blog2 from "../../img/news-2.png";
 import Img1 from "../../img/blpl-1.jpg";
+
 import Img2 from "../../img/blpl-2.jpg";
 import Img3 from "../../img/blpl-3.jpg";
 

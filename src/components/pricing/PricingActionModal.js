@@ -25,32 +25,47 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import { useDispatch, useSelector } from 'react-redux';
+import { setImageQuantity , setIsCheckboxChecked  } from '../../main-component/CreateSlice/pricingSlice';
 
 
-
-// const Container = styled('div')({
-//   display: 'flex',
-//   flexDirection: 'column',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   height: '100%',
-// });
 const PricingActionModal = ({ show, handleClose, pricingData }) => {
-  const [imageQuantity, setImageQuantity] = useState(1);
+  // const [imageQuantity, setImageQuantity] = useState(1);
   const [revisionQuantity, setRevisionQuantity] = useState(1);
-  // console.log('pricingData====>', pricingData);
   useEffect(() => {
     setImageQuantity(1);
     setRevisionQuantity(1);
   }, []);
 
-  const handleImageIncrement = () => {
-    setImageQuantity((prevQuantity) => prevQuantity + 1);
-  };
+   // Access Redux state
+   const imageQuantity = useSelector((state) => state.pricing.imageQuantity);
+   const isCheckboxChecked = useSelector((state) => state.pricing.isCheckboxChecked);
+ 
+   // Dispatch Redux actions
+   const dispatch = useDispatch();
+ 
+   const handleImageIncrement = () => {
+     // Dispatch the setImageQuantity action to update the Redux state
+     dispatch(setImageQuantity(imageQuantity + 1));
+   };
+ 
+   const handleImageDecrement = () => {
+     // Dispatch the setImageQuantity action to update the Redux state
+     dispatch(setImageQuantity(Math.max(imageQuantity - 1, 1)));
+   };
+ 
+   const handleCheckboxChange = (event) => {
+     // Dispatch the setIsCheckboxChecked action to update the Redux state
+     dispatch(setIsCheckboxChecked(event.target.checked));
+   };
 
-  const handleImageDecrement = () => {
-    setImageQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
-  };
+  // const handleImageIncrement = () => {
+  //   setImageQuantity((prevQuantity) => prevQuantity + 1);
+  // };
+
+  // const handleImageDecrement = () => {
+  //   setImageQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
+  // };
 
   const handleRevisionIncrement = () => {
     setRevisionQuantity((prevQuantity) => prevQuantity + 1);
@@ -60,11 +75,11 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
     setRevisionQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
   };
 
-  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+  // const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
 
-  const handleCheckboxChange = (event) => {
-    setIsCheckboxChecked(event.target.checked);
-  };
+  // const handleCheckboxChange = (event) => {
+  //   setIsCheckboxChecked(event.target.checked);
+  // };
 
 
   const checkbox = (isCheckboxChecked ? parseFloat(pricingData.time) * imageQuantity : 0);
@@ -77,7 +92,6 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const lines = longText.match(/.{1,10}/g) || [];
 
   const list = () => (
-    // <div style={{ paddingTop: 10, width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'right' }}>
     <Grid container spacing={1} maxWidth={450} justifyContent={'center'}>
       <Grid item xs={11.1} md={12}>
         <Grid container spacing={2} >
@@ -226,7 +240,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
               <Divider />
             </Grid>
             <Grid item xs={6}>
-              <Button variant="contained" size='large' href='/payments' style={{ width: "300px", backgroundColor: '#B78D65' ,marginLeft:"35px" }}>
+              <Button variant="contained" size='large' href='/payments' style={{ width: "300px", backgroundColor: '#B78D65' ,marginLeft:"35px" }} onClick={dispatch}>
                 Proced to checkout
               </Button>
             </Grid>
@@ -234,7 +248,6 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
         </Card>
       </Grid>
     </Grid>
-    // </div>
   );
 
 

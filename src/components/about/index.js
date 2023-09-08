@@ -32,15 +32,7 @@ const About = () => {
               <p>
                 We look forward to hearing from you and discussing how our virtual staging, renovation, and enhancement services can add value to your projects. Feel free to reach out to us with any questions or inquiries – our team is ready to assist you every step of the way.
               </p>
-              {/* <div className="about-signature">
-                <div className="signature-left">
-                  <img src={signature} alt="signature" />
-                </div>
-                <div className="signature-right">
-                  <h3>Robertho Garcia</h3>
-                  <p>President</p>
-                </div>
-              </div> */}
+            
             </div>
           </div>
           <div className="col-lg-6 offset-lg-1 col-md-6">
