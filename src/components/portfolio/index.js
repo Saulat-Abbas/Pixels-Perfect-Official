@@ -18,18 +18,24 @@ const Portfolio = () => {
 
   return (
     <>
-      <BasicModal open={openModal} setOpen={setOpenModal} data={modalData} />
+<BasicModal open={openModal} setOpen={setOpenModal} data={modalData} />
       <section className="portfolio-area portfolio-page">
         <div className="container">
           <div className="row">
             <div className="col-md-4 col-sm-6 no-paading">
-              <div className="portfolio-box hover-effect" onClick={() => { setOpenModal(true); setModalData(Img1) }}>
-                <div className="portfolio-img">
+              <div
+                className="portfolio-box hover-effect"
+                onClick={() => {
+                  setOpenModal(true);
+                  setModalData(Img1);
+                }}
+              >
+                 <div className="portfolio-img">
                   <img src={Img1} alt="" />
-                </div>
-                <div className="portfolio-text text-center" style={{ textAlign: 'center', marginBottom : "150px" }}>
-                  <h2 className="h4" >Interior Design</h2>
-                  <h3 className="h2" >City</h3>
+                  </div>
+                <div className="portfolio-text text-center" style={{ textAlign: 'center', marginBottom: '150px' }}>
+                  <h2 className="h4">Interior Design</h2>
+                  <h3 className="h2">City</h3>
                 </div>
               </div>
             </div>

@@ -50,6 +50,8 @@
 	width: 80px;
 	display: inline-block;
 	margin-top: 8px; /* Adjust the margin value as needed */
+	padding-top: 10px;
+	padding-left: 10px;
 }
 
 
