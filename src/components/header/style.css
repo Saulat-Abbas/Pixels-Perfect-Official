@@ -5,7 +5,7 @@
 	z-index: 99;
 	width: 100%;
 	padding-right: 5%;
-}
+	}
 
 .header:after {
 	position: absolute;
@@ -45,13 +45,11 @@
 
 .site-logo a {
 	padding:-1px ;
-	margin-left: 20px;
+	margin-left:35px;
 	background: #fff;
-	width: 100px;
+	width: 80px;
 	display: inline-block;
-	margin-top: 10px; /* Adjust the margin value as needed */
-}
-
+	margin-top: 25px; }
 
 .header-navigation {
 	display: -webkit-box;

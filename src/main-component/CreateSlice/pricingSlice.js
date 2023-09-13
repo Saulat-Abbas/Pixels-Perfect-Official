@@ -1,24 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const pricingSlice = createSlice({
-  name: 'pricing',
+  name: "pricing",
   initialState: {
-    imageQuantity: 1,
-    isCheckboxChecked: false,
+    pricingData: {
+      quantity: 1,
+      fastDelivery: false,
+      totalPrice: 0,
+    },
   },
   reducers: {
-    setImageQuantity: (state, action) => {
-      state.imageQuantity = action.payload;
-    },
-    setIsCheckboxChecked: (state, action) => {
-      state.isCheckboxChecked = action.payload;
+    updatePricingCart: (state, action) => {
+      state.pricingData = action.payload;
     },
   },
 });
 
-export const {
-  setImageQuantity,
-  setIsCheckboxChecked,
-} = pricingSlice.actions;
+export const { updatePricingCart } = pricingSlice.actions;
 
 export default pricingSlice.reducer;

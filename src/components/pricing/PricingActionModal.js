@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { styled } from '@mui/material/styles';
-import './pricingActionmodal.css';
+import React, { useEffect, useState } from "react";
+import "./pricingActionmodal.css";
 import {
   Box,
   Button,
@@ -15,90 +14,64 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Tooltip
-} from "@mui/material"
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-import CloseIcon from '@mui/icons-material/Close';
-import InventoryIcon from '@mui/icons-material/Inventory';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
-import AutorenewIcon from '@mui/icons-material/Autorenew';
+  Tooltip,
+} from "@mui/material";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import CloseIcon from "@mui/icons-material/Close";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
+import { updatePricingCart } from "../../main-component/CreateSlice/pricingSlice";
+import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import { useDispatch, useSelector } from 'react-redux';
-import { setImageQuantity , setIsCheckboxChecked  } from '../../main-component/CreateSlice/pricingSlice';
-
 
 const PricingActionModal = ({ show, handleClose, pricingData }) => {
-  // const [imageQuantity, setImageQuantity] = useState(1);
-  const [revisionQuantity, setRevisionQuantity] = useState(1);
   useEffect(() => {
     setImageQuantity(1);
-    setRevisionQuantity(1);
   }, []);
 
-   // Access Redux state
-   const imageQuantity = useSelector((state) => state.pricing.imageQuantity);
-   const isCheckboxChecked = useSelector((state) => state.pricing.isCheckboxChecked);
- 
-   // Dispatch Redux actions
-   const dispatch = useDispatch();
- 
-   const handleImageIncrement = () => {
-     // Dispatch the setImageQuantity action to update the Redux state
-     dispatch(setImageQuantity(imageQuantity + 1));
-   };
- 
-   const handleImageDecrement = () => {
-     // Dispatch the setImageQuantity action to update the Redux state
-     dispatch(setImageQuantity(Math.max(imageQuantity - 1, 1)));
-   };
- 
-   const handleCheckboxChange = (event) => {
-     // Dispatch the setIsCheckboxChecked action to update the Redux state
-     dispatch(setIsCheckboxChecked(event.target.checked));
-   };
+  const dispatch = useDispatch(updatePricingCart);
 
-  // const handleImageIncrement = () => {
-  //   setImageQuantity((prevQuantity) => prevQuantity + 1);
-  // };
+  const [imageQuantity, setImageQuantity] = useState(0);
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(0);
 
-  // const handleImageDecrement = () => {
-  //   setImageQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
-  // };
-
-  const handleRevisionIncrement = () => {
-    setRevisionQuantity((prevQuantity) => prevQuantity + 1);
+  const handleImageIncrement = () => {
+    setImageQuantity(imageQuantity + 1);
   };
 
-  const handleRevisionDecrement = () => {
-    setRevisionQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
+  const handleImageDecrement = () => {
+    setImageQuantity(Math.max(imageQuantity - 1, 1));
   };
 
-  // const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+  const handleCheckboxChange = (event) => {
+    setIsCheckboxChecked(event.target.checked);
+  };
 
-  // const handleCheckboxChange = (event) => {
-  //   setIsCheckboxChecked(event.target.checked);
-  // };
-
-
-  const checkbox = (isCheckboxChecked ? parseFloat(pricingData.time) * imageQuantity : 0);
+  const checkbox = isCheckboxChecked
+    ? parseFloat(pricingData.time) * imageQuantity
+    : 0;
   const totalPrice = pricingData.price * imageQuantity + checkbox;
 
+  const dataToSend = {
+      imageQuantity,
+      isCheckboxChecked,
+      totalPrice
+  };
 
-  const [fastDelivery, setFastDelivery] = useState(pricingData.time)
-
-  const longText = 'This is a long text that needs to be split into lines when its length is greater than 10.';
+dispatch(updatePricingCart(dataToSend));
+console.log(pricingData);
+  const longText =
+    "This is a long text that needs to be split into lines when its length is greater than 10.";
   const lines = longText.match(/.{1,10}/g) || [];
 
   const list = () => (
-    <Grid container spacing={1} maxWidth={450} justifyContent={'center'}>
+    <Grid container spacing={1} maxWidth={450} justifyContent={"center"}>
       <Grid item xs={11.1} md={12}>
-        <Grid container spacing={2} >
-          <Grid item xs={9} ml={4} >
-            <Typography variant="h6">
-              Order Option
-            </Typography>
+        <Grid container spacing={2}>
+          <Grid item xs={9} ml={4}>
+            <Typography variant="h6">Order Option</Typography>
           </Grid>
           <Grid item xs={2}>
             <IconButton onClick={handleClose}>
@@ -108,51 +81,53 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
         </Grid>
       </Grid>
       <Grid item xs={11.1} md={12}>
-        <Card variant='outlined' sx={{ m: 2, p: 2, maxWidth: { xs: '400px', sm: 400 } }}>
+        <Card
+          variant="outlined"
+          sx={{ m: 2, p: 2, maxWidth: { xs: "400px", sm: 400 } }}
+        >
           <Grid container spacing={2}>
             <Grid item xs={10}>
-              <Typography variant="button">
-                {pricingData.name}
-              </Typography>
+              <Typography variant="button">{pricingData.name}</Typography>
             </Grid>
-            <Grid item xs={2} >
+            <Grid item xs={2}>
               $ {pricingData.price}
             </Grid>
             <Grid item xs={12}>
-              <Box sx={{ width: '100%', maxWidth: 600 }}>
+              <Box sx={{ width: "100%", maxWidth: 600 }}>
                 <Typography variant="body1" gutterBottom>
-                  {pricingData.details.map((detail, index) => (
+                  {pricingData?.details?.map((detail, index) => (
                     <li key={index}>
                       <p>
-                        <ArrowCircleRightIcon fontSize='small' sx={{ color: '#B78D65' }} /> {detail}
+                        <ArrowCircleRightIcon
+                          fontSize="small"
+                          sx={{ color: "#B78D65" }}
+                        />{" "}
+                        {detail}
                       </p>
                     </li>
                   ))}
                 </Typography>
               </Box>
-
             </Grid>
-            <Grid item xs={12} >
+            <Grid item xs={12}>
               <Divider />
             </Grid>
             <Grid item xs={7}>
-              <Typography variant="h6">
-                Gig Quantity
-              </Typography>
+              <Typography variant="h6">Gig Quantity</Typography>
             </Grid>
             <Grid item xs={1.6}>
               <IconButton onClick={handleImageDecrement} sx={{ border: 1 }}>
-                <RemoveIcon fontSize='small' />
+                <RemoveIcon fontSize="small" />
               </IconButton>
             </Grid>
             <Grid item xs={0}>
-              <Typography variant="h5" sx={{ color: 'gray' }}>
+              <Typography variant="h5" sx={{ color: "gray" }}>
                 {imageQuantity}
               </Typography>
             </Grid>
             <Grid item xs={1.4} onClick={handleImageIncrement}>
               <IconButton sx={{ border: 1 }}>
-                <AddIcon fontSize='small' />
+                <AddIcon fontSize="small" />
               </IconButton>
             </Grid>
           </Grid>
@@ -164,7 +139,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
         </Typography>
       </Grid>
       <Grid item xs={11.1} md={12}>
-        <Card variant='outlined' sx={{ m: 2, mb: 2, p: 2, maxWidth: 400 }}  >
+        <Card variant="outlined" sx={{ m: 2, mb: 2, p: 2, maxWidth: 400 }}>
           <Grid container spacing={1}>
             <Grid item xs={10} mt={1}>
               <Typography variant="subtitle2">
@@ -172,15 +147,26 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
               </Typography>
             </Grid>
             <Grid item xs={2}>
-              <Tooltip title={!pricingData?.time && "Extra fast delivary is not available."}>
+              <Tooltip
+                title={
+                  !pricingData?.time && "Extra fast delivary is not available."
+                }
+              >
                 <span>
-                  <Checkbox disabled={!pricingData?.time} checked={isCheckboxChecked} onChange={handleCheckboxChange} sx={{ color: "#B78D65" }} />
+                  <Checkbox
+                    disabled={!pricingData?.time}
+                    checked={isCheckboxChecked}
+                    onChange={handleCheckboxChange}
+                    sx={{ color: "#B78D65" }}
+                  />
                 </span>
               </Tooltip>
             </Grid>
-            <Grid item xs={12} mt={'-15px'} mb={1}>
-              <Typography variant="body2" sx={{ color: 'gray' }}>
-                {isCheckboxChecked ? `$${pricingData.time * imageQuantity}` : ''}
+            <Grid item xs={12} mt={"-15px"} mb={1}>
+              <Typography variant="body2" sx={{ color: "gray" }}>
+                {isCheckboxChecked
+                  ? `$${pricingData.time * imageQuantity}`
+                  : ""}
               </Typography>
             </Grid>
           </Grid>
@@ -190,15 +176,19 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
         <Divider variant="middle" />
       </Grid>
       <Grid item xs={11.1} md={12}>
-        <Card variant='outlined' sx={{ m: 2, mt: 2, p: 2, maxWidth: 400, bgcolor: '#E5E4E2' }} xs={2}>
+        <Card
+          variant="outlined"
+          sx={{ m: 2, mt: 2, p: 2, maxWidth: 400, bgcolor: "#E5E4E2" }}
+          xs={2}
+        >
           <Grid container spacing={2}>
             <Grid item xs={12} mt={1}>
-              <Typography variant="h4" sx={{ color: '#36454F' }}>
+              <Typography variant="h4" sx={{ color: "#36454F" }}>
                 ${totalPrice}
               </Typography>
             </Grid>
-            <Grid item xs={12} mt={'-15px'} mb={1}>
-              <Typography variant="body2" sx={{ color: 'gray' }}>
+            <Grid item xs={12} mt={"-15px"} mb={1}>
+              <Typography variant="body2" sx={{ color: "gray" }}>
                 {`Single Order (X${imageQuantity})`}
               </Typography>
             </Grid>
@@ -213,36 +203,78 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
-                    <InventoryIcon fontSize='small' sx={{ mr: 2 }} />
-                    <Typography variant='subtitle2'>{`${pricingData.name} (X${imageQuantity})`}</Typography>
+                    <InventoryIcon fontSize="small" sx={{ mr: 2 }} />
+                    <Typography variant="subtitle2">{`${pricingData.name} (X${imageQuantity})`}</Typography>
                   </AccordionSummary>
-                  <AccordionDetails sx={{ mx: 4.5, mt: '-14px' }}>
-                    <Typography variant='body2'>
+                  <AccordionDetails sx={{ mx: 4.5, mt: "-14px" }}>
+                    <Typography variant="body2">
                       + Extra-fast 1-day Delivery
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
               ) : (
-                <Card variant='outlined' sx={{ bgcolor: 'white', display: 'inline-flex', width: '100%', padding: 1.5 }}>
-                  <InventoryIcon fontSize='small' sx={{ mr: 2 }} />
-                  <Typography variant='subtitle2'>{`${pricingData.name} (X${imageQuantity})`}</Typography>
+                <Card
+                  variant="outlined"
+                  sx={{
+                    bgcolor: "white",
+                    display: "inline-flex",
+                    width: "100%",
+                    padding: 1.5,
+                  }}
+                >
+                  <InventoryIcon fontSize="small" sx={{ mr: 2 }} />
+                  <Typography variant="subtitle2">{`${pricingData.name} (X${imageQuantity})`}</Typography>
                 </Card>
               )}
-
             </Grid>
             <Grid item xs={6}>
-              <Button startIcon={<QueryBuilderIcon />} sx={{ color: 'black', pointerEvents: 'none', textTransform: 'capitalize' }}>{pricingData.details[2]}</Button>
+              <Button
+                startIcon={<QueryBuilderIcon />}
+                sx={{
+                  color: "black",
+                  pointerEvents: "none",
+                  textTransform: "capitalize",
+                }}
+              >
+                {pricingData.details[2]}
+              </Button>
             </Grid>
             <Grid item xs={5} sm={4} md={12} lg={12}>
-              <Button startIcon={<AutorenewIcon />} sx={{ color: 'black', pointerEvents: 'none', textTransform: 'capitalize' }}>{pricingData.details[1]}</Button>
+              <Button
+                // startIcon={<AutorenewIcon />}
+                sx={{
+                  color: "black",
+                  pointerEvents: "none",
+                  textTransform: "capitalize",
+                }}
+              >
+                {pricingData.details[1]}
+              </Button>
             </Grid>
             <Grid item xs={12}>
               <Divider />
             </Grid>
             <Grid item xs={6}>
-              <Button variant="contained" size='large' href='/payments' style={{ width: "300px", backgroundColor: '#B78D65' ,marginLeft:"35px" }} onClick={dispatch}>
-                Proced to checkout
-              </Button>
+              <Link to="/payments">
+                <Button
+                  variant="contained"
+                  size="large"
+                  style={{
+                    width: "300px",
+                    backgroundColor: "#B78D65",
+                    marginLeft: "35px",
+                  }}
+                  onClick={() => {
+                    dispatch(updatePricingCart({
+                     quantity : imageQuantity,
+                     fastDelivery : isCheckboxChecked,  
+                     totalPrice : totalPrice
+                    }));
+                  }}
+                >
+                  Proceed to checkout
+                </Button>
+              </Link>
             </Grid>
           </Grid>
         </Card>
@@ -250,11 +282,10 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
     </Grid>
   );
 
-
   return (
-    <div className='element'>
-      <Drawer anchor="right" open={show} onClose={handleClose} width={'350px'}>
-        {list('right')}
+    <div className="element">
+      <Drawer anchor="right" open={show} onClose={handleClose} width={"350px"}>
+        {list("right")}
       </Drawer>
     </div>
   );

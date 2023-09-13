@@ -7,17 +7,12 @@ import { countriesData } from "./countriesData";
 import { useSelector } from "react-redux";
 import img from "../../img/decluter-1.jpg";
 import CheckIcon from "@mui/icons-material/Check";
-import { Bolt } from "@mui/icons-material";
 import { Button as MuiButton } from "@mui/material";
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
-function PaymentForm() {
 
-  const imageQuantity = useSelector((state) => state.pricing.imageQuantity);
-  const isCheckboxChecked = useSelector((state) => state.pricing.isCheckboxChecked);
-
-  // const imageQuantity = useSelector((state) =>
-  //   console.log("state imageQuantity ===========>", state?.pricing)
-  // );
+const  PaymentForm = ({ pricingData }) => {
+  const cartUpdate = useSelector((state) => state.pricing);
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
@@ -35,9 +30,7 @@ function PaymentForm() {
     city: "",
     country: "United States",
   });
-  const data = [
-    // ... (all the country data you provided)
-  ];
+
   useEffect(() => {
     const index = countriesData.findIndex(
       (country) => country.code === formData.country
@@ -45,7 +38,7 @@ function PaymentForm() {
     setCountryIndex(index);
   }, [formData.country]);
 
-  // Sort the data array in ascending order based on country name
+  const data = [...countriesData];
   data.sort((a, b) => a.name.localeCompare(b.name));
 
   const handleChange = (event) => {
@@ -55,6 +48,7 @@ function PaymentForm() {
       [name]: value,
     }));
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -68,21 +62,21 @@ function PaymentForm() {
         name: formData.fullName,
         email: formData.email,
         address: {
-          postal_code: formData.zip, // Include the zip code
+          postal_code: formData.zip,
           state: formData.state,
           line1: formData.address,
           line2: formData.apartment,
-          city: formData.city.toLowerCase(), // City
-          // country: formData.country, //Country
+          city: formData.city.toLowerCase(),
         },
       },
     });
-    console.log("card elementv =========>", CardElement);
+
     setLoading(false);
 
     if (error) {
       setError(error.message);
     } else {
+      // Handle successful payment here
     }
   };
 
@@ -280,13 +274,13 @@ function PaymentForm() {
                           variant="body1"
                           style={{
                             marginTop: "20px",
-                            width: "100ch", 
+                            width: "100ch",
                             overflow: "hidden",
                             whiteSpace: "nowrap",
                             textOverflow: "ellipsis",
                           }}
                         >
-                          Your data goes here
+                          {/* Your data goes here {cartUpdate.quantity} */}
                         </Typography>
                       </Grid>
                     </Grid>
@@ -296,8 +290,18 @@ function PaymentForm() {
                         xs={10}
                         sx={{ display: "flex", alignItems: "center" }}
                       >
-                        <Typography variant="h6" component="div">
-                          Standard Package {imageQuantity}
+                        <Typography variant="body1" gutterBottom>
+                          {/* {pricingData.details.map((detail, index) => (
+                            <li key={index}>
+                              <p>
+                                <ArrowCircleRightIcon
+                                  fontSize="small"
+                                  sx={{ color: "#B78D65" }}
+                                />{" "}
+                                {detail}
+                              </p>
+                            </li>
+                          ))} */}
                         </Typography>
                       </Grid>
                       <Grid item xs={2}>
@@ -307,20 +311,55 @@ function PaymentForm() {
                       </Grid>
                     </Grid>
                     <Grid sx={{ marginTop: "10px" }}>
-                      <Typography sx={{ mt: "10px", mb: "10px" }}>
-                        {" "}
-                        <CheckIcon sx={{ color: "green" }} /> 3 revision{" "}
-                      </Typography>
-                      <Divider sx={{ mb: "10px" }} />
-                      <Typography>
-                        {" "}
-                        <CheckIcon sx={{ color: "green" }} /> Extra fast
-                        delivery
-                      </Typography>
+                      <Grid container spacing={2} alignItems="center">
+                        <Grid
+                          item
+                          xs={10}
+                          sx={{ display: "flex", alignItems: "center" }}
+                        >
+                          <Typography variant="h6" component="div"></Typography>
+                        </Grid>
+                        <Grid item xs={2}>
+                          <Typography
+                            variant="h6"
+                            component="div"
+                            align="right"
+                          >
+                            $10
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                      <Grid item xs={2}>
+                        <Divider sx={{ mb: "10px" }} />
+                        <Typography>
+                          {" "}
+                          <CheckIcon sx={{ color: "green" }} /> Extra fast
+                          delivery
+                        </Typography>
+                      </Grid>
                       <Divider sx={{ mb: "30px" }} />
-                      <Typography sx={{ mb: "10px" }}>
-                        No of days Delivery
-                      </Typography>
+                      <Grid container spacing={2} alignItems="center">
+                        <Grid
+                          item
+                          xs={10}
+                          sx={{ display: "flex", alignItems: "center" }}
+                        >
+                          <Typography component="div">No of days</Typography>
+                        </Grid>
+                        <Grid item xs={2}>
+                          <Typography
+                            variant="h6"
+                            component="div"
+                            align="right"
+                          >
+                            {/* {cartUpdate.checkbox ? (
+                              <CheckIcon sx={{ color: "green" }} />
+                            ) : (
+                              "1"
+                            )} */}
+                          </Typography>
+                        </Grid>
+                      </Grid>
                       <Divider sx={{ mb: "10px" }} />
                       <Grid container spacing={2} alignItems="center">
                         <Grid
@@ -338,7 +377,7 @@ function PaymentForm() {
                             component="div"
                             align="right"
                           >
-                            $10
+                            {/* ${cartUpdate.totalPrice} */}
                           </Typography>
                         </Grid>
                         <MuiButton
