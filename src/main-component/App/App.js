@@ -4,6 +4,8 @@ import 'aos/dist/aos.css';
 import AllRoute from '../router';
 import './App.css';
 import Logo from '../../img/logo.gif';
+import { Provider } from 'react-redux'; 
+import { store } from './store';
 
 function App() {
   const [loading, setLoading] = useState(true);
