@@ -3,22 +3,19 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import AllRoute from '../router';
 import './App.css';
-import Logo from "../../img/logo.gif";
-import { Provider } from 'react-redux'; 
-import { store } from './store';
+import Logo from '../../img/logo.gif';
 
-const App = () => {
-  const [loading, setLoading] = useState(false);
+function App() {
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1000); // Simulate loading for 1 second
 
     AOS.init({
       offset: 100,
-      duration: 1000
+      duration: 1000,
     });
   }, []);
 
