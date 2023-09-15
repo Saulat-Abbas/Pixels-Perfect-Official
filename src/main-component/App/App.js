@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 import AllRoute from '../router';
 import './App.css';
 import Logo from '../../img/logo.gif';
-import { Provider } from 'react-redux'; 
+import { Provider } from 'react-redux';
 import { store } from './store';
 
 function App() {
@@ -23,24 +23,24 @@ function App() {
 
   const pricingData = {
     imageQuantity: 5,
-    totalPrice: 100, 
+    totalPrice: 100,
   };
 
 
   return (
     <div className="App body_wrap">
-    {loading ? (
-      <div className="loader-overlay">
-        <div className="gif-loader-container">
-          <img src={Logo} alt="Loading" className="gif-loader" />
+      {loading ? (
+        <div className="loader-overlay">
+          <div className="gif-loader-container">
+            <img src={Logo} alt="Loading" className="gif-loader" />
+          </div>
         </div>
-      </div>
-    ) : (
-      <Provider store={store}>
-        <AllRoute />
-      </Provider>
-    )}
-  </div>
+      ) : (
+        <Provider store={store}>
+          <AllRoute />
+        </Provider>
+      )}
+    </div>
   );
 }
 

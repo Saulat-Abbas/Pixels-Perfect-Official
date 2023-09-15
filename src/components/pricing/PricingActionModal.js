@@ -10,7 +10,6 @@ import {
   IconButton,
   Grid,
   Checkbox,
-  Paper,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -26,6 +25,7 @@ import { updatePricingCart } from "../../main-component/CreateSlice/pricingSlice
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import Pricing from ".";
 
 const PricingActionModal = ({ show, handleClose, pricingData }) => {
   useEffect(() => {
@@ -57,11 +57,10 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
   const dataToSend = {
       imageQuantity,
       isCheckboxChecked,
-      totalPrice
+      totalPrice,
+      
   };
 
-dispatch(updatePricingCart(dataToSend));
-console.log(pricingData);
   const longText =
     "This is a long text that needs to be split into lines when its length is greater than 10.";
   const lines = longText.match(/.{1,10}/g) || [];
@@ -268,7 +267,10 @@ console.log(pricingData);
                     dispatch(updatePricingCart({
                      quantity : imageQuantity,
                      fastDelivery : isCheckboxChecked,  
-                     totalPrice : totalPrice
+                     totalPrice : totalPrice,
+                     price:pricingData.price,
+                     
+
                     }));
                   }}
                 >

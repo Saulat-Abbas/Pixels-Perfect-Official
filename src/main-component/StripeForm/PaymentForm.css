@@ -14,13 +14,13 @@
 
 /* Center the form group */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* Label styles */
 .form-group label {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 14px;
   color: #777;
 }
@@ -231,8 +231,17 @@ button[type="submit"]:hover {
 
 .card-element {
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #000000;
   border-radius: 3px;
   background-color: #fff;
+}
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-wrapper {
+  flex: 1;
+  margin-right: 10px; /* Adjust spacing as needed */
 }

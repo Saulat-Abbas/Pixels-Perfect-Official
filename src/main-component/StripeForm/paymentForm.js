@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import "./PaymentForm.css";
-import { FormControlLabel } from "@mui/material";
+import { FormControlLabel, Button as MuiButton } from "@mui/material";
 import { Card, Grid, Typography, Divider } from "@mui/material";
 import { countriesData } from "./countriesData";
 import { useSelector } from "react-redux";
 import img from "../../img/decluter-1.jpg";
 import CheckIcon from "@mui/icons-material/Check";
-import { Button as MuiButton } from "@mui/material";
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import './PaymentForm.css';
+import { updatePricingCart } from "../CreateSlice/pricingSlice";
+import ClearIcon from '@mui/icons-material/Clear';
 
 
-const  PaymentForm = ({ pricingData }) => {
-  const cartUpdate = useSelector((state) => state.pricing);
+
+const PaymentForm = ({ pricingData }) => {
+  const cartUpdate = useSelector((state) => state.pricing.pricingData);
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
@@ -37,9 +38,6 @@ const  PaymentForm = ({ pricingData }) => {
     );
     setCountryIndex(index);
   }, [formData.country]);
-
-  const data = [...countriesData];
-  data.sort((a, b) => a.name.localeCompare(b.name));
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -79,35 +77,44 @@ const  PaymentForm = ({ pricingData }) => {
       // Handle successful payment here
     }
   };
-
+  console.log("fastDilivery",Image);
   return (
     <div className="two-panel-container">
       <div className="code-panel">
         <div className="form-body">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} style={{ width: "85%", marginTop: "20%", marginBottom: "20%" }}>
             <div className="form-group">
-              <h3 style={{ paddingBottom: "2%" }}>Contact Form</h3>
-              <label style={{ cursor: "none" }}>
-                <b>Email</b>
+              <h3 style={{ paddingBottom: "2%" }}>Billing Information</h3>
+              <div className="name-container">
+                <div className="form-group" style={{ width: "60.5%" }}>
+                  <label>
+                    <b>Full Name</b>
+                  </label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    placeholder="Full Name"
+                    required
+                  />
+                </div>
+              </div>
+              <label>
+                <b>Company Name</b>
               </label>
               <input
-                type="email"
-                name="email"
-                value={formData.email}
+                type="text"
+                name="Text"
+                value={formData.Text}
                 onChange={handleChange}
-                placeholder="Email:abc@email.com"
+                placeholder="Company Name"
                 required
               />
             </div>
-            <div style={{ marginBottom: "20px" }}>
-              <FormControlLabel
-                control={<defaultChecked />}
-                label="Email me with news and offers"
-              />
-            </div>
-            <div className="form-group" style={{ width: "100%" }}>
+            <div className="form-group">
               <label>
-                <b>Shipping Country</b>
+                <b>Country</b>
               </label>
               <select
                 onChange={(e) => handleChange(e)}
@@ -122,36 +129,26 @@ const  PaymentForm = ({ pricingData }) => {
                 ))}
               </select>
             </div>
-            <div className="form-group" style={{ width: "100%" }}>
+            <div className="form-group">
               <label>
-                <b>Shipping City</b>
+                <b>State/Province/Territory</b>
               </label>
-              {/* <select onChange={(e) => handleChange(e)} name='city'>
-                {countriesData[countryIndex]?.cities.map((city, index) => (
-                  <option key={city} value={city}>
-                    {city || "Please Choose Country"}
-                  </option>
-                ))}
-              </select> */}
-
-              <div class="d-flex" style={{ marginTop: "5%" }}>
+              <input
+                type="text"
+                placeholder="State"
+                name="state"
+                value={formData.state}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>
+                <b>City</b>
+              </label>
+              <div className="d-flex" >
+              <div className="input-wrapper">
                 <input
-                  class=""
-                  type="number"
-                  max={"99999"}
-                  onInput={(e) => {
-                    e.target.value = Math.max(0, parseInt(e.target.value))
-                      .toString()
-                      .slice(0, 5);
-                  }}
-                  placeholder="ZIP"
-                  name="zip"
-                  value={formData.zip}
-                  onChange={handleChange}
-                  required
-                />
-                <input
-                  class=""
                   type="text"
                   placeholder="City"
                   name="city"
@@ -159,57 +156,38 @@ const  PaymentForm = ({ pricingData }) => {
                   onChange={handleChange}
                   required
                 />
-
-                <input
-                  class=""
-                  type="text"
-                  placeholder="State"
-                  name="state"
-                  value={formData.state}
-                  onChange={handleChange}
-                  required
-                />
+                </div>
+                  <div className="input-wrapper">
+                  <input
+                    type="number"
+                    max={"99999"}
+                    onInput={(e) => {
+                      e.target.value = Math.max(0, parseInt(e.target.value))
+                        .toString()
+                        .slice(0, 5);
+                    }}
+                    placeholder="ZIP"
+                    name="zip"
+                    value={formData.zip}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
               </div>
             </div>
-            <div className="name-container">
-              <div className="form-group" style={{ width: "60.5%" }}>
-                <label style={{ cursor: "none" }}></label>
-                <input
-                  type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  placeholder="Full Name"
-                  required
-                />
-              </div>
-            </div>
-
             <div className="form-group">
-              <label style={{ cursor: "none" }}></label>
+              <label>VAT Number</label>
               <input
-                type="text"
-                name="address"
-                value={formData.address}
-                placeholder="Address"
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label style={{ cursor: "none" }}></label>
-              <input
-                type="text"
-                name="apartment"
+                type="Number"
+                name="VAT Number"
                 value={formData.apartment}
-                placeholder="Apartment, suit etc (Optional)"
+                placeholder="VAT Number"
                 onChange={handleChange}
               />
+             
+             
             </div>
-            {error && <div className="error-message">{error}</div>}
-            <button type="submit" disabled={!stripe || loading}>
-              {loading ? "Processing..." : "Continue to Shipping"}
-            </button>
+              <CardElement className="card-element" />
           </form>
         </div>
       </div>
@@ -219,7 +197,6 @@ const  PaymentForm = ({ pricingData }) => {
             <div className="left border">
               <div className="row">
                 <div className="card-element-container">
-                  <CardElement className="card-element" />
                 </div>
                 <Card
                   variant="outlined"
@@ -262,8 +239,8 @@ const  PaymentForm = ({ pricingData }) => {
                         <img
                           src={img}
                           style={{
-                            width: "100%", // Set the width to 100% to fill the container
-                            height: "auto", // Use "auto" to maintain the aspect ratio
+                            width: "100%",
+                            height: "auto",
                             border: "2px solid black",
                           }}
                           alt="Your Image"
@@ -280,7 +257,7 @@ const  PaymentForm = ({ pricingData }) => {
                             textOverflow: "ellipsis",
                           }}
                         >
-                          {/* Your data goes here {cartUpdate.quantity} */}
+                          {/* Your data goes here */}
                         </Typography>
                       </Grid>
                     </Grid>
@@ -291,22 +268,12 @@ const  PaymentForm = ({ pricingData }) => {
                         sx={{ display: "flex", alignItems: "center" }}
                       >
                         <Typography variant="body1" gutterBottom>
-                          {/* {pricingData.details.map((detail, index) => (
-                            <li key={index}>
-                              <p>
-                                <ArrowCircleRightIcon
-                                  fontSize="small"
-                                  sx={{ color: "#B78D65" }}
-                                />{" "}
-                                {detail}
-                              </p>
-                            </li>
-                          ))} */}
+                          Pricing details
                         </Typography>
                       </Grid>
                       <Grid item xs={2}>
                         <Typography variant="h6" component="div" align="right">
-                          $10
+                        ${cartUpdate.price}
                         </Typography>
                       </Grid>
                     </Grid>
@@ -319,7 +286,7 @@ const  PaymentForm = ({ pricingData }) => {
                         >
                           <Typography variant="h6" component="div"></Typography>
                         </Grid>
-                        <Grid item xs={2}>
+                        {/* <Grid item xs={2}>
                           <Typography
                             variant="h6"
                             component="div"
@@ -327,16 +294,30 @@ const  PaymentForm = ({ pricingData }) => {
                           >
                             $10
                           </Typography>
-                        </Grid>
+                        </Grid> */}
                       </Grid>
                       <Grid item xs={2}>
                         <Divider sx={{ mb: "10px" }} />
                         <Typography>
-                          {" "}
-                          <CheckIcon sx={{ color: "green" }} /> Extra fast
+                       
+                          {cartUpdate.fastDelivery  ? <CheckIcon color="success"/> :   <ClearIcon color="error"/>}
+                          
+                         
+                           Extra fast
                           delivery
                         </Typography>
                       </Grid>
+                      {/* <Grid item xs={2}>
+                          <Typography
+                            variant="h6"
+                            component="div"
+                            align="right"
+                          >
+                            
+                         <span style={{ color: "green", fontSize: "24px" }}>✓</span>
+                           {cartUpdate.fastDelivery}
+                          </Typography>
+                        </Grid> */}
                       <Divider sx={{ mb: "30px" }} />
                       <Grid container spacing={2} alignItems="center">
                         <Grid
@@ -344,7 +325,7 @@ const  PaymentForm = ({ pricingData }) => {
                           xs={10}
                           sx={{ display: "flex", alignItems: "center" }}
                         >
-                          <Typography component="div">No of days</Typography>
+                          <Typography component="div">No of Quantity</Typography>
                         </Grid>
                         <Grid item xs={2}>
                           <Typography
@@ -352,11 +333,7 @@ const  PaymentForm = ({ pricingData }) => {
                             component="div"
                             align="right"
                           >
-                            {/* {cartUpdate.checkbox ? (
-                              <CheckIcon sx={{ color: "green" }} />
-                            ) : (
-                              "1"
-                            )} */}
+                           {cartUpdate.quantity}
                           </Typography>
                         </Grid>
                       </Grid>
@@ -377,7 +354,7 @@ const  PaymentForm = ({ pricingData }) => {
                             component="div"
                             align="right"
                           >
-                            {/* ${cartUpdate.totalPrice} */}
+                              ${cartUpdate.totalPrice}
                           </Typography>
                         </Grid>
                         <MuiButton
@@ -398,6 +375,10 @@ const  PaymentForm = ({ pricingData }) => {
               </div>
             </div>
           </div>
+                            {/* {error && <div className="error-message">{error}</div>}
+                            <button type="submit" disabled={!stripe || loading}>
+                              {loading ? "Processing..." : "Continue to Shipping"}
+                            </button> */}
         </div>
       </div>
     </div>
