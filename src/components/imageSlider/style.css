@@ -72,10 +72,11 @@
   gap: 16px;
 }
 
-/* .main-slide {
-  border: 12px solid #B78D65;
+.main-slide {
+  border: 7px solid #070706;
   box-sizing: border-box;
-} */
+  ;
+}
 
 .main-image {
   width: 100%;

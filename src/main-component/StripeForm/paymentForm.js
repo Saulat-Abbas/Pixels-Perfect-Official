@@ -74,10 +74,14 @@ const PaymentForm = ({ pricingData }) => {
     if (error) {
       setError(error.message);
     } else {
-      // Handle successful payment here
+      updatePricingCart({
+        price: pricingData.price,
+        paymentMethodId: paymentMethod.id,
+        paymentMethodType: paymentMethod.type,
+       
+      });
     }
-  };
-  console.log("fastDilivery",Image);
+  };  
   return (
     <div className="two-panel-container">
       <div className="code-panel">
@@ -180,7 +184,7 @@ const PaymentForm = ({ pricingData }) => {
               <input
                 type="Number"
                 name="VAT Number"
-                value={formData.apartment}
+                value={formData.VATNumber}
                 placeholder="VAT Number"
                 onChange={handleChange}
               />
@@ -236,7 +240,7 @@ const PaymentForm = ({ pricingData }) => {
                   >
                     <Grid container alignItems="center">
                       <Grid item xs={12}>
-                        <img
+                        {/* <img
                           src={img}
                           style={{
                             width: "100%",
@@ -244,7 +248,7 @@ const PaymentForm = ({ pricingData }) => {
                             border: "2px solid black",
                           }}
                           alt="Your Image"
-                        />
+                        /> */}
                       </Grid>
                       <Grid item>
                         <Typography

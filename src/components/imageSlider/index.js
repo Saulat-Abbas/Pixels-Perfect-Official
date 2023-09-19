@@ -5,7 +5,7 @@ const ImageSlider = ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    setCurrentSlide(0); // Reset current slide when images prop changes
+    setCurrentSlide(0);
   }, [images]);
 
   const handleNextSlide = () => {
@@ -43,17 +43,17 @@ const ImageSlider = ({ images }) => {
             alt={`Image ${currentSlide + 1}`}
             className="main-image"
           />
-        </div>
         <div className="thumbnail-container">
           {images.map((image, index) => (
             <button
-              key={index}
+            key={index}
               onClick={() => handleSlideChange(index)}
               className={`thumbnail-button ${index === currentSlide ? 'active' : ''}`}
-            >
+              >
               <img src={image} alt={`Thumbnail ${index + 1}`} className="thumbnail-image" />
             </button>
           ))}
+          </div>
         </div>
       </div>
       <button onClick={handleNextSlide} className="slider-button next-button">

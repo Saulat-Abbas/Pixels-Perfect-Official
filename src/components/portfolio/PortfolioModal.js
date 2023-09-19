@@ -30,7 +30,7 @@ const modalStyle = {
 
 export default function BasicModal(props) {
     const { open, setOpen, data } = props;
-    const handleOpen = () => setOpen(true);
+    // const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     return (
         <div>
@@ -41,7 +41,7 @@ export default function BasicModal(props) {
     aria-describedby="modal-modal-description"
 >
     <Box sx={modalStyle}>
-        <img src={data} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <img src={data} style={{ width: '300%', height: '200%', objectFit: 'cover' }}/>
     </Box>
 </Modal>
         </div>
