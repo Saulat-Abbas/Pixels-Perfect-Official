@@ -10,8 +10,8 @@ const pricingSlice = createSlice({
     },
   },
   reducers: {
-    updatePricingCart: (state, action) => { 
-      state.pricingData = action.payload;
+    updatePricingCart: (state, action) => {
+            state.pricingData = action.payload;
     },
   },
 });

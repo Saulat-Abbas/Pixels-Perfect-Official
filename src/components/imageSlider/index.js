@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 
 const ImageSlider = ({ images }) => {
+
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {

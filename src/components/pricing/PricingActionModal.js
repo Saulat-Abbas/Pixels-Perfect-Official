@@ -23,16 +23,18 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
 import { updatePricingCart } from "../../main-component/CreateSlice/pricingSlice";
 import { Link } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import Pricing from ".";
+import { useDispatch } from "react-redux";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import { Login } from "@mui/icons-material";
 
-const PricingActionModal = ({ show, handleClose, pricingData }) => {
+const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
+ 
+
   useEffect(() => {
     setImageQuantity(1);
   }, []);
 
-  const dispatch = useDispatch(updatePricingCart);
+  const dispatch = useDispatch();
 
   const [imageQuantity, setImageQuantity] = useState(0);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(0);
@@ -50,16 +52,9 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
   };
 
   const checkbox = isCheckboxChecked
-    ? parseFloat(pricingData.time) * imageQuantity
+    ? parseFloat(pricingModalData?.priceData.time) * imageQuantity
     : 0;
-  const totalPrice = pricingData.price * imageQuantity + checkbox;
-
-  const dataToSend = {
-      imageQuantity,
-      isCheckboxChecked,
-      totalPrice,
-      
-  };
+  const totalPrice = pricingModalData?.priceData.price * imageQuantity + checkbox;
 
   const longText =
     "This is a long text that needs to be split into lines when its length is greater than 10.";
@@ -86,15 +81,15 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
         >
           <Grid container spacing={2}>
             <Grid item xs={10}>
-              <Typography variant="button">{pricingData.name}</Typography>
+              <Typography variant="button">{pricingModalData?.priceData.name}</Typography>
             </Grid>
             <Grid item xs={2}>
-              $ {pricingData.price}
+              $ {pricingModalData?.priceData.price}
             </Grid>
             <Grid item xs={12}>
               <Box sx={{ width: "100%", maxWidth: 600 }}>
                 <Typography variant="body1" gutterBottom>
-                  {pricingData?.details?.map((detail, index) => (
+                  {pricingModalData?.priceData?.details?.map((detail, index) => (
                     <li key={index}>
                       <p>
                         <ArrowCircleRightIcon
@@ -148,12 +143,12 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
             <Grid item xs={2}>
               <Tooltip
                 title={
-                  !pricingData?.time && "Extra fast delivary is not available."
+                  !pricingModalData?.priceData?.time && "Extra fast delivary is not available."
                 }
               >
                 <span>
                   <Checkbox
-                    disabled={!pricingData?.time}
+                    disabled={!pricingModalData?.priceData?.time}
                     checked={isCheckboxChecked}
                     onChange={handleCheckboxChange}
                     sx={{ color: "#B78D65" }}
@@ -164,7 +159,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
             <Grid item xs={12} mt={"-15px"} mb={1}>
               <Typography variant="body2" sx={{ color: "gray" }}>
                 {isCheckboxChecked
-                  ? `$${pricingData.time * imageQuantity}`
+                  ? `$${pricingModalData?.priceData.time * imageQuantity}`
                   : ""}
               </Typography>
             </Grid>
@@ -203,7 +198,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
                     id="panel1a-header"
                   >
                     <InventoryIcon fontSize="small" sx={{ mr: 2 }} />
-                    <Typography variant="subtitle2">{`${pricingData.name} (X${imageQuantity})`}</Typography>
+                    <Typography variant="subtitle2">{`${pricingModalData?.priceData.name} (X${imageQuantity})`}</Typography>
                   </AccordionSummary>
                   <AccordionDetails sx={{ mx: 4.5, mt: "-14px" }}>
                     <Typography variant="body2">
@@ -222,7 +217,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
                   }}
                 >
                   <InventoryIcon fontSize="small" sx={{ mr: 2 }} />
-                  <Typography variant="subtitle2">{`${pricingData.name} (X${imageQuantity})`}</Typography>
+                  <Typography variant="subtitle2">{`${pricingModalData?.priceData.name} (X${imageQuantity})`}</Typography>
                 </Card>
               )}
             </Grid>
@@ -235,7 +230,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
                   textTransform: "capitalize",
                 }}
               >
-                {pricingData.details[2]}
+                {pricingModalData?.priceData.details[2]}
               </Button>
             </Grid>
             <Grid item xs={5} sm={4} md={12} lg={12}>
@@ -247,7 +242,7 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
                   textTransform: "capitalize",
                 }}
               >
-                {pricingData.details[1]}
+                {pricingModalData?.priceData.details[1]}
               </Button>
             </Grid>
             <Grid item xs={12}>
@@ -264,14 +259,15 @@ const PricingActionModal = ({ show, handleClose, pricingData }) => {
                     marginLeft: "35px",
                   }}
                   onClick={() => {
-                    dispatch(updatePricingCart({
-                     quantity : imageQuantity,
-                     fastDelivery : isCheckboxChecked,  
-                     totalPrice : totalPrice,
-                     price:pricingData.price,
-                     
-
-                    }));
+                    dispatch(
+                      updatePricingCart({
+                        image: pricingModalData?.images[0],
+                        quantity: imageQuantity,
+                        fastDelivery: isCheckboxChecked,
+                        totalPrice: totalPrice,
+                        price: pricingModalData?.priceData.price,
+                      })
+                    );
                   }}
                 >
                   Proceed to checkout
