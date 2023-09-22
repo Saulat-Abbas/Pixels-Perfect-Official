@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import AllRoute from '../router';
-import './App.css';
-import Logo from '../../img/logo.gif';
-import { Provider } from 'react-redux';
-import { store } from './store';
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import AllRoute from "../router";
+import "./App.css";
+import Logo from "../../img/logo.gif";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -25,7 +25,6 @@ function App() {
     imageQuantity: 5,
     totalPrice: 100,
   };
-
 
   return (
     <div className="App body_wrap">

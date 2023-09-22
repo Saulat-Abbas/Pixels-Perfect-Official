@@ -1,24 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Homepage from '../HomePage';
-import AboutPage from '../AboutPage';
-import ProjectPage from '../ProjectPage';
-import ProjectSinglePage from '../ProjectSinglePage';
-import ServicePage from '../ServicePage';
-import ServiceSinglePage from '../ServiceSinglePage';
-import PortfolioPage from '../PortfolioPage';
-import TeamPage from '../TeamPage';
-import FaqPage from '../FaqPage';
-import ContactPage from '../ContactPage';
-import ErrorPage from '../ErrorPage';
-import BlogPage from '../BlogPage';
-// import BlogSinglePage from '../BlogSinglePage';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import BlogSection from '../../components/BlogSection';
-import Checkoutform from '../StripeForm/checkOutForm';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Homepage from "../HomePage";
+import AboutPage from "../AboutPage";
+import ProjectPage from "../ProjectPage";
+import ProjectSinglePage from "../ProjectSinglePage";
+import ServicePage from "../ServicePage";
+import ServiceSinglePage from "../ServiceSinglePage";
+import PortfolioPage from "../PortfolioPage";
+import TeamPage from "../TeamPage";
+import FaqPage from "../FaqPage";
+import ContactPage from "../ContactPage";
+import ErrorPage from "../ErrorPage";
+import BlogPage from "../BlogPage";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import BlogSection from "../../components/BlogSection";
+import Checkoutform from "../StripeForm/checkOutForm";
 
-const stripePromise = loadStripe('pk_test_51LkExQD2dU6r3UJMo1HDdTm4E9g36D4Db12YmQzG7AnkXsBrFnwiMqOGJbNdpHUVX7SwHJXZXxsHCJNd12ahZfw5005R8EAYYi');
+const stripePromise = loadStripe(
+  "pk_test_51LkExQD2dU6r3UJMo1HDdTm4E9g36D4Db12YmQzG7AnkXsBrFnwiMqOGJbNdpHUVX7SwHJXZXxsHCJNd12ahZfw5005R8EAYYi"
+);
 
 const AllRoute = () => {
   return (
@@ -37,15 +38,12 @@ const AllRoute = () => {
         <Route path="/contact" component={ContactPage} />
         <Route path="/404" component={ErrorPage} />
         <Route path="/blog" component={BlogPage} />
-        <Route path="/blog-single" component={BlogSection}/>
+        <Route path="/blog-single" component={BlogSection} />
         <Route path="/payments">
           <Elements stripe={stripePromise}>
             <Checkoutform />
           </Elements>
         </Route>
-        
-
-        
       </Switch>
     </Router>
   );

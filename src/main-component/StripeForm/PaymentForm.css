@@ -1,6 +1,5 @@
-/* PaymentForm.css
+/* PaymentForm.css */
 
-/* Center the form container */
 .form-container {
   max-width: 300px;
   margin: 0 auto;
@@ -12,12 +11,10 @@
   flex-direction: column;
 }
 
-/* Center the form group */
 .form-group {
   margin-bottom: 10px;
 }
 
-/* Label styles */
 .form-group label {
   display: block;
   margin-bottom: 10px;
@@ -27,10 +24,10 @@
 
 /* Input styles */
 input[type="email"],
-input[type="text"]
-input[type="number"]
+input[type="text"],
+input[type="number"],
 input[type="tel"] {
-  width:100%;
+  width: 100%;
   height: 45px;
   background-color: #f8f8f8;
   border: 1px solid #ccc;
@@ -42,12 +39,10 @@ input[type="tel"] {
   color: #777;
 }
 
-
 .name-container {
   display: flex;
-  justify-content: space-between; /* Space between First Name and Last Name fields */
-  width: 165%; /* Adjust the width as needed */
-  
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* Quantity counter styles */
@@ -87,9 +82,8 @@ input[type="tel"] {
 
 /* Submit button styles */
 button[type="submit"] {
-  display:inline-block;
+  display: inline-block;
   width: 50%;
-  /* padding: 12px 20px; */
   background-color: #B78D65;
   color: #fff;
   border: none;
@@ -113,129 +107,117 @@ button[type="submit"]:disabled {
 button[type="submit"]:hover {
   background-color: #525099;
 }
+
 @media (max-width: 767px) {
   .form-container {
     max-width: 80%;
   }
 }
+
 .form-body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   flex-direction: column;
-  
-}
-.card-element-container{
-  margin-bottom: 50px;
-  
-}
-.input-group {
-  display: flex; /* Use flexbox to display the inputs in a row */
-  gap: 10px; /* Add some spacing between the inputs */
 }
 
-/* Alternatively, you can use grid layout */
+.card-element-container {
+  margin-bottom: 50px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
 .input-group {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  gap: 10px; /* Add some spacing between the inputs */
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .two-panel-container {
   display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .code-panel {
   flex: 1;
-  padding: 0px;
+  padding: 0;
   background-color: #f0f0f0;
 }
 
- .picture-panel {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.picture-panel {
   background-color: #F0F0F0;
+  padding-top: 10.5%;
 }
-
-.picture-panel img {
-  max-width: 50%;
-  max-height: 50%;
-} */
-
-/* General styles */
- .two-panel-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-} 
 
 /* Styles for larger screens (desktop view) */
 @media screen and (min-width: 768px) {
-   .two-panel-container {
+  .two-panel-container {
     flex-direction: row;
-    gap: 0px;
-  } 
+    gap: 0;
+  }
+
   .code-panel {
     width: 60%;
   }
+
   .picture-panel {
-    width: 40%;
-  } 
-}
-.row{
-  align-items: center;
-  align-content: stretch;
+    width: 50%;
+  }
 }
 
 /* Styles for smaller screens (mobile view) */
 @media screen and (max-width: 767px) {
-   .two-panel-container {
+  .two-panel-container {
     gap: 20px;
     flex-direction: column-reverse;
-  } */
+  }
+
   .code-panel,
   .picture-content {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
   }
   .code-panel,
   .picture-panel {
-    width: 100%;
+    width: 100%; 
   }
+
   /* Center the content within the picture panel for mobile view */
   .picture-content {
     height: auto;
+    text-align: center;
+     max-width: 100%;
   }
-  
-}  
+}
 
 .card-body {
   flex: 1 1 auto;
-  /* padding: 1rem 1rem; */
   margin-left: 20%;
 }
+
 .card-element-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 20px; */
-  /* border: 1px solid #ccc; */
-  border-radius: 5px;
 }
 
 .card-element {
   width: 100%;
   padding: 20px;
   border: 1px solid #000000;
-  border-radius: 3px;
-  background-color: #fff;
+  background-color: #f8f8f8;
+  border: #ccc;
 }
+
 .d-flex {
   display: flex;
   justify-content: space-between;
@@ -243,5 +225,9 @@ button[type="submit"]:hover {
 
 .input-wrapper {
   flex: 1;
-  margin-right: 10px; /* Adjust spacing as needed */
+  margin-right: 10px;
+}
+
+.input-wrapper1 {
+  flex: 1;
 }

@@ -4,20 +4,15 @@ import PricingActionModal from "./PricingActionModal";
 import { Button as MuiButton, colors } from "@mui/material";
 import { Tabs, Tab, Paper } from "@mui/material";
 
-const Pricing = ({ pricing, images }) => {
-
-  const pricingBG =
-    "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-cost-bg.jpg?alt=media&token=36ba7e12-c9c5-490a-800c-c2dbd5020846";
-
+const Pricing = ({ pricing, pageTitle }) => {
   // State to store the pricing data for the modal
   const [pricingModalData, setPricingModalData] = useState(null);
-
   // State to manage the modal visibility
   const [showModal, setShowModal] = useState(false);
 
   // Function to show the modal and set the pricing data for the modal
   const handleShowModal = (priceData) => {
-    setPricingModalData({ priceData, images });
+    setPricingModalData({ priceData, pageTitle });
     setShowModal(true);
   };
 
@@ -47,8 +42,8 @@ const Pricing = ({ pricing, images }) => {
                 </h2>
               </div>
               <Tabs
-                value={value} // Set the active tab value
-                onChange={handleChange} // Handle tab change
+                value={value}
+                onChange={handleChange}
                 variant="fullWidth"
                 indicatorColor="primary"
                 textColor="primary"

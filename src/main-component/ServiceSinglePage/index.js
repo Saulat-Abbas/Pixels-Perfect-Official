@@ -4,9 +4,7 @@ import Header from "../../components/header";
 import PageTitle from "../../components/pagetitle";
 import ImageSlider from "../../components/imageSlider";
 import Footer from "../../components/footer";
-import Testimonial from "../../components/testimonial";
 import Pricing from "../../components/pricing";
-import Partners from "../../components/partners";
 import "./style.css";
 
 const ServiceSinglePage = () => {
@@ -63,8 +61,6 @@ const ServiceSinglePage = () => {
   const word1 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/word-1.jpg?alt=media&token=ae8d22d2-d968-42ce-a01a-e37db3340516";
 
-    
-
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const type = queryParams.get("service");
@@ -72,10 +68,10 @@ const ServiceSinglePage = () => {
 
   let pageTitle = "";
   let pageSub = "";
-  let images = []; // Declare images array
+  let images = [];
   let pricing = [];
   let description = "";
-  // Set the page title, subtitle, and images based on the type query parameter
+
   switch (type) {
     case "Virtual-Duculator":
       pageTitle = "Virtual Duculator";
@@ -96,7 +92,7 @@ const ServiceSinglePage = () => {
           price: 10,
           details: [
             " I will remove all the existing furniture in Just $10 for each image",
-            "1 revision",
+            <span key="revision">1 revision</span>,
           ],
         },
         {
@@ -104,18 +100,18 @@ const ServiceSinglePage = () => {
           price: 50,
           details: [
             " I will remove all the existing furniture in Just $50 for 6 images",
-            "2 revison ",
+            <span key="revision">2 revision</span>,
+            <span key="revision">3 days Dilivery</span>,
           ],
-          time: "15",
         },
         {
           name: "Premium",
           price: 100,
           details: [
             "I will remove all the existing furniture in Just $100 for 12 images",
-            "3 revison ",
+            <span key="revision">3 revision</span>,
+            <span key="revision">5 days Dilivery</span>,
           ],
-          time: "25",
         },
       ];
       break;
@@ -131,7 +127,7 @@ const ServiceSinglePage = () => {
           price: 1,
           details: [
             "Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Sharpen Clarity.",
-            "1 revision ",
+            <span key="revision">1 revision</span>,
           ],
         },
         {
@@ -139,16 +135,17 @@ const ServiceSinglePage = () => {
           price: 20,
           details: [
             "Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Object removing (25 Images)",
-            "2 revison ",
+            <span key="revision">2 revision</span>,
+            <span key="revision">3 days Dilivery</span>,
           ],
-          time: "15",
         },
         {
           name: "Premium",
           price: 25,
           details: [
             "Basic Enhancement, Object removing  (35 Images), Your company Logo as watermark, Sharpen Clarity.",
-            "3 revision ",
+            <span key="revision">3 revision</span>,
+            <span key="revision">5 days Dilivery</span>,
           ],
           time: "25",
         },
@@ -166,8 +163,7 @@ const ServiceSinglePage = () => {
           price: 10,
           details: [
             "I'll virtual stage your One image of your Room in Just $10",
-            "1 Revision",
-            "",
+            <span key="revision">1 revision</span>,
           ],
         },
         {
@@ -176,7 +172,8 @@ const ServiceSinglePage = () => {
           details: [
             "I'll virtual stage your 8 image of your Vacant Room in Just $70",
             "2 Revision ",
-            "2 Days Dalivery ",
+            <span key="revision">2 revision</span>,
+            <span key="revision">3 days Dilivery</span>,
           ],
           time: "15",
         },
@@ -185,10 +182,9 @@ const ServiceSinglePage = () => {
           price: 100,
           details: [
             "I'll virtual stage your 12 image of your Vacant Room in Just $100",
-            "3 Revision ",
-            "3 Days Dalivery",
+            <span key="revision">3 revision</span>,
+            <span key="revision">5 days Dilivery</span>,
           ],
-          time: "25",
         },
       ];
       break;
@@ -196,7 +192,7 @@ const ServiceSinglePage = () => {
       pageTitle = "Website Development";
       pageSub = "Website Development Details";
       images = [web1, web2, web3];
-      
+
       description =
         "Website development involves designing, creating, and maintaining websites to ensure they are functional, visually appealing, and user-friendly. It encompasses various aspects such as front-end development, which focuses on the user interface and design, and back-end development, which involves the server-side functionality and databases. Website developers use programming languages like HTML, CSS, JavaScript, and backend languages (e.g., PHP, Python, Ruby) to build dynamic and interactive websites. They also integrate features like navigation, forms, multimedia, e-commerce, and responsive design for optimal performance across different devices. The goal is to deliver websites that meet specific requirements, engage users, and provide a seamless browsing experience.";
       pricing = [
@@ -223,7 +219,7 @@ const ServiceSinglePage = () => {
       pageTitle = "WordPress Designing";
       pageSub = "WordPress Designing Details";
       images = [word1];
-      
+
       description =
         "WordPress designing encompasses the creation and customization of websites using the WordPress platform. It involves selecting themes, layouts, and plugins to build websites tailored to specific needs. WordPress's user-friendly interface allows for seamless content management, from text and images to interactive elements. Designers can leverage pre-designed themes or create unique layouts, ensuring responsive and visually appealing sites. With its vast community and extensive resources, WordPress is a powerful tool for crafting websites ranging from blogs and portfolios to e-commerce stores and corporate sites.";
       pricing = [
@@ -246,6 +242,7 @@ const ServiceSinglePage = () => {
             "Event",
             " Payment Integration ",
             "GTMetrix score upto 80%",
+            "3 days Dilivery",
           ],
         },
         {
@@ -256,6 +253,7 @@ const ServiceSinglePage = () => {
             "Membership Features",
             "Mailchimp Setup",
             " Page Speed 80% - 90%",
+            "5 days Dilivery",
           ],
         },
       ];
@@ -279,7 +277,7 @@ const ServiceSinglePage = () => {
           price: 25,
           details: [
             "Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $25/Photo",
-            "1 Revision ",
+            <span key="revision">1 revision</span>,
           ],
         },
         {
@@ -287,18 +285,18 @@ const ServiceSinglePage = () => {
           price: 140,
           details: [
             "Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $140/ 6 Photo",
-            "2 Revision ",
+            <span key="revision">2 revision</span>,
+            <span key="revision">3 days Dilivery</span>,
           ],
-          time: "30",
         },
         {
           name: "Premium",
           price: 220,
           details: [
             "Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $220/ 10 Photo",
-            "3 Revision ",
+            <span key="revision">3 revision</span>,
+            <span key="revision">5 days Dilivery</span>,
           ],
-          time: "50",
         },
       ];
       break;
@@ -319,7 +317,7 @@ const ServiceSinglePage = () => {
               <ImageSlider images={images} />
             </div>
             <div class="col-lg-6 pricing">
-              <Pricing pricing={pricing} images={images} />
+              <Pricing pricing={pricing} pageTitle={pageTitle} />
             </div>
             <div class="row">
               <div

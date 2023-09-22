@@ -25,14 +25,12 @@ import { updatePricingCart } from "../../main-component/CreateSlice/pricingSlice
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import { Login } from "@mui/icons-material";
 
 const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
- 
-
   useEffect(() => {
     setImageQuantity(1);
   }, []);
+  console.log("pricingModalData================>", pricingModalData);
 
   const dispatch = useDispatch();
 
@@ -54,7 +52,8 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
   const checkbox = isCheckboxChecked
     ? parseFloat(pricingModalData?.priceData.time) * imageQuantity
     : 0;
-  const totalPrice = pricingModalData?.priceData.price * imageQuantity + checkbox;
+  const totalPrice =
+    pricingModalData?.priceData.price * imageQuantity + checkbox;
 
   const longText =
     "This is a long text that needs to be split into lines when its length is greater than 10.";
@@ -81,7 +80,9 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
         >
           <Grid container spacing={2}>
             <Grid item xs={10}>
-              <Typography variant="button">{pricingModalData?.priceData.name}</Typography>
+              <Typography variant="button">
+                {pricingModalData?.priceData.name}
+              </Typography>
             </Grid>
             <Grid item xs={2}>
               $ {pricingModalData?.priceData.price}
@@ -89,17 +90,19 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
             <Grid item xs={12}>
               <Box sx={{ width: "100%", maxWidth: 600 }}>
                 <Typography variant="body1" gutterBottom>
-                  {pricingModalData?.priceData?.details?.map((detail, index) => (
-                    <li key={index}>
-                      <p>
-                        <ArrowCircleRightIcon
-                          fontSize="small"
-                          sx={{ color: "#B78D65" }}
-                        />{" "}
-                        {detail}
-                      </p>
-                    </li>
-                  ))}
+                  {pricingModalData?.priceData?.details?.map(
+                    (detail, index) => (
+                      <li key={index}>
+                        <p>
+                          <ArrowCircleRightIcon
+                            fontSize="small"
+                            sx={{ color: "#B78D65" }}
+                          />{" "}
+                          {detail}
+                        </p>
+                      </li>
+                    )
+                  )}
                 </Typography>
               </Box>
             </Grid>
@@ -143,7 +146,8 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
             <Grid item xs={2}>
               <Tooltip
                 title={
-                  !pricingModalData?.priceData?.time && "Extra fast delivary is not available."
+                  !pricingModalData?.priceData?.time &&
+                  "Extra fast delivary is not available."
                 }
               >
                 <span>
@@ -261,11 +265,13 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
                   onClick={() => {
                     dispatch(
                       updatePricingCart({
-                        image: pricingModalData?.images[0],
+                        pageTitle: "",
                         quantity: imageQuantity,
                         fastDelivery: isCheckboxChecked,
                         totalPrice: totalPrice,
                         price: pricingModalData?.priceData.price,
+                        package: pricingModalData?.priceData.name,
+                        pageTitle: pricingModalData?.pageTitle,
                       })
                     );
                   }}
@@ -279,7 +285,6 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
       </Grid>
     </Grid>
   );
-
   return (
     <div className="element">
       <Drawer anchor="right" open={show} onClose={handleClose} width={"350px"}>

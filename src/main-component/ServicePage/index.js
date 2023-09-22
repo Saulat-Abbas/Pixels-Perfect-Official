@@ -1,21 +1,18 @@
-import React, {Fragment} from 'react'
-import Header from '../../components/header'
-import PageTitle from '../../components/pagetitle'
-import ServiceList from '../../components/ServiceList'
-import Footer from '../../components/footer'
-import ServiceSection from '../../components/ServiceSection'
+import React, { Fragment } from "react";
+import Header from "../../components/header";
+import PageTitle from "../../components/pagetitle";
+import ServiceList from "../../components/ServiceList";
+import Footer from "../../components/footer";
+import ServiceSection from "../../components/ServiceSection";
 
-
-
-const ServicePage =() => {
-    return(
-        <Fragment>
-            <Header/>
-            <PageTitle pageTitle={'SERVICE'} pagesub={'Service'}/>
-            <ServiceSection/>
-            <Footer/>
-        </Fragment>
-    )
+const ServicePage = () => {
+  return (
+    <Fragment>
+      <Header />
+      <PageTitle pageTitle={"SERVICE"} pagesub={"Service"} />
+      <ServiceSection />
+      <Footer />
+    </Fragment>
+  );
 };
 export default ServicePage;
-

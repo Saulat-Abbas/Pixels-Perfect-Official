@@ -3,7 +3,6 @@
     margin: 0 auto;
     padding: 20px;
 }
-
 .row {
     display: flex;
     justify-content: space-between;
@@ -11,7 +10,6 @@
     align-content: space-around;
     
 }
-
 .content {
     flex: 1;
     padding: 20px;

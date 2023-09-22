@@ -11,7 +11,7 @@ const pricingSlice = createSlice({
   },
   reducers: {
     updatePricingCart: (state, action) => {
-            state.pricingData = action.payload;
+      state.pricingData = action.payload;
     },
   },
 });

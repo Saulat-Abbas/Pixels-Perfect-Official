@@ -4,7 +4,6 @@ import PageTitle from '../../components/pagetitle'
 import BlogList from '../../components/BlogList'
 import Footer from '../../components/footer'
 
-
 const ContactPage =() => {
     return(
         <Fragment>

@@ -4,8 +4,6 @@ import PageTitle from '../../components/pagetitle'
 import Portfolio from '../../components/portfolio'
 import Footer from '../../components/footer'
 
-
-
 const PortfolioPage =() => {
     return(
         <Fragment>

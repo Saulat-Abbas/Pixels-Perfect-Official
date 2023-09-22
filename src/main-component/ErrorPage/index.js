@@ -4,7 +4,6 @@ import PageTitle from '../../components/pagetitle'
 import Error from '../../components/404'
 import Footer from '../../components/footer'
 
-
 const ErrorPage =() => {
     return(
         <Fragment>

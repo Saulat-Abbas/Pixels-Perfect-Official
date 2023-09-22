@@ -6,8 +6,6 @@ import ServiceSection from '../../components/ServiceSection'
 import BlogSection from '../../components/BlogSection'
 import Footer from '../../components/footer'
 
-
-
 const HomePage =() => {
     return(
         <Fragment>
