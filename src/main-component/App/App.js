@@ -5,7 +5,9 @@ import AllRoute from "../router";
 import "./App.css";
 import Logo from "../../img/logo.gif";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store} from "./store";
+import {persistor} from "./store"
+import { PersistGate } from "redux-persist/integration/react";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -36,7 +38,9 @@ function App() {
         </div>
       ) : (
         <Provider store={store}>
+          <PersistGate persistor={persistor}>
           <AllRoute />
+          </PersistGate>
         </Provider>
       )}
     </div>

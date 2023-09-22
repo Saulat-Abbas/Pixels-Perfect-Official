@@ -42,8 +42,8 @@ const Pricing = ({ pricing, pageTitle }) => {
                 </h2>
               </div>
               <Tabs
-                value={value}
-                onChange={handleChange}
+                value={value} // Set the active tab value
+                onChange={handleChange} // Handle tab change
                 variant="fullWidth"
                 indicatorColor="primary"
                 textColor="primary"
