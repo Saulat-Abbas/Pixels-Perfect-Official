@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import PaymentForm from "./paymentForm";
+import PaymentForm from "./payments";
 
 const Checkoutform = (pricingData) => {
     return (

@@ -30,7 +30,6 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
   useEffect(() => {
     setImageQuantity(1);
   }, []);
-  console.log("pricingModalData================>", pricingModalData);
 
   const dispatch = useDispatch();
 

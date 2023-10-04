@@ -22,7 +22,7 @@ const Footer = () => {
                     <i className="fas fa-phone-square-alt" /> (+1) 307 243 2920
                   </li>
                   <li>
-                    <i className="fas fa-envelope" /> info@Pixelperfect.com
+                    <i className="fas fa-envelope" /> info@Pxlperfects.com
                   </li>
                   <li>
                     <i className="fas fa-map" /> 30 N Gould Street, Sheridan, Wyoming, USA.

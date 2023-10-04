@@ -165,7 +165,10 @@
 	font-weight: 500;
 	margin-left: 35px;
 	position: relative;
-	color: #B78D65
+	color: #B78D65;
+	margin-bottom: 10%;
+	
+	
 }
 
 .header-btn>div {
