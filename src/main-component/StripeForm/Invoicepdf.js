@@ -1,11 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Invoicepdf.css";
 import Logo from "../../img/logo.gif";
+import ClearIcon from "@mui/icons-material/Clear";
+import CheckIcon from "@mui/icons-material/Check";
 
 const InvoicePDF = ({ InvoiceData }) => {
+  const cartUpdate = useSelector((state) => state.pricing.pricingData);
   const generatePDF = () => {
     const input = document.getElementById("invoice-container");
 
@@ -41,16 +45,16 @@ const InvoicePDF = ({ InvoiceData }) => {
   };
   <InvoicePDF invoiceData={invoiceData} />;
   // Helper function to calculate subtotal
-  const calculateSubtotal = (items) => {
-    return items.reduce((acc, item) => acc + item.quantity * item.unitPrice, 0);
-  };
+  // const calculateSubtotal = (items) => {
+  //   return items.reduce((acc, item) => acc + item.quantity * item.unitPrice, 0);
+  // };
 
   // Helper function to calculate total
-  const calculateTotal = (items) => {
-    const subtotal = calculateSubtotal(items);
-    const tax = subtotal * 0.1; // Assuming 10% tax rate
-    return subtotal + tax;
-  };
+  // const calculateTotal = (items) => {
+  //   const subtotal = calculateSubtotal(items);
+  //   const tax = subtotal * 0.1; // Assuming 10% tax rate
+  //   return subtotal + tax;
+  // };
   function downloadInvoice() {
     // Create an anchor element
     const anchor = document.createElement("a");
@@ -128,7 +132,7 @@ const InvoicePDF = ({ InvoiceData }) => {
                 <thead>
                   <tr>
                     <td class="text-bold">Service</td>
-                    <td class="text-bold">Description</td>
+                    <td class="text-bold">package</td>
                     <td class="text-bold">Rate</td>
                     <td class="text-bold">QTY</td>
                     <td class="text-bold">Amount</td>
@@ -136,13 +140,13 @@ const InvoicePDF = ({ InvoiceData }) => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Design</td>
-                    <td>Creating a website design</td>
-                    <td>$50.00</td>
-                    <td>10</td>
-                    <td class="text-end">$500.00</td>
+                    <td>{cartUpdate.pageTitle}</td>
+                    <td>{cartUpdate.package}</td>
+                    <td>${cartUpdate.price}</td>
+                    <td>{cartUpdate.quantity}</td>
+                    <td class="text-end">${cartUpdate.totalPrice}</td>
                   </tr>
-                  <tr>
+                  {/* <tr>
                     <td>Development</td>
                     <td>Website Development</td>
                     <td>$50.00</td>
@@ -159,21 +163,25 @@ const InvoicePDF = ({ InvoiceData }) => {
                   <tr>
                     <td colspan="4">10</td>
                     <td>$500.00</td>
-                  </tr>
+                  </tr> */}
                 </tbody>
               </table>
               <div class="invoice-body-bottom">
                 <div class="invoice-body-info-item border-bottom">
                   <div class="info-item-td text-end text-bold">Sub Total:</div>
-                  <div class="info-item-td text-end">$2150.00</div>
+                  <div class="info-item-td text-end">${cartUpdate.totalPrice}</div>
                 </div>
                 <div class="invoice-body-info-item border-bottom">
-                  <div class="info-item-td text-end text-bold">Tax:</div>
-                  <div class="info-item-td text-end">$215.00</div>
+                  <div class="info-item-td text-end text-bold">Extra fastDelivery:</div>
+                  <div class="info-item-td text-end"> {cartUpdate.fastDelivery ? (
+                                <CheckIcon color="success" />
+                              ) : (
+                                <ClearIcon color="error" />
+                              )}</div>
                 </div>
                 <div class="invoice-body-info-item">
                   <div class="info-item-td text-end text-bold">Total:</div>
-                  <div class="info-item-td text-end">$21365.00</div>
+                  <div class="info-item-td text-end">${cartUpdate.totalPrice}
                 </div>
               </div>
             </div>
@@ -210,7 +218,7 @@ const InvoicePDF = ({ InvoiceData }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
   );
 };
 

@@ -10,6 +10,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { useHistory } from "react-router-dom";
 import ErrorModal from "./ErrorModal";
 import SuccessModal from "./SuccessModal";
+import InvoicePDF from "./Invoicepdf";
 
 const PaymentForm = ({ images }) => {
   const cartUpdate = useSelector((state) => state.pricing.pricingData);
@@ -96,6 +97,7 @@ const PaymentForm = ({ images }) => {
   return (
   
     <div>
+      <InvoicePDF/>
       <form onSubmit={handleSubmit}>
         <Typography
           variant="h2"
