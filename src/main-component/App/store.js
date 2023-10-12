@@ -11,7 +11,7 @@ const persistedReducer = persistReducer(persistConfig, pricingReducer);
 export const store = configureStore({
   reducer: {
     pricing: persistedReducer,
-  },
+      },
 });
 
 export const persistor = persistStore(store);

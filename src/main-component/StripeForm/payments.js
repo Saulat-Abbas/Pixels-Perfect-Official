@@ -13,7 +13,7 @@ import SuccessModal from "./SuccessModal";
 
 const PaymentForm = ({ images }) => {
   const cartUpdate = useSelector((state) => state.pricing.pricingData);
-  const [showSuccessModal, setShowSuccessModal] = useState(true);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const history = useHistory();
   const stripe = useStripe();
@@ -94,6 +94,7 @@ const PaymentForm = ({ images }) => {
   };
 
   return (
+  
     <div>
       <form onSubmit={handleSubmit}>
         <Typography
@@ -223,6 +224,7 @@ const PaymentForm = ({ images }) => {
                 >
                   Back
                 </MuiButton>
+              
               </div>
             </div>
           </div>
@@ -252,6 +254,7 @@ const PaymentForm = ({ images }) => {
                             {" "}
                             Your Order Summary
                           </h3>
+                         
                         </Typography>
                       </Grid>
                       <Grid item sm={10} xs={10}>
