@@ -119,7 +119,7 @@
   /* style.css */
   /* You can add any additional styles here */
   .mui-button{
-	margin-left: 200px;
+	margin-left: 30%;
 }
 @media (max-width: 768px) {
     .mui-button {

@@ -94,7 +94,7 @@ const PaymentForm = ({ images }) => {
   return (
 
     <div>
-      {formData && <InvoicePDF formData={formData} />}
+      {/* {formData && <InvoicePDF formData={formData} />} */}
 
       <form onSubmit={handleSubmit}>
         <Typography
