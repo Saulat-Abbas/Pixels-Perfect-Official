@@ -1,5 +1,4 @@
 import { Button, Modal } from "react-bootstrap";
-import React, { useState } from "react";
 import Image from "react-bootstrap/Image";
 import tickImage from "../../img/404-tick.png";
 

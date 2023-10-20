@@ -21,7 +21,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
-import { updatePricingCart } from "../../main-component/CreateSlice/pricingSlice";
+import { updatePricingCart } from "../../main-component/ReduxStore/Slices/pricingSlice";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
@@ -53,10 +53,6 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
     : 0;
   const totalPrice =
     pricingModalData?.priceData.price * imageQuantity + checkbox;
-
-  const longText =
-    "This is a long text that needs to be split into lines when its length is greater than 10.";
-  const lines = longText.match(/.{1,10}/g) || [];
 
   const list = () => (
     <Grid container spacing={1} maxWidth={450} justifyContent={"center"}>
@@ -264,14 +260,14 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
                   onClick={() => {
                     dispatch(
                       updatePricingCart({
-                        pageTitle: "",
+                    
                         quantity: imageQuantity,
                         fastDelivery: isCheckboxChecked,
                         totalPrice: totalPrice,
                         price: pricingModalData?.priceData.price,
                         package: pricingModalData?.priceData.name,
                         pageTitle: pricingModalData?.pageTitle,
-                      })
+                      }),
                     );
                   }}
                 >

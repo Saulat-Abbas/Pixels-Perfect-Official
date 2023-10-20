@@ -1,67 +1,65 @@
 import React from "react";
-import { Modal, Typography, Button,Paper } from "@mui/material";
-import { CheckCircleOutlineRounded } from "@mui/icons-material";
+import { Modal, Paper, Button } from "@mui/material";
 import InvoicePDF from "./Invoicepdf";
+import "./SuccessModal.css";
+import LocalPrintshopIcon from "@mui/icons-material/LocalPrintshop";
+import CloseIcon from "@mui/icons-material/Close";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
-
-function printInvoice(){
+function printInvoice() {
   window.print();
 }
+
 function downloadInvoice() {
-  // Create an anchor element
   const anchor = document.createElement("a");
-
-  // Set the href attribute to the URL of the file you want to download
-  anchor.href = "path_to_invoice.pdf"; // Replace with the actual path to your PDF file
-
-  // Set the download attribute to specify the default file name
-  anchor.download = "invoice.pdf"; // You can change the file name if needed
-
-  // Programmatically click the anchor element to trigger the download
+  anchor.href = "path_to_invoice.pdf";
+  anchor.download = "invoice.pdf";
   anchor.click();
 }
+
 const SuccessModal = ({ open, onClose }) => {
   return (
     <Modal
-    open={open}
-    onClose={onClose}
-    sx={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    }}
-  >
-    <Paper
-      elevation={3}
+      open={open}
+      onClose={onClose}
       sx={{
-        width: "50vw",
-        // maxWidth: "800px",
-        height: "90vh",
         display: "flex",
-        flexDirection: "column",
-        padding: "20px",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
-        
-      {/* InvoicePDF Component */}
-      <div style={{ flex: 1, overflowY: "auto" }}>
-        <InvoicePDF />
-      </div>
-
-      {/* Close Button */}
-      <div style={{ marginTop: "20px", textAlign: "center" }}>
-        <Button variant="contained" onClick={onClose}>
-          Close
-        </Button>
-        <Button variant="contained" className="invoice-btn" onClick={printInvoice}>
-         Print
-        </Button>
-        <Button variant="contained" className="download-btn" onClick={downloadInvoice}>
-          Download
-        </Button>
-      </div>
-    </Paper>
-  </Modal>
+      <Paper
+        elevation={3}
+        sx={{
+          width: "50vw",
+          height: "90vh",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20px",
+          justifyContent: "center", 
+          alignItems: "center", 
+        }}
+      >
+      
+        <div style={{ textAlign: "center", marginBottom: "20px" }}>
+          <div style={{ fontSize: "24px", color: "green" }}>
+            <i
+              className="fas fa-check-circle"
+              style={{ marginRight: "10px" }}
+            ></i>
+            Thank you for your business
+          </div>
+        </div>
+        <div style={{ flex: 1, overflowY: "auto" }}>
+          <InvoicePDF />
+        </div>
+        <div>
+          <button class="button"  style={{color:"red"}} onClick={onClose}><CloseIcon/>Close </button>
+          <button class="button" onClick={downloadInvoice}><FileDownloadIcon/>Download </button>
+          <button class="button"  onClick={printInvoice}><LocalPrintshopIcon/>Print </button>
+        </div>
+      </Paper>
+    </Modal>
   );
 };
 

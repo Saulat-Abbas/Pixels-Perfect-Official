@@ -11,18 +11,53 @@ const ServiceSection = () => {
   const serviceImg4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-bg-4.jpg?alt=media&token=a8152bb0-13ae-481c-a549-647c29085c93"
   const serviceImg5 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-bg-5.jpg?alt=media&token=9f826547-63fa-4d23-90d4-1b4b48681fda"
   const serviceImg6  = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-bg-6.jpg?alt=media&token=82a45ba2-4621-4318-ab37-4798868c8bd6"
+  const serviceImg7  = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-bg-6.jpg?alt=media&token=82a45ba2-4621-4318-ab37-4798868c8bd6"
   const serviceIcon1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-1.png?alt=media&token=bfba3402-6d36-4ac5-86c7-c5bf3e548f6d"
   const serviceIcon2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-2.png?alt=media&token=2d1b309f-32d3-4558-ac4e-244395be503a"
   const serviceIcon3 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-3.png?alt=media&token=dfbef278-3442-4f08-b11f-3986d7af4217"
   const serviceIcon4 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-4.png?alt=media&token=90b81a21-9091-46c6-9ca3-82cea559e96a"
   const serviceIcon5 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-5.png?alt=media&token=2c830ceb-8684-4019-ba91-a7cd126a6e7a"
   const serviceIcon6 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-6.png?alt=media&token=a7cbdde8-731f-427f-ba3b-ccfdba669469"
+  const serviceIcon7 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/service-icon-6.png?alt=media&token=a7cbdde8-731f-427f-ba3b-ccfdba669469"
 
   return (
     <section className="service-area">
       <div className="col-lg-12 col-md-12" >
         <h1 className="sub-titlee">Architectural & Interior Designing</h1>
         <div className="justify-content-center d-flex flex-wrap" style={{ margin: 60 }}>
+        <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
+            <Link to="/service-single?service=Virtual-Boy" className="service-text">
+              <div className="service-box" data-aos="fade-up" data-aos-delay="100">
+                <div className="service-icon">
+                  <img src={serviceIcon7} alt="img" />
+                </div>
+                <div>
+                  <h3 className="cta-btn btn-border">360 Staging</h3>
+                  <p className="btn-border">
+                  "Elevate your property listings with this service, buyers in fully staged,
+                    enabling them to explore their future home."
+                  </p>
+                </div>
+                <img src={serviceImg7} alt="img" />
+              </div>
+            </Link>
+          </div>
+          <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
+            <Link to="/service-single?service=Virtual-Boy" className="service-text">
+              <div className="service-box" data-aos="fade-up" data-aos-delay="100">
+                <div className="service-icon">
+                  <img src={serviceIcon7} alt="img" />
+                </div>
+                <div>
+                  <h3 className="cta-btn btn-border">360 Renovation</h3>
+                  <p className="btn-border">
+                  360 Home Renovations takes the time to understand your vision right down to every last detail
+                  </p>
+                </div>
+                <img src={serviceImg7} alt="img" />
+              </div>
+            </Link>
+          </div>
           <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
             <Link to="/service-single?service=Virtual-Duculator" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="100">
@@ -117,5 +152,4 @@ const ServiceSection = () => {
     </section>
   );
 };
-
 export default ServiceSection;

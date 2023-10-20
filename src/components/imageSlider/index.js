@@ -45,16 +45,16 @@ const ImageSlider = ({ images }) => {
             alt={`Image ${currentSlide + 1}`}
             className="main-image"
           />
-        <div className="thumbnail-container">
-          {images.map((image, index) => (
-            <button
-            key={index}
-              onClick={() => handleSlideChange(index)}
-              className={`thumbnail-button ${index === currentSlide ? 'active' : ''}`}
+          <div className="thumbnail-container">
+            {images.map((image, index) => (
+              <button
+                key={index}
+                onClick={() => handleSlideChange(index)}
+                className={`thumbnail-button ${index === currentSlide ? 'active' : ''}`}
               >
-              <img src={image} alt={`Thumbnail ${index + 1}`} className="thumbnail-image" />
-            </button>
-          ))}
+                <img src={image} alt={`Thumbnail ${index + 1}`} className="thumbnail-image" />
+              </button>
+            ))}
           </div>
         </div>
       </div>

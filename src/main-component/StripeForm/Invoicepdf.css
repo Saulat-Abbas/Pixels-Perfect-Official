@@ -19,7 +19,6 @@ ul li{
     margin: 2px 0;
 }
 
-/* text colors */
 .text-dark{
     color: var(--dark-color);
 }
@@ -38,12 +37,12 @@ ul li{
 .text-bold{
     font-weight: 700;
 }
-/* hr line */
+
 .hr{
     height: 1px;
     background-color: rgba(0, 0, 0, 0.1);
 }
-/* border-bottom */
+
 .border-bottom{
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -154,9 +153,6 @@ body{
     }
 }
 
-.overflow-view{
-    overflow-x: scroll;
-}
 .invoice-body{
     min-width: 600px;
 }
@@ -194,3 +190,18 @@ body{
       top: 50;
     }
   }
+  .invoice-left-panel {
+    flex: 1; 
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    width:50%
+  }
+  .invoice-right-panel {
+    flex: 1; 
+    padding: 20px;
+    width: 50%;
+  }
+  i.fas.fa-map-marked-alt {
+    color: #0e0e0e;
+    font-size: 24px;
+}

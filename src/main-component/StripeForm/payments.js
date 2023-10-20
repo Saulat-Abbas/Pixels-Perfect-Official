@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { Button as MuiButton } from "@mui/material";
-import { Card, Grid, Typography, Divider, Modal, Button } from "@mui/material";
+import { Card, Grid, Typography, Divider } from "@mui/material";
 import { countriesData } from "./countriesData";
 import { useSelector } from "react-redux";
 import CheckIcon from "@mui/icons-material/Check";
@@ -11,6 +11,8 @@ import { useHistory } from "react-router-dom";
 import ErrorModal from "./ErrorModal";
 import SuccessModal from "./SuccessModal";
 import InvoicePDF from "./Invoicepdf";
+import { useDispatch } from "react-redux";
+import { updateFormData } from "../ReduxStore/Slices/formDataSlice";
 
 const PaymentForm = ({ images }) => {
   const cartUpdate = useSelector((state) => state.pricing.pricingData);
@@ -21,17 +23,16 @@ const PaymentForm = ({ images }) => {
   const elements = useElements();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [countryIndex, setCountryIndex] = useState("");
   const [formData, setFormData] = useState({
-  fullName: "",
-  Email: "",
-  CompanyName: "",
-  country: "United States",
-  state: "",
-  city: "",
-  zip: "",
-});
-  
+    fullName: "",
+    Email: "",
+    CompanyName: "",
+    country: "United States",
+    state: "",
+    city: "",
+    zip: "",
+  });
+
   const isFormValid = () => {
     return (
       formData.fullName !== "" &&
@@ -39,15 +40,10 @@ const PaymentForm = ({ images }) => {
       formData.state !== "" &&
       formData.city !== "" &&
       formData.zip !== ""
-      );
-    };
-
-  useEffect(() => {
-    const index = countriesData.findIndex(
-      (country) => country.code === formData.country
     );
-    setCountryIndex(index);
-  }, [formData.country]);
+  };
+
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -84,6 +80,7 @@ const PaymentForm = ({ images }) => {
       } else {
         if (paymentMethod) {
           setShowSuccessModal(true);
+          dispatch(setFormData(formData));
         }
       }
     } catch (error) {
@@ -93,11 +90,12 @@ const PaymentForm = ({ images }) => {
       setShowErrorModal(true);
     }
   };
-
+ 
   return (
-  
+
     <div>
-      <InvoicePDF/>
+      {formData && <InvoicePDF formData={formData} />}
+
       <form onSubmit={handleSubmit}>
         <Typography
           variant="h2"
@@ -226,7 +224,17 @@ const PaymentForm = ({ images }) => {
                 >
                   Back
                 </MuiButton>
-              
+                <ErrorModal
+                  open={showErrorModal}
+                  onClose={() => setShowErrorModal(false)}
+                  formData={formData}
+                />
+
+                <SuccessModal
+                  open={showSuccessModal}
+                  onClose={() => setShowSuccessModal(false)}
+                  formData={formData}
+                />
               </div>
             </div>
           </div>
@@ -252,11 +260,10 @@ const PaymentForm = ({ images }) => {
                             fontSize: "15px",
                           }}
                         >
-                          <h3 style={{ marginTop: "5%" }}>
+                          <h3 style={{ marginTop: "3%" }}>
                             {" "}
                             Your Order Summary
                           </h3>
-                         
                         </Typography>
                       </Grid>
                       <Grid item sm={10} xs={10}>
@@ -294,7 +301,7 @@ const PaymentForm = ({ images }) => {
                             ></Typography>
                           </Grid>
                         </Grid>
-                        <Divider style={{ marginTop: "2%" }} />
+                        <Divider style={{ marginTop: "1%" }} />
                         <Grid container spacing={2} alignItems="center">
                           <Grid
                             item
@@ -343,7 +350,7 @@ const PaymentForm = ({ images }) => {
                               </b>
                             </Typography>
                           </Grid>
-                          <Divider sx={{ mb: "30px", marginTop: "2%" }} />
+                          <Divider sx={{ mb: "30px", marginTop: "1%" }} />
                           <Grid container spacing={2} alignItems="center">
                             <Grid
                               item
@@ -364,8 +371,8 @@ const PaymentForm = ({ images }) => {
                               </Typography>
                             </Grid>
                           </Grid>
-                          <Divider sx={{ mb: "5px", marginBottom: "5%" }} />
-                          <Grid container spacing={2} alignItems="center">
+                          <Divider sx={{ mb: "5px", marginBottom: "0%" }} />
+                          <Grid container spacing={0} alignItems="center">
                             <Grid
                               item
                               xs={10}
@@ -389,12 +396,16 @@ const PaymentForm = ({ images }) => {
                             )}
                             <MuiButton
                               type="submit"
+                              onClick={() => {
+                                dispatch(updateFormData(formData));
+                             
+                              }}
                               disabled={!isFormValid() || !stripe || loading}
                               variant="contained"
                               style={{
                                 backgroundColor: "#B78D65",
                                 color: "white",
-                                marginTop: "40px",
+                                marginTop: "30px",
                                 marginLeft: "30%",
                                 fontSize: "80%",
                               }}
@@ -419,6 +430,7 @@ const PaymentForm = ({ images }) => {
       <SuccessModal
         open={showSuccessModal}
         onClose={() => setShowSuccessModal(false)}
+        formData={formData}
       />
     </div>
   );

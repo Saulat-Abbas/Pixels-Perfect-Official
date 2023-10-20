@@ -52,25 +52,12 @@ export const handleServiceData = (type) => {
   const word1 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/word-1.jpg?alt=media&token=ae8d22d2-d968-42ce-a01a-e37db3340516";
 
-    let pageTitle = "";
-    let pageSub = "";
-    let images = [];
-    let pricing = [];
-    let description = "";
-
   switch (type) {
     case "Virtual-Duculator":
       return {
         pageTitle: "Virtual Duculator",
         pageSub: "Virtual Duculator Details",
-        images: [
-          decluter1,
-          decluter2,
-          decluter3,
-          decluter4,
-          decluter5,
-          decluter6,
-        ],
+        images: [decluter1,decluter2,decluter3,decluter4,decluter5,decluter6 ],
         description:
           "Virtual Duculator is an innovative digital tool that transforms the way calculations are conducted. Combining cutting-edge technology with user-friendly design, it offers a virtual calculator experience that transcends traditional methods. Virtual Duculator's intuitive interface allows users to perform a wide range of calculations, from basic arithmetic to advanced mathematical operations, all within a digital environment. Its 24/7 availability ensures instant access whenever needed, while data security measures prioritize privacy. Virtual Duculator is a versatile solution that suits students, professionals, and anyone seeking accurate and efficient computations, redefining the concept of digital calculators.",
         pricing: [
@@ -102,6 +89,83 @@ export const handleServiceData = (type) => {
           },
         ],
       };
+      
+      case "360 Staging":
+        return{
+        pageTitle : "360 Staging",
+        pageSub : "360 Staging Details",
+        images : [enhacment1, enhacment2, enhacment3, enhacment4],
+        description :
+          "360 Staging refers to the process of improving the visual quality of a photograph or image through various techniques and technologies. It aims to make images more visually appealing, clear, and detailed by adjusting attributes such as brightness, contrast, color balance, sharpness, and removing unwanted elements or imperfections. Image enhancement can be applied for various purposes, including improving the visual impact of photographs, enhancing the clarity of details, and making images more suitable for specific applications such as printing, publishing, or digital display. This process can involve manual adjustments using software tools or automated algorithms to achieve desired outcomes while maintaining the integrity of the original content.",
+        pricing: [
+          {
+            name: "Starter",
+            price: 1,
+            details: [
+              "Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Sharpen Clarity.",
+              <span key="revision">1 revision</span>,
+            ],
+          },
+          {
+            name: "Regular",
+            price: 20,
+            details: [
+              "Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Object removing (25 Images)",
+              <span key="revision">2 revision</span>,
+              <span key="revision">3 days Dilivery</span>,
+            ],
+          },
+          {
+            name: "Premium",
+            price: 25,
+            details: [
+              "Basic Enhancement, Object removing  (35 Images), Your company Logo as watermark, Sharpen Clarity.",
+              <span key="revision">3 revision</span>,
+              <span key="revision">5 days Dilivery</span>,
+            ],
+            time: "25",
+          },
+        ]
+    };
+        
+      case "360 Enhancement":
+        return{
+        pageTitle : "360 Enhancement",
+        pageSub : "360 Enhancement Details",
+        images : [enhacment1, enhacment2, enhacment3, enhacment4],
+        description :
+          "Image enhancement refers to the process of improving the visual quality of a photograph or image through various techniques and technologies. It aims to make images more visually appealing, clear, and detailed by adjusting attributes such as brightness, contrast, color balance, sharpness, and removing unwanted elements or imperfections. Image enhancement can be applied for various purposes, including improving the visual impact of photographs, enhancing the clarity of details, and making images more suitable for specific applications such as printing, publishing, or digital display. This process can involve manual adjustments using software tools or automated algorithms to achieve desired outcomes while maintaining the integrity of the original content.",
+        pricing: [
+          {
+            name: "Starter",
+            price: 1,
+            details: [
+              "Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Sharpen Clarity.",
+              <span key="revision">1 revision</span>,
+            ],
+          },
+          {
+            name: "Regular",
+            price: 20,
+            details: [
+              "Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Object removing (25 Images)",
+              <span key="revision">2 revision</span>,
+              <span key="revision">3 days Dilivery</span>,
+            ],
+          },
+          {
+            name: "Premium",
+            price: 25,
+            details: [
+              "Basic Enhancement, Object removing  (35 Images), Your company Logo as watermark, Sharpen Clarity.",
+              <span key="revision">3 revision</span>,
+              <span key="revision">5 days Dilivery</span>,
+            ],
+            time: "25",
+          },
+        ]
+    };
+        
       case "Image-Enhancement":
         return{
         pageTitle : "Image Enhancement",

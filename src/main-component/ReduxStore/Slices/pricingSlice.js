@@ -16,26 +16,8 @@ const pricingSlice = createSlice({
     },
   },
 });
-// const formDataSlice = createSlice({
-//   name: "formData",
-//   initialState: {
-//     fullName: "",
-//     Email: "",
-//     CompanyName: "",
-//     country: "United States",
-//     state: "",
-//     city: "",
-//     zip: "",
-//   },
-//   reducers: {
-//     updateFormData: (state, action) => {
-//       return { ...state, ...action.payload };
-//     },
-//   },
-// });
 
 export const { updatePricingCart } = pricingSlice.actions;
-// export const { updateFormData } = formDataSlice.actions;
 
 export default pricingSlice.reducer;
 

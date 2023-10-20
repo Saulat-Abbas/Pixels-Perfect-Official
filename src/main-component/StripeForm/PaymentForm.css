@@ -97,6 +97,7 @@ button[type="submit"] {
   transition: background-color 0.3s ease;
   margin-left: 100px;
   height: 50px;
+ 
 }
 
 button[type="submit"]:disabled {
@@ -155,8 +156,6 @@ button[type="submit"]:hover {
   background-color: #F0F0F0;
   padding-top: 10.5%;
 }
-
-/* Styles for larger screens (desktop view) */
 @media screen and (min-width: 768px) {
   .two-panel-container {
     flex-direction: row;
@@ -172,7 +171,7 @@ button[type="submit"]:hover {
   }
 }
 
-/* Styles for smaller screens (mobile view) */
+
 @media screen and (max-width: 767px) {
   .two-panel-container {
     gap: 20px;
@@ -192,7 +191,7 @@ button[type="submit"]:hover {
     width: 100%; 
   }
 
-  /* Center the content within the picture panel for mobile view */
+
   .picture-content {
     height: auto;
     text-align: center;
