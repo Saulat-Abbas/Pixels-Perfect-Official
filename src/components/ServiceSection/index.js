@@ -26,7 +26,7 @@ const ServiceSection = () => {
         <h1 className="sub-titlee">Architectural & Interior Designing</h1>
         <div className="justify-content-center d-flex flex-wrap" style={{ margin: 60 }}>
         <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
-            <Link to="/service-single?service=Virtual-Boy" className="service-text">
+            <Link to="/service-single?service=360-Staging" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-icon">
                   <img src={serviceIcon7} alt="img" />
@@ -43,7 +43,7 @@ const ServiceSection = () => {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
-            <Link to="/service-single?service=Virtual-Boy" className="service-text">
+            <Link to="/service-single?service=360-Renovation" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-icon">
                   <img src={serviceIcon7} alt="img" />

@@ -12,7 +12,7 @@ const ServiceSinglePage = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const type = queryParams.get("service");
-  const [serviceData, setServiceData] = useState(null); 
+  const [serviceData, setServiceData] = useState(null);
   window.scrollTo(0, 0);
 
   useEffect(() => {
@@ -21,8 +21,8 @@ const ServiceSinglePage = () => {
       setServiceData(data);
     };
 
-    fetchData(); 
-    }, [type]); 
+    fetchData();
+  }, [type]);
 
   if (!serviceData) {
     return null;
@@ -31,7 +31,10 @@ const ServiceSinglePage = () => {
   return (
     <Fragment>
       <Header />
-      <PageTitle pageTitle={serviceData.pageTitle} pagesub={serviceData.pageSub} />
+      <PageTitle
+        pageTitle={serviceData.pageTitle}
+        pagesub={serviceData.pageSub}
+      />
       <div className="content-section">
         <div className="container">
           <div className="row">
@@ -39,7 +42,10 @@ const ServiceSinglePage = () => {
               <ImageSlider images={serviceData.images} />
             </div>
             <div className="col-lg-6 pricing">
-              <Pricing pricing={serviceData.pricing} pageTitle={serviceData.pageTitle} />
+              <Pricing
+                pricing={serviceData.pricing}
+                pageTitle={serviceData.pageTitle}
+              />
             </div>
             <div className="row">
               <div

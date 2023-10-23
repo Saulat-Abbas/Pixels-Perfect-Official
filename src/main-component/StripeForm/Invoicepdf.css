@@ -146,7 +146,7 @@ body{
         margin-bottom: 12px;
     }
     .invoice *{
-        text-align: left;
+        text-align: right;
     }
     .invoice{
         padding: 28px;
@@ -186,8 +186,8 @@ body{
   
     #invoice-container {
       position: absolute;
-      left: 50;
-      top: 50;
+      margin: auto;
+      
     }
   }
   .invoice-left-panel {

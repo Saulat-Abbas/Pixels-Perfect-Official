@@ -57,7 +57,14 @@ export const handleServiceData = (type) => {
       return {
         pageTitle: "Virtual Duculator",
         pageSub: "Virtual Duculator Details",
-        images: [decluter1,decluter2,decluter3,decluter4,decluter5,decluter6 ],
+        images: [
+          decluter1,
+          decluter2,
+          decluter3,
+          decluter4,
+          decluter5,
+          decluter6,
+        ],
         description:
           "Virtual Duculator is an innovative digital tool that transforms the way calculations are conducted. Combining cutting-edge technology with user-friendly design, it offers a virtual calculator experience that transcends traditional methods. Virtual Duculator's intuitive interface allows users to perform a wide range of calculations, from basic arithmetic to advanced mathematical operations, all within a digital environment. Its 24/7 availability ensures instant access whenever needed, while data security measures prioritize privacy. Virtual Duculator is a versatile solution that suits students, professionals, and anyone seeking accurate and efficient computations, redefining the concept of digital calculators.",
         pricing: [
@@ -89,13 +96,13 @@ export const handleServiceData = (type) => {
           },
         ],
       };
-      
-      case "360 Staging":
-        return{
-        pageTitle : "360 Staging",
-        pageSub : "360 Staging Details",
-        images : [enhacment1, enhacment2, enhacment3, enhacment4],
-        description :
+
+    case "360-Staging":
+      return {
+        pageTitle: "360 Staging",
+        pageSub: "360 Staging Details",
+        images: [enhacment1, enhacment2, enhacment3, enhacment4],
+        description:
           "360 Staging refers to the process of improving the visual quality of a photograph or image through various techniques and technologies. It aims to make images more visually appealing, clear, and detailed by adjusting attributes such as brightness, contrast, color balance, sharpness, and removing unwanted elements or imperfections. Image enhancement can be applied for various purposes, including improving the visual impact of photographs, enhancing the clarity of details, and making images more suitable for specific applications such as printing, publishing, or digital display. This process can involve manual adjustments using software tools or automated algorithms to achieve desired outcomes while maintaining the integrity of the original content.",
         pricing: [
           {
@@ -125,15 +132,15 @@ export const handleServiceData = (type) => {
             ],
             time: "25",
           },
-        ]
-    };
-        
-      case "360 Enhancement":
-        return{
-        pageTitle : "360 Enhancement",
-        pageSub : "360 Enhancement Details",
-        images : [enhacment1, enhacment2, enhacment3, enhacment4],
-        description :
+        ],
+      };
+
+    case "360-Renovation":
+      return {
+        pageTitle: "360 Renovation",
+        pageSub: "360 Renovation Details",
+        images: [enhacment1, enhacment2, enhacment3, enhacment4],
+        description:
           "Image enhancement refers to the process of improving the visual quality of a photograph or image through various techniques and technologies. It aims to make images more visually appealing, clear, and detailed by adjusting attributes such as brightness, contrast, color balance, sharpness, and removing unwanted elements or imperfections. Image enhancement can be applied for various purposes, including improving the visual impact of photographs, enhancing the clarity of details, and making images more suitable for specific applications such as printing, publishing, or digital display. This process can involve manual adjustments using software tools or automated algorithms to achieve desired outcomes while maintaining the integrity of the original content.",
         pricing: [
           {
@@ -152,6 +159,7 @@ export const handleServiceData = (type) => {
               <span key="revision">2 revision</span>,
               <span key="revision">3 days Dilivery</span>,
             ],
+            time:"20"
           },
           {
             name: "Premium",
@@ -163,24 +171,25 @@ export const handleServiceData = (type) => {
             ],
             time: "25",
           },
-        ]
-    };
-        
-      case "Image-Enhancement":
-        return{
-        pageTitle : "Image Enhancement",
-        pageSub : "Image Enhancement Details",
-        images : [enhacment1, enhacment2, enhacment3, enhacment4],
-        description :
+        ],
+      };
+
+    case "Image-Enhancement":
+      return {
+        pageTitle: "Image Enhancement",
+        pageSub: "Image Enhancement Details",
+        images: [enhacment1, enhacment2, enhacment3, enhacment4],
+        description:
           "Image enhancement refers to the process of improving the visual quality of a photograph or image through various techniques and technologies. It aims to make images more visually appealing, clear, and detailed by adjusting attributes such as brightness, contrast, color balance, sharpness, and removing unwanted elements or imperfections. Image enhancement can be applied for various purposes, including improving the visual impact of photographs, enhancing the clarity of details, and making images more suitable for specific applications such as printing, publishing, or digital display. This process can involve manual adjustments using software tools or automated algorithms to achieve desired outcomes while maintaining the integrity of the original content.",
         pricing: [
           {
             name: "Starter",
-            price: 1,
+            price: 5,
             details: [
               "Blue Sky replacement, Boost color, Shadow Lift, Straighten & Crop, Sharpen Clarity.",
               <span key="revision">1 revision</span>,
             ],
+            
           },
           {
             name: "Regular",
@@ -190,6 +199,7 @@ export const handleServiceData = (type) => {
               <span key="revision">2 revision</span>,
               <span key="revision">3 days Dilivery</span>,
             ],
+            time:"20"
           },
           {
             name: "Premium",
@@ -199,19 +209,19 @@ export const handleServiceData = (type) => {
               <span key="revision">3 revision</span>,
               <span key="revision">5 days Dilivery</span>,
             ],
-            time: "25",
+            time: "50",
           },
-        ]
-    };
-        
-      case "virtual-staging":
-        return{
-        pageTitle :"Virtual Staging",
-        pageSub : "Virtual Staging Details",
-        images : [staging1, staging2, staging3, staging4, staging5, staging6],
-        description :
+        ],
+      };
+
+    case "virtual-staging":
+      return {
+        pageTitle: "Virtual Staging",
+        pageSub: "Virtual Staging Details",
+        images: [staging1, staging2, staging3, staging4, staging5, staging6],
+        description:
           "Virtual staging is a modern real estate technique where software is used to digitally furnish and decorate vacant or minimally furnished rooms in property photographs. By adding virtual furniture and design elements, it creates visually engaging images that help potential buyers envision the full potential of a space. This cost-effective approach allows for customization of styles, layouts, and decor, while also enabling quick turnaround for property listings. However, it's important to transparently communicate that these images are digitally enhanced for marketing purposes to set accurate expectations for potential buyers or renters.  ",
-        pricing : [
+        pricing: [
           {
             name: "Starter",
             price: 10,
@@ -239,28 +249,32 @@ export const handleServiceData = (type) => {
               <span key="revision">3 revision</span>,
               <span key="revision">5 days Dilivery</span>,
             ],
+            time:"30"
           },
-        ]
-    };
-        
-      case "website-development":
-        return{
-        pageTitle : "Website Development",
-        pageSub : "Website Development Details",
-        images : [web1, web2, web3],
+        ],
+      };
 
-        description :
+    case "website-development":
+      return {
+        pageTitle: "Website Development",
+        pageSub: "Website Development Details",
+        images: [web1, web2, web3],
+
+        description:
           "Website development involves designing, creating, and maintaining websites to ensure they are functional, visually appealing, and user-friendly. It encompasses various aspects such as front-end development, which focuses on the user interface and design, and back-end development, which involves the server-side functionality and databases. Website developers use programming languages like HTML, CSS, JavaScript, and backend languages (e.g., PHP, Python, Ruby) to build dynamic and interactive websites. They also integrate features like navigation, forms, multimedia, e-commerce, and responsive design for optimal performance across different devices. The goal is to deliver websites that meet specific requirements, engage users, and provide a seamless browsing experience.",
-        pricing : [
+        pricing: [
           {
             name: "Starter",
             price: 500,
-            details: ["I will develop a single page Frontend website (Static)."],
+            details: [
+              "I will develop a single page Frontend website (Static).",
+            ],
           },
           {
             name: "Regular",
             price: 700,
             details: ["3 pages Frontend application"],
+            time:"25"
           },
           {
             name: "Premium",
@@ -268,19 +282,20 @@ export const handleServiceData = (type) => {
             details: [
               "Complete Website, up to 5 pages with frontend and backend.",
             ],
+            time:"50"
           },
-        ]
-    };
+        ],
+      };
 
-      case "wordpress-designing":
-        return{
-        pageTitle : "WordPress Designing",
-        pageSub : "WordPress Designing Details",
-        images : [word1],
+    case "wordpress-designing":
+      return {
+        pageTitle: "WordPress Designing",
+        pageSub: "WordPress Designing Details",
+        images: [word1],
 
-        description :
+        description:
           "WordPress designing encompasses the creation and customization of websites using the WordPress platform. It involves selecting themes, layouts, and plugins to build websites tailored to specific needs. WordPress's user-friendly interface allows for seamless content management, from text and images to interactive elements. Designers can leverage pre-designed themes or create unique layouts, ensuring responsive and visually appealing sites. With its vast community and extensive resources, WordPress is a powerful tool for crafting websites ranging from blogs and portfolios to e-commerce stores and corporate sites.",
-        pricing : [
+        pricing: [
           {
             name: "Starter",
             price: 150,
@@ -302,6 +317,7 @@ export const handleServiceData = (type) => {
               "GTMetrix score upto 80%",
               "3 days Dilivery",
             ],
+            time:"25"
           },
           {
             name: "Premium",
@@ -313,59 +329,61 @@ export const handleServiceData = (type) => {
               " Page Speed 80% - 90%",
               "5 days Dilivery",
             ],
+            time:"50"
           },
-        ]
-    };
-        
-      case "Virtual-Renovation":
-        return{
-      pageTitle : "Virtual Renovation",
-      pageSub : "Virtual-Renovation Details",
-      images : [
-        interior1,
-        interior2,
-        interior3,
-        interior4,
-        interior5,
-        interior6,
-      ],
-      description :
-        "Virtual renovation refers to the digital transformation of real estate property images to showcase potential renovations, improvements, or updates. Through specialized software, virtual renovation allows visual enhancements like new paint colors, flooring materials, fixtures, and furniture placements to be added to existing images. This technique helps potential buyers or renters envision the possibilities for a property, whether it's a vacant space or a property in need of updates. Virtual renovation can be a cost-effective way to demonstrate the potential of a space without physically making changes. However, it's important to transparently communicate that the images represent a virtual concept and not the current state of the property.",
-      pricing :[
-        {
-          name: "Starter",
-          price: 25,
-          details: [
-            "Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $25/Photo",
-            <span key="revision">1 revision</span>,
-          ],
-        },
-        {
-          name: "Regular",
-          price: 140,
-          details: [
-            "Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $140/ 6 Photo",
-            <span key="revision">2 revision</span>,
-            <span key="revision">3 days Dilivery</span>,
-          ],
-        },
-        {
-          name: "Premium",
-          price: 220,
-          details: [
-            "Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $220/ 10 Photo",
-            <span key="revision">3 revision</span>,
-            <span key="revision">5 days Dilivery</span>,
-          ],
-        },
-      ]};
-    
+        ],
+      };
+
+    case "Virtual-Renovation":
+      return {
+        pageTitle: "Virtual Renovation",
+        pageSub: "Virtual-Renovation Details",
+        images: [
+          interior1,
+          interior2,
+          interior3,
+          interior4,
+          interior5,
+          interior6,
+        ],
+        description:
+          "Virtual renovation refers to the digital transformation of real estate property images to showcase potential renovations, improvements, or updates. Through specialized software, virtual renovation allows visual enhancements like new paint colors, flooring materials, fixtures, and furniture placements to be added to existing images. This technique helps potential buyers or renters envision the possibilities for a property, whether it's a vacant space or a property in need of updates. Virtual renovation can be a cost-effective way to demonstrate the potential of a space without physically making changes. However, it's important to transparently communicate that the images represent a virtual concept and not the current state of the property.",
+        pricing: [
+          {
+            name: "Starter",
+            price: 25,
+            details: [
+              "Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $25/Photo",
+              <span key="revision">1 revision</span>,
+            ],
+          },
+          {
+            name: "Regular",
+            price: 140,
+            details: [
+              "Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $140/ 6 Photo",
+              <span key="revision">2 revision</span>,
+              <span key="revision">3 days Dilivery</span>,
+            ],
+            time:"25"
+          },
+          {
+            name: "Premium",
+            price: 220,
+            details: [
+              "Removing old furniture and then Replace with new Furniture, Paint walls, Change Floor in $220/ 10 Photo",
+              <span key="revision">3 revision</span>,
+              <span key="revision">5 days Dilivery</span>,
+            ],
+            time:"50"
+          },
+        ],
+      };
+
     default:
       return {
         pageTitle: "Service Details",
         pageSub: "Service Details",
-      }
-    };
-      
-  };
-
+      };
+  }
+};

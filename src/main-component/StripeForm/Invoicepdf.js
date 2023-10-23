@@ -27,9 +27,9 @@ const InvoicePDF = () => {
       pdf.save("invoice.pdf");
     });
   };
-function printInvoice() {
-    window.print();
-  }
+// function printInvoice() {
+//     window.print();
+//   }
   const currentDate = new Date().toLocaleDateString();
   const generateInvoiceNumber = () => {
     return Math.floor(Math.random() * 10000);

@@ -71,28 +71,24 @@ const PaymentForm = ({ images }) => {
           },
         },
       });
-
       setLoading(false);
-
       if (error) {
         setError(error.message);
         setShowErrorModal(true);
       } else {
         if (paymentMethod) {
           setShowSuccessModal(true);
-          dispatch(setFormData(formData));
+          dispatch(updateFormData(formData));
         }
       }
     } catch (error) {
       setLoading(false);
       setError("An error occurred while processing your payment.");
-
       setShowErrorModal(true);
     }
   };
- 
-  return (
 
+  return (
     <div>
       {/* {formData && <InvoicePDF formData={formData} />} */}
 
@@ -224,17 +220,6 @@ const PaymentForm = ({ images }) => {
                 >
                   Back
                 </MuiButton>
-                <ErrorModal
-                  open={showErrorModal}
-                  onClose={() => setShowErrorModal(false)}
-                  formData={formData}
-                />
-
-                <SuccessModal
-                  open={showSuccessModal}
-                  onClose={() => setShowSuccessModal(false)}
-                  formData={formData}
-                />
               </div>
             </div>
           </div>
@@ -396,10 +381,6 @@ const PaymentForm = ({ images }) => {
                             )}
                             <MuiButton
                               type="submit"
-                              onClick={() => {
-                                dispatch(updateFormData(formData));
-                             
-                              }}
                               disabled={!isFormValid() || !stripe || loading}
                               variant="contained"
                               style={{

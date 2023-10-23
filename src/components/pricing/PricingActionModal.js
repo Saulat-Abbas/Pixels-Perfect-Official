@@ -53,7 +53,6 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
     : 0;
   const totalPrice =
     pricingModalData?.priceData.price * imageQuantity + checkbox;
-
   const list = () => (
     <Grid container spacing={1} maxWidth={450} justifyContent={"center"}>
       <Grid item xs={11.1} md={12}>
@@ -145,6 +144,7 @@ const PricingActionModal = ({ show, handleClose, pricingModalData }) => {
                   "Extra fast delivary is not available."
                 }
               >
+
                 <span>
                   <Checkbox
                     disabled={!pricingModalData?.priceData?.time}
