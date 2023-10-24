@@ -7,12 +7,6 @@ import "./Invoicepdf.css";
 import Logo from "../../img/logo.gif";
 import ClearIcon from "@mui/icons-material/Clear";
 import CheckIcon from "@mui/icons-material/Check";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import EmailIcon from '@mui/icons-material/Email';
-import PublicIcon from '@mui/icons-material/Public';
-import LocationCityIcon from '@mui/icons-material/LocationCity';
-
-
 
 const InvoicePDF = () => {
   const cartUpdate = useSelector((state) => state.pricing.pricingData);
@@ -27,9 +21,6 @@ const InvoicePDF = () => {
       pdf.save("invoice.pdf");
     });
   };
-// function printInvoice() {
-//     window.print();
-//   }
   const currentDate = new Date().toLocaleDateString();
   const generateInvoiceNumber = () => {
     return Math.floor(Math.random() * 10000);
@@ -72,22 +63,20 @@ const InvoicePDF = () => {
                   <ul>
                     <li className="text-bold">Invoiced To:</li>
                     <li>
-                    <strong><AccountCircleIcon/>Name:</strong>  {formData?.fullName}
+                      <strong>Name:</strong> {formData?.fullName}
                     </li>
                     <li>
-                      <strong><EmailIcon/>Email:</strong> {formData.Email}
+                      <strong>Email:</strong> {formData.Email}
                     </li>
                     <li>
-                      <strong><PublicIcon/>Country:</strong> {formData.country}
+                      <strong>Country:</strong> {formData.country}
                     </li>
                     <li>
-                    <i class="fas fa-map-marked-alt"></i>
                       <strong>State:</strong> {formData.state}
                     </li>
                     <li>
-                      <strong><LocationCityIcon/>City:</strong> {formData.city} /{" "}
-                      {formData.zip}
-                    </li>             
+                      <strong>City:</strong> {formData.city} / {formData.zip}
+                    </li>
                   </ul>
                 </div>
               )}
@@ -161,9 +150,8 @@ const InvoicePDF = () => {
               a computer-generated receipt and does not require a physical
               signature.
             </p>
-
-           
           </div>
+          <button onClick={generatePDF}>Generate PDF</button>{" "}
         </div>
       </div>
     </div>
