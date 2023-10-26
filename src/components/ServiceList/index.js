@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import stagging1 from "../../img/360staging-1.webp";
 
 
 
@@ -38,14 +38,14 @@ const ServiceSection = () => {
                 <img src={serviceIcon7} alt="img" />
               </div>
               <div className="service-text">
-                <h3>360 Staging</h3>
+                <h3>360 </h3>
                 <p>
                 "Elevate your property listings with this service, buyers in fully staged,
                     enabling them to explore their future home."
                 </p>
               
               </div>
-              <img src={serviceImg7} alt="img" />
+              <img src={stagging1} alt="img" />
             </div>
           </div>
           <div className="col-lg-4 col-md-6">

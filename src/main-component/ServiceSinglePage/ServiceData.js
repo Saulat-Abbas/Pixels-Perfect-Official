@@ -1,3 +1,17 @@
+
+import stagging1 from "../../img/360staging-1.webp";
+import stagging2 from "../../img/360staging-2.webp";
+import stagging3 from "../../img/360staging-3.webp";
+import stagging4 from "../../img/360staging-4.webp";
+import stagging5 from "../../img/360staging-5.webp";
+import stagging6 from "../../img/360 staging 6.webp";
+import renovation1 from "../../img/360reno-1.webp";
+import renovation2 from "../../img/360reno-2.webp";
+import renovation3 from "../../img/360reno-3.webp";
+import renovation4 from "../../img/360reno-4.webp";
+import renovation5 from "../../img/360reno-5.webp";
+
+
 export const handleServiceData = (type) => {
   const decluter1 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/decluter-1.jpeg?alt=media&token=b78cc221-bb6d-4249-a940-0cb14214c4f5";
@@ -31,17 +45,17 @@ export const handleServiceData = (type) => {
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/interior-5.jpg?alt=media&token=74a3d7d9-59d4-41fb-b1cc-d56504404897";
   const interior6 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/interior-6.jpg?alt=media&token=176b37b2-a242-41d4-b224-322017d85dcf";
-  const staging1 =
+  const virtualStagging1 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-1.jpg?alt=media&token=cdc29a90-90b6-49e7-9935-e8d7d012f7a7";
-  const staging2 =
+  const virtualStagging2 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-2.jpg?alt=media&token=36324d4e-af8a-4658-bb99-6d26b781acaf";
-  const staging3 =
+  const virtualStagging3 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-3.jpg?alt=media&token=047a2b97-88e1-48b8-a8d9-d10d157e482d";
-  const staging4 =
+  const virtualStagging4 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-4.jpg?alt=media&token=d3d28c65-cfe8-4f29-afce-40fa6b417ba9";
-  const staging5 =
+  const virtualStagging5 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-5.jpg?alt=media&token=7c8602ff-e1c0-4c86-9b3a-2f1d0650eedd";
-  const staging6 =
+  const virtualStagging6 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/staging-6.jpg?alt=media&token=2da9843d-7a5e-4311-8b47-5bb312a835a2";
   const web1 =
     "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/web-1.jpg?alt=media&token=76e0e991-c8f9-4427-85fd-504f88c8ffb8";
@@ -101,7 +115,7 @@ export const handleServiceData = (type) => {
       return {
         pageTitle: "360 Staging",
         pageSub: "360 Staging Details",
-        images: [enhacment1, enhacment2, enhacment3, enhacment4],
+        images: [stagging1, stagging2, stagging3, stagging4,stagging5,stagging6],
         description:
           "360 Staging refers to the process of improving the visual quality of a photograph or image through various techniques and technologies. It aims to make images more visually appealing, clear, and detailed by adjusting attributes such as brightness, contrast, color balance, sharpness, and removing unwanted elements or imperfections. Image enhancement can be applied for various purposes, including improving the visual impact of photographs, enhancing the clarity of details, and making images more suitable for specific applications such as printing, publishing, or digital display. This process can involve manual adjustments using software tools or automated algorithms to achieve desired outcomes while maintaining the integrity of the original content.",
         pricing: [
@@ -121,6 +135,7 @@ export const handleServiceData = (type) => {
               <span key="revision">2 revision</span>,
               <span key="revision">3 days Dilivery</span>,
             ],
+            time:"15"
           },
           {
             name: "Premium",
@@ -139,7 +154,7 @@ export const handleServiceData = (type) => {
       return {
         pageTitle: "360 Renovation",
         pageSub: "360 Renovation Details",
-        images: [enhacment1, enhacment2, enhacment3, enhacment4],
+        images: [renovation1, renovation2, renovation3, renovation4,renovation5],
         description:
           "Image enhancement refers to the process of improving the visual quality of a photograph or image through various techniques and technologies. It aims to make images more visually appealing, clear, and detailed by adjusting attributes such as brightness, contrast, color balance, sharpness, and removing unwanted elements or imperfections. Image enhancement can be applied for various purposes, including improving the visual impact of photographs, enhancing the clarity of details, and making images more suitable for specific applications such as printing, publishing, or digital display. This process can involve manual adjustments using software tools or automated algorithms to achieve desired outcomes while maintaining the integrity of the original content.",
         pricing: [
@@ -218,7 +233,7 @@ export const handleServiceData = (type) => {
       return {
         pageTitle: "Virtual Staging",
         pageSub: "Virtual Staging Details",
-        images: [staging1, staging2, staging3, staging4, staging5, staging6],
+        images: [virtualStagging1, virtualStagging2, virtualStagging3, virtualStagging4, virtualStagging5, virtualStagging6],
         description:
           "Virtual staging is a modern real estate technique where software is used to digitally furnish and decorate vacant or minimally furnished rooms in property photographs. By adding virtual furniture and design elements, it creates visually engaging images that help potential buyers envision the full potential of a space. This cost-effective approach allows for customization of styles, layouts, and decor, while also enabling quick turnaround for property listings. However, it's important to transparently communicate that these images are digitally enhanced for marketing purposes to set accurate expectations for potential buyers or renters.  ",
         pricing: [

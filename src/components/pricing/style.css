@@ -99,7 +99,6 @@
 	margin-right: 10px;
   }
   
-  /* Add styles for your "Proceed to Checkout" button */
   .bottom-button-container {
 	position: fixed;
 	bottom: 20px;
@@ -108,24 +107,19 @@
 	z-index: 9999;
   }
   
-  /* Add hover styles for pricing boxes */
   .pricing-box:hover {
 	border-color: #000;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
-  
-  
-  
-  /* style.css */
-  /* You can add any additional styles here */
+
   .mui-button{
 	margin-left: 30%;
 }
 @media (max-width: 768px) {
     .mui-button {
-        margin-left: auto; /* Reset margin-left */
-        margin-right: auto; /* Set margin-right to center horizontally */
-        display: block; /* Make sure it takes up full width */
-        text-align: center; /* Center the content inside the button */
+        margin-left: auto;
+        margin-right: auto; 
+        display: block; 
+        text-align: center; 
     }
 }

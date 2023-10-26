@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { Button as MuiButton } from "@mui/material";
 import { Card, Grid, Typography, Divider } from "@mui/material";
@@ -7,10 +8,8 @@ import { useSelector } from "react-redux";
 import CheckIcon from "@mui/icons-material/Check";
 import "./PaymentForm.css";
 import ClearIcon from "@mui/icons-material/Clear";
-import { useHistory } from "react-router-dom";
 import ErrorModal from "./ErrorModal";
 import SuccessModal from "./SuccessModal";
-import InvoicePDF from "./Invoicepdf";
 import { useDispatch } from "react-redux";
 import { updateFormData } from "../ReduxStore/Slices/formDataSlice";
 
@@ -52,6 +51,10 @@ const PaymentForm = ({ images }) => {
       [name]: value,
     }));
   };
+  const handleCloseSuccessModal = () => {
+    setShowSuccessModal(false);
+    history.goBack();
+  };
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
@@ -70,16 +73,16 @@ const PaymentForm = ({ images }) => {
             postal_code: formData.zip,
           },
         },
-      });
+        });
       setLoading(false);
       if (error) {
-        setError(error.message);
+setError(error.message);
         setShowErrorModal(true);
       } else {
         if (paymentMethod) {
           setShowSuccessModal(true);
           dispatch(updateFormData(formData));
-        }
+                }
       }
     } catch (error) {
       setLoading(false);
@@ -410,7 +413,10 @@ const PaymentForm = ({ images }) => {
       />
       <SuccessModal
         open={showSuccessModal}
-        onClose={() => setShowSuccessModal(false)}
+        onClose={() => {
+          setShowSuccessModal(false);
+          handleCloseSuccessModal();
+        }}
         formData={formData}
       />
     </div>

@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import "./style.css";
 import PricingActionModal from "./PricingActionModal";
-import { Button as MuiButton, colors } from "@mui/material";
+import { Button as MuiButton } from "@mui/material";
 import { Tabs, Tab, Paper } from "@mui/material";
 
 const Pricing = ({ pricing, pageTitle }) => {
-  // State to store the pricing data for the modal
+
   const [pricingModalData, setPricingModalData] = useState(null);
-  // State to manage the modal visibility
+
   const [showModal, setShowModal] = useState(false);
 
-  // Function to show the modal and set the pricing data for the modal
+
   const handleShowModal = (priceData) => {
     setPricingModalData({ priceData, pageTitle });
     setShowModal(true);
   };
 
-  // Function to hide the modal
+
   const handleCloseModal = () => setShowModal(false);
 
   const [value, setValue] = useState(0);
@@ -34,7 +34,7 @@ const Pricing = ({ pricing, pageTitle }) => {
         <div>
           <div className="col-md-6" style={{ width: "100%", height: "100%" }}>
             {" "}
-            {/* Adjust the column width as needed */}
+           
             <Paper elevation={3} className="pricing-box" data-aos="fade-up">
               <div className="site-heading" data-aos="fade-up">
                 <h2 className="section-title" style={{ textAlign: "center" }}>
@@ -42,8 +42,8 @@ const Pricing = ({ pricing, pageTitle }) => {
                 </h2>
               </div>
               <Tabs
-                value={value} // Set the active tab value
-                onChange={handleChange} // Handle tab change
+                value={value} 
+                onChange={handleChange} 
                 variant="fullWidth"
                 indicatorColor="primary"
                 textColor="primary"

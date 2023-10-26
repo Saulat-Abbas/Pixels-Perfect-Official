@@ -42,7 +42,7 @@ const ImageSlider = ({ images }) => {
         <div className="main-slide">
           <img
             src={images[currentSlide]}
-            alt={`Image ${currentSlide + 1}`}
+            alt={`Img ${currentSlide + 1}`}
             className="main-image"
           />
           <div className="thumbnail-container">
