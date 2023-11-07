@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Logo from "../../img/logo.png";
 import MobileMenu from "../../components/MobileMenu";
 import { Link } from "react-router-dom";
-
 import "./style.css";
 
 const Header = () => {
