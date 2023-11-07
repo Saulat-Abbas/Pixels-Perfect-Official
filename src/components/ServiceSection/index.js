@@ -26,7 +26,8 @@ const ServiceSection = () => {
         <h1 className="sub-titlee">Architectural & Interior Designing</h1>
         <div className="justify-content-center d-flex flex-wrap" style={{ margin: 60 }}>
         <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
-            <Link to="/service-single?service=360-Staging" className="service-text">
+            {/* <Link to="/service-single?service=360-Staging" className="service-text"> */}
+            <Link to="/Contact" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-icon">
                   <img src={serviceIcon7} alt="img" />
@@ -43,8 +44,8 @@ const ServiceSection = () => {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
-            <Link to="/service-single?service=360-Renovation" className="service-text">
-              <div className="service-box" data-aos="fade-up" data-aos-delay="100">
+          <Link to="/Contact" className="service-text">
+            <div className="service-box" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-icon">
                   <img src={serviceIcon7} alt="img" />
                 </div>
@@ -59,8 +60,8 @@ const ServiceSection = () => {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
-            <Link to="/service-single?service=Virtual-Duculator" className="service-text">
-              <div className="service-box" data-aos="fade-up" data-aos-delay="100">
+          <Link to="/Contact" className="service-text">
+            <div className="service-box" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-icon">
                   <img src={serviceIcon1} alt="img" />
                 </div>
@@ -73,8 +74,8 @@ const ServiceSection = () => {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
-            <Link to="/service-single?service=Image-Enhancement" className="service-text">
-              <div className="service-box" data-aos="fade-up" data-aos-delay="250">
+          <Link to="/Contact" className="service-text">              
+          <div className="service-box" data-aos="fade-up" data-aos-delay="250">
                 <div className="service-icon">
                   <img src={serviceIcon2} alt="img" />
                 </div>
@@ -87,8 +88,8 @@ const ServiceSection = () => {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
-            <Link to="/service-single?service=virtual-staging" className="service-text">
-              <div className="service-box" data-aos="fade-up" data-aos-delay="400">
+          <Link to="/Contact" className="service-text">             
+           <div className="service-box" data-aos="fade-up" data-aos-delay="400">
                 <div className="service-icon">
                   <img src={serviceIcon3} alt="img" />
                 </div>
@@ -101,8 +102,8 @@ const ServiceSection = () => {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6" style={{ padding: 5 }}>
-            <Link to="/service-single?service=Virtual-Renovation" className="service-text">
-              <div className="service-box" data-aos="fade-up" data-aos-delay="400">
+          <Link to="/Contact" className="service-text">
+                <div className="service-box" data-aos="fade-up" data-aos-delay="400">
                 <div className="service-icon">
                   <img src={serviceIcon6} alt="img" />
                 </div>
@@ -120,7 +121,7 @@ const ServiceSection = () => {
         <h1 className="sub-titlee">Website Development & Designing</h1>
         <div className="row justify-content-center">
           <div className="col-lg-3 col-md-6">
-            <Link to="/service-single?service=website-development" className="service-text">
+          <Link to="/Contact" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="100">
                 <div className="service-icon">
                   <img src={serviceIcon4} alt="img" />
@@ -134,7 +135,7 @@ const ServiceSection = () => {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6">
-            <Link to="/service-single?service=wordpress-designing" className="service-text">
+          <Link to="/Contact" className="service-text">
               <div className="service-box" data-aos="fade-up" data-aos-delay="250">
                 <div className="service-icon">
                   <img src={serviceIcon5} alt="img" />

@@ -26,8 +26,8 @@ const ContactForm = () => {
     switch (e.target.name) {
       case "name":
         setName(e.target.value);
-        if (e.target.value.length > 10) {
-          newError.name = 'First Name cannot exceed 10 characters';
+        if (e.target.value.length > 20) {
+          newError.name = 'First Name cannot exceed 20 characters';
         }
         break;
       case "email":

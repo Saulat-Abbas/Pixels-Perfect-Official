@@ -1,7 +1,6 @@
 import React from "react";
 import ContactForm from "../ContactFrom";
 import "./style.css";
-import { Modal } from "react-bootstrap";
 const Contactpage = () => {
   return (
     <section className="contact-page-area">
