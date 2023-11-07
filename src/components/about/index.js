@@ -5,7 +5,6 @@ import bg from "../../img/about-bg.png";
 import img1 from "../../img/about-1.png";
 import img2 from "../../img/about-2.png";
 import signature from "../../img/signature.png";
-
 import "./style.css";
 
 const About = () => {
