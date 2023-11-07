@@ -1,10 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import stagging1 from "../../img/360staging-1.webp";
-
-
-
-
 import "./style.css";
 
 const ServiceSection = () => {

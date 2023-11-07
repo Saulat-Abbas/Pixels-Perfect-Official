@@ -10,7 +10,6 @@ const About = () => {
   const img2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/about-2.png?alt=media&token=0eb61a4f-de18-4855-afe9-2e7c32367405"
   const img1 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/about-1.jpg?alt=media&token=add1b6a1-3a79-4dd4-a6ed-07f335d6ce83"
   const bg = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/about-bg.jpg?alt=media&token=0e62e2ff-df54-47f2-8dde-52bb2b645537"
-  const signature = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspot.com/o/signature.png?alt=media&token=b06d0a48-8a1a-4c77-921e-2de3180758b4"
 
   return (
     <section className="about-area" style={{ backgroundImage: `url(${bg})` }}>
