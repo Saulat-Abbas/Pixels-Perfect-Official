@@ -1,0 +1,21 @@
+/* UI.css */
+
+.about {
+    background: linear-gradient(90deg, rgb(3, 189, 165) 0%, 23.5043%, rgb(64, 127, 119) 47.0085%, 73.5043%, rgb(32, 75, 128) 100%);
+    padding: 20px; /* Add padding for spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .about img {
+    max-width: 100px; /* Adjust the max-width of the image */
+    margin-right: 20px; /* Add margin for spacing */
+  }
+  
+  .about p {
+    font-size: 24px; /* Adjust the font size */
+    color: #333; /* Set the text color */
+    margin: 0; /* Remove default margin */
+  }
+  
