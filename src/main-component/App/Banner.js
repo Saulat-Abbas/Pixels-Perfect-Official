@@ -2,11 +2,12 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Bg from "../../img/LogoFooter.png";
+import BG from "../../img/bannerbg.jpg"
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: `linear-gradient(90deg, rgb(3, 189, 165) 0% 23.5043%, rgb(64, 127, 119) 47.0085% 73.5043%, rgb(32, 75, 128) 100%)`,
+    backgroundImage: `url(${BG})`,
     height: "100vh", 
     display: "flex",
     alignItems: "center",
