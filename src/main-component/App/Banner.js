@@ -1,10 +1,8 @@
 // Banner.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Bg from "../../img/LogoFooter.png";
 import CssBaseline from "@material-ui/core/CssBaseline";
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" />
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,25 +15,42 @@ const useStyles = makeStyles((theme) => ({
   about: {
     textAlign: "center",
     padding: "20px", 
-    border: "2px solid #fff", 
     borderRadius: "10px", 
   },
   image: {
-    maxWidth: "150px", 
-    maxHeight: "150px",
+    maxWidth: "400px",
+    maxHeight: "400px", 
     margin: "0 auto", 
     display: "block", 
   },
   text: {
-    fontSize: "24px", 
+    fontSize: "36px", 
     fontFamily: "'Roboto', sans-serif", 
     color: "#fff", 
     margin: "10px 0", 
+    overflow: "hidden", 
+    whiteSpace: "nowrap",
+    borderRight: "2px solid #fff", 
+    animation: "$typewriter 2s steps(30, end)", 
+  },
+ 
+  "@keyframes typewriter": {
+    from: {
+      width: 0,
+    },
+    to: {
+      width: "100%",
+    },
   },
 }));
 
 const Banner = () => {
   const classes = useStyles();
+  const [textAnimation, setTextAnimation] = useState(false);
+
+  useEffect(() => {
+    setTextAnimation(true);
+  }, []);
 
   return (
     <div className={classes.root}>
@@ -44,8 +59,10 @@ const Banner = () => {
         <div>
           <img src={Bg} alt="Logo" className={classes.image} />
         </div>
-        <div>
-          <p className={classes.text}>Something Is Coming Soon</p>
+        <div style={{ marginTop: "1cm" }}>
+          <p className={`${classes.text} ${textAnimation ? "animated-text" : ""}`}>
+            Something Amazing Is Coming Soon......!
+          </p>
         </div>
       </div>
     </div>
