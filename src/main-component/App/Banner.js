@@ -2,12 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Bg from "../../img/LogoFooter.png";
-import BG from "../../img/bannerbg.jpg"
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundImage: `url(${BG})`,
+    background:" linear-gradient(90deg, rgba(0,207,170,1) 0%, rgba(41,42,118,1) 100%);;",
     height: "100vh", 
     display: "flex",
     alignItems: "center",
@@ -25,15 +24,17 @@ const useStyles = makeStyles((theme) => ({
     display: "block", 
   },
   text: {
-    fontSize: "36px", 
-    fontFamily: "'Roboto', sans-serif", 
-    color: "#fff", 
-    margin: "10px 0", 
-    overflow: "hidden", 
+    fontSize: "40px",
+    fontFamily: "'Roboto', sans-serif",
+    color: "#fff",
+    margin: "10px 0",
+    overflow: "hidden",
     whiteSpace: "nowrap",
-    borderRight: "2px solid #fff", 
-    animation: "$typewriter 2s steps(30, end)", 
+    borderRight: "2px solid #fff",
+    animation: "$typewriter 2s steps(30, end) infinite",
+    
   },
+
  
   "@keyframes typewriter": {
     from: {
@@ -60,9 +61,9 @@ const Banner = () => {
         <div>
           <img src={Bg} alt="Logo" className={classes.image} />
         </div>
-        <div style={{ marginTop: "1cm" }}>
+        <div style={{ marginTop: "5cm" }}>
           <p className={`${classes.text} ${textAnimation ? "animated-text" : ""}`}>
-            Something Amazing Is Coming Soon......!
+            SOMETHING AMAZING IS COMING SOON.......!
           </p>
         </div>
       </div>
