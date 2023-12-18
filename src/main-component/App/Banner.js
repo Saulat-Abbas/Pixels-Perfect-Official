@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
     whiteSpace: "nowrap",
     borderRight: "2px solid #fff",
-    animation: "$typewriter 2s steps(30, end) infinite",
     
   },
 
