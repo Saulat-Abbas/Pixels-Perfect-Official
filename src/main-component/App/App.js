@@ -35,8 +35,8 @@ function App() {
       ) : (
         <Provider store={store}>
           <PersistGate persistor={persistor}>
-          {/* <AllRoute /> */}
-          <Banner/>
+            <AllRoute />
+            {/* <Banner/> */}
           </PersistGate>
         </Provider>
       )}

@@ -12,14 +12,14 @@ import FaqPage from "../FaqPage";
 import ContactPage from "../ContactPage";
 import ErrorPage from "../ErrorPage";
 import BlogPage from "../BlogPage";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+// import { Elements } from "@stripe/react-stripe-js";
+// import { loadStripe } from "@stripe/stripe-js";
 import BlogSection from "../../components/BlogSection";
 import Checkoutform from "../StripeForm/checkOutForm";
 
-const stripePromise = loadStripe(
-  "pk_test_51LkExQD2dU6r3UJMo1HDdTm4E9g36D4Db12YmQzG7AnkXsBrFnwiMqOGJbNdpHUVX7SwHJXZXxsHCJNd12ahZfw5005R8EAYYi"
-);
+// const stripePromise = loadStripe(
+//   "pk_test_51LkExQD2dU6r3UJMo1HDdTm4E9g36D4Db12YmQzG7AnkXsBrFnwiMqOGJbNdpHUVX7SwHJXZXxsHCJNd12ahZfw5005R8EAYYi"
+// );
 
 const AllRoute = () => {
   return (
@@ -40,9 +40,6 @@ const AllRoute = () => {
         <Route path="/blog" component={BlogPage} />
         <Route path="/blog-single" component={BlogSection} />
         <Route path="/payments">
-          <Elements stripe={stripePromise}>
-            <Checkoutform />
-          </Elements>
         </Route>
       </Switch>
     </Router>
