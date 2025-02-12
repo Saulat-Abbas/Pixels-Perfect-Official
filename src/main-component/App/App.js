@@ -8,7 +8,6 @@ import { Provider } from "react-redux";
 import { store } from "../ReduxStore/Store/store";
 import { persistor } from "../ReduxStore/Store/store";
 import { PersistGate } from "redux-persist/integration/react";
-import Banner from "./Banner";
 
 function App() {
   const [loading, setLoading] = useState(true);

@@ -70,7 +70,7 @@ const hero2 = "https://firebasestorage.googleapis.com/v0/b/pixel-perfects.appspo
                       Design Ideas
                     </h2>
                     <div className="hero-action">
-                      <Link to="/service" className="cta-btn btn-fill">
+                      <Link to="/service"  className="cta-btn btn-fill">
                         Services
                       </Link>
                       <Link to="/contact" className="cta-btn btn-border">

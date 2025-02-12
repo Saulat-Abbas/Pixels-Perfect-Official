@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../img/logo.gif";
 import MobileMenu from "../../components/MobileMenu";
@@ -6,15 +6,6 @@ import MobileMenu from "../../components/MobileMenu";
 import "./style.css";
 
 const Header = () => {
-  const [show, setShow] = useState(false);
-
-  const SubmitHandler = (e) => {
-    e.preventDefault();
-  };
-
-  const onClick = (e) => {
-    e.preventDefault();
-  };
 
   return (
     <header className="header">

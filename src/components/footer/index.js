@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 const Footer = () => {
-  const NewsletterHandler = (e) => {
-    e.preventDefault();
-  };
 
   return (
     <footer className="footer-area">

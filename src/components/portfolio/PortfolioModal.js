@@ -1,21 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
-
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
 const modalStyle = {
     display: 'flex',
     justifyContent: 'center',
@@ -41,7 +27,7 @@ export default function BasicModal(props) {
     aria-describedby="modal-modal-description"
 >
     <Box sx={modalStyle}>
-        <img src={data} style={{ width: '300%', height: '200%', objectFit: 'cover' }}/>
+        <img src={data} alt='img' style={{ width: '300%', height: '200%', objectFit: 'cover' }}/>
     </Box>
 </Modal>
         </div>
