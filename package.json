@@ -15,6 +15,7 @@
     "@stripe/react-stripe-js": "^2.1.1",
     "aos": "^2.3.4",
     "axios": "^1.4.0",
+    "babel-loader": "^9.2.1",
     "bootstrap": "^5.1.1",
     "emailjs-com": "^3.2.0",
     "html2canvas": "^1.4.1",
@@ -33,6 +34,7 @@
     "redux-persist": "^6.0.0",
     "select2": "^4.1.0-rc.0",
     "slick-carousel": "^1.8.1",
+    "source-map-loader": "^5.0.0",
     "styled-components": "^5.3.11",
     "web-vitals": "^1.1.2",
     "webpack": "^5.97.1"
